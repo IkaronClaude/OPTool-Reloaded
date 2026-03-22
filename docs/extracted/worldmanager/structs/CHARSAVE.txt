@@ -1,0 +1,158 @@
+## PROTO_NC_CHARSAVE_2WLDMAN_ABSTATE_CMD (sizeof 10)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_ABSTATE_REQ abstate
+
+## PROTO_NC_CHARSAVE_2WLDMAN_ALL_CMD (sizeof 107)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_ALL_REQ all
+
+## PROTO_NC_CHARSAVE_2WLDMAN_CHAT_COLOR_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned char nChatFontColorID
+  +5: unsigned char nChatBalloonColorID
+
+## PROTO_NC_CHARSAVE_2WLDMAN_CHESTINFO_CMD (sizeof 10)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHAR_CHESTINFO_REQ chest
+
+## PROTO_NC_CHARSAVE_2WLDMAN_COININFO_CMD (sizeof 22)
+  +0: unsigned short wldmanhandle
+  +2: unsigned __int64 nCoin
+  +10: unsigned __int64 nExchangedCoin
+  +18: unsigned long nCharNo
+
+## PROTO_NC_CHARSAVE_2WLDMAN_GAME_CMD (sizeof 11)
+  +0: unsigned short wldmanhandle
+  +2: unsigned long nCharNo
+  +6: PROTO_GAMEDATA_CMD game
+
+## PROTO_NC_CHARSAVE_2WLDMAN_ITEM_CMD (sizeof 9)
+  +0: unsigned short wldmanhandle
+  +2: unsigned long nCharNo
+  +6: PROTO_NC_CHARSAVE_2WLDMAN_ITEM_CMD::<unnamed-type-PacketOrder> PacketOrder
+  +7: unsigned char nPartMark
+  +8: PROTO_ITEM_CMD itemstr
+
+## PROTO_NC_CHARSAVE_2WLDMAN_ITEMACTIONCOOLTIME_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHARSAVE_ITEMACTIONCOOLTIME_ACK ActionCoolTime
+
+## PROTO_NC_CHARSAVE_2WLDMAN_LINK_FROM_CMD (sizeof 26)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHAR_LINKFROM_CMD linkfrom
+
+## PROTO_NC_CHARSAVE_2WLDMAN_MISC_CMD (sizeof 18)
+  +0: unsigned short wldmanhandle
+  +2: unsigned __int64 cen
+  +10: unsigned long fame
+  +14: unsigned long nCharNo
+
+## PROTO_NC_CHARSAVE_2WLDMAN_PET_LINK_RESUMMON_CMD (sizeof 23)
+  +0: unsigned long nCharNo
+  +4: unsigned char bDoResummon
+  +5: unsigned __int64 xResummonCode
+  +13: unsigned short nSummonSlot
+  +15: unsigned long nId
+  +19: unsigned long nRegNum
+
+## PROTO_NC_CHARSAVE_2WLDMAN_QUEST_DOING_CMD (sizeof 8)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_2WLDMAN_QUEST_DOING_CMD::tagQUESTDOING questdoing
+
+## PROTO_NC_CHARSAVE_2WLDMAN_QUEST_DONE_CMD (sizeof 14)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_2WLDMAN_QUEST_DONE_CMD::tagQUESTDONE questdone
+
+## PROTO_NC_CHARSAVE_2WLDMAN_QUEST_READ_CMD (sizeof 8)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_2WLDMAN_QUEST_READ_CMD::tagQUESTREAD questread
+
+## PROTO_NC_CHARSAVE_2WLDMAN_QUEST_REPEAT_CMD (sizeof 8)
+  +0: unsigned short wldmanhandle
+  +2: PROTO_NC_CHARSAVE_2WLDMAN_QUEST_REPEAT_CMD::tagQUESTREPEAT questrepeat
+
+## PROTO_NC_CHARSAVE_2WLDMAN_SINGLE_OPTION_CMD (sizeof 17)
+  +0: unsigned short WmHandle
+  +2: unsigned long chrregnum
+  +6: long resttime
+  +10: unsigned char autopick
+  +11: unsigned char mystery_vault
+  +12: unsigned long nChatBan
+  +16: unsigned char bFirstJoin
+
+## PROTO_NC_CHARSAVE_2WLDMAN_SKILL_CMD (sizeof 13)
+  +0: unsigned short wldmanhandle
+  +2: PARTMARK PartMark
+  +3: unsigned short nMaxNum
+  +5: PROTO_NC_CHARSAVE_SKILL_REQ skill
+
+## PROTO_NC_CHARSAVE_2WLDMAN_TITLE_CMD (sizeof 1037)
+  +0: unsigned short wldmanhandle
+  +2: unsigned long nCharNo
+  +6: CHARACTER_TITLE_READBLOCK CTData
+
+## PROTO_NC_CHARSAVE_ABSTATE_REQ (sizeof 8)
+  +0: PROTO_NC_CHARSAVE_ALL_ACK handle
+  +6: unsigned short abstatenum
+  +8: ABSTATEREADBLOCK[0] abstate
+
+## PROTO_NC_CHARSAVE_ALL_ACK (sizeof 6)
+  +0: unsigned short bufferlocation
+  +2: unsigned long chrregnum
+
+## PROTO_NC_CHARSAVE_ALL_REQ (sizeof 105)
+  +0: PROTO_NC_CHARSAVE_ALL_ACK handle
+  +6: PROTO_NC_CHARSAVE_LEVEL_CMD level
+  +23: PROTO_NC_CHARSAVE_LOCATION_CMD location
+  +71: PROTO_NC_CHARSAVE_CHARSTAT_CMD stat
+
+## PROTO_NC_CHARSAVE_CHARSTAT_CMD (sizeof 34)
+  +0: unsigned long chrregnum
+  +4: unsigned long CurPwrStone
+  +8: unsigned long CurGrdStone
+  +12: unsigned long CurHPStone
+  +16: unsigned long CurSPStone
+  +20: unsigned long CurHP
+  +24: unsigned long CurSP
+  +28: CHARSTATDISTSTR statdistribute
+
+## PROTO_NC_CHARSAVE_ITEMACTIONCOOLTIME_ACK (sizeof 2)
+  +0: unsigned short num
+  +2: ActionCooltime[0] group
+
+## PROTO_NC_CHARSAVE_LEVEL_CMD (sizeof 17)
+  +0: unsigned long chrregnum
+  +4: unsigned char level
+  +5: unsigned __int64 exp
+  +13: unsigned long fame
+
+## PROTO_NC_CHARSAVE_LOCATION_CMD (sizeof 48)
+  +0: unsigned long chrregnum
+  +4: Name3 map
+  +16: SHINE_XY_TYPE coord
+  +24: unsigned long kqhandle
+  +28: Name3 map_kq
+  +40: SHINE_XY_TYPE coord_kq
+
+## PROTO_NC_CHARSAVE_SELL_ITEM_INFO_CMD (sizeof 7)
+  +0: unsigned short nWorldHandle
+  +2: unsigned long nCharNo
+  +6: unsigned char NumOfSellItem
+  +7: PROTO_SELL_ITEM_INFO_SERVER[0] SellItemList
+
+## PROTO_NC_CHARSAVE_SET_CHAT_BLOCK_SPAMER_WM_CMD (sizeof 14)
+  +0: unsigned short WmHandle
+  +2: unsigned long CharNo
+  +6: unsigned long BlockTime
+  +10: unsigned long DelayTime
+
+## PROTO_NC_CHARSAVE_SKILL_REQ (sizeof 8)
+  +0: PROTO_NC_CHARSAVE_ALL_ACK handle
+  +6: unsigned short number
+  +8: PROTO_SKILLREADBLOCK[0] skill
+
+## PROTO_NC_CHARSAVE_USEITEM_MINIMON_INFO_WORLD_CMD (sizeof 56)
+  +0: unsigned short nWorldHandle
+  +2: unsigned long nCharNo
+  +6: USEITEM_MINIMON_INFO UseItemMinimonInfo
+

@@ -1,0 +1,6 @@
+# ANNOUNCE (0x19) - 3 opcodes
+# Full opcode = 0x19 << 8 | cmd_value
+#
+NC_ANNOUNCE_NULL = 0
+NC_ANNOUNCE_Z2W_CMD = 1
+NC_ANNOUNCE_W2C_CMD = 2

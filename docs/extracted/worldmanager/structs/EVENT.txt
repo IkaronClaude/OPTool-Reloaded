@@ -1,0 +1,45 @@
+## PROTO_NC_EVENT_ADD_EVENT_ACK (sizeof 1365)
+  +0: unsigned short nError
+  +2: GM_EVENT_DATA EventData
+
+## PROTO_NC_EVENT_ADD_EVENT_REQ (sizeof 1363)
+  +0: GM_EVENT_DATA EventData
+
+## PROTO_NC_EVENT_ADD_UPDATE_EVENT_CMD (sizeof 1363)
+  +0: GM_EVENT_DATA EventData
+
+## PROTO_NC_EVENT_DEL_EVENT_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nEventNo
+
+## PROTO_NC_EVENT_DEL_EVENT_CMD (sizeof 2)
+  +0: unsigned short nEventNo
+
+## PROTO_NC_EVENT_DEL_EVENT_REQ (sizeof 2)
+  +0: unsigned short nEventNo
+
+## PROTO_NC_EVENT_GET_ALL_EVENT_INFO_ACK (sizeof 1370)
+  +0: unsigned short nError
+  +2: unsigned short nAllEventCnt
+  +4: unsigned short nPacketOrder
+  +6: GM_EVENT_DATA EventData
+  +1369: unsigned char bIsFlagAllReady
+
+## PROTO_NC_EVENT_GET_ALL_EVENT_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_EVENT_SET_ALL_READY_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nEventNo
+
+## PROTO_NC_EVENT_SET_ALL_READY_REQ (sizeof 3)
+  +0: unsigned short nEventNo
+  +2: unsigned char bIsFlagAllReady
+
+## PROTO_NC_EVENT_UPDATE_EVENT_ACK (sizeof 1365)
+  +0: unsigned short nError
+  +2: GM_EVENT_DATA EventData
+
+## PROTO_NC_EVENT_UPDATE_EVENT_REQ (sizeof 1363)
+  +0: GM_EVENT_DATA EventData
+

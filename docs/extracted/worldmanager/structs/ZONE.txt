@@ -1,0 +1,58 @@
+## PROTO_NC_ZONE_PRISON_END_CMD (sizeof 6)
+  +0: unsigned short nCharZoneHandle
+  +2: unsigned long nCharRegNum
+
+## PROTO_NC_ZONE_PRISON_GO_ACK (sizeof 374)
+  +0: unsigned short nGmHandler
+  +2: unsigned long nGmRegNum
+  +6: [0x3343] sGmUserID
+  +262: [0x1349] sCharID
+  +282: unsigned short nCharSessHandler
+  +284: unsigned short nCharZoneHandle
+  +286: unsigned long nCharRegNum
+  +290: unsigned short nMinute
+  +292: [0x12FA] sReason
+  +308: [0x16C8] sRemark
+  +372: unsigned short err
+
+## PROTO_NC_ZONE_PRISON_GO_REQ (sizeof 372)
+  +0: unsigned short nGmHandler
+  +2: unsigned long nGmRegNum
+  +6: [0x3343] sGmUserID
+  +262: [0x1349] sCharID
+  +282: unsigned short nCharSessHandle
+  +284: unsigned short nCharZoneHandle
+  +286: unsigned long nCharRegNum
+  +290: unsigned short nMinute
+  +292: [0x12FA] sReason
+  +308: [0x16C8] sRemark
+
+## PROTO_NC_ZONE_PRISON_END_CMD (sizeof 6)
+  +0: unsigned short nCharZoneHandle
+  +2: unsigned long nCharRegNum
+
+## PROTO_NC_ZONE_PRISON_GO_ACK (sizeof 374)
+  +0: unsigned short nGmHandler
+  +2: unsigned long nGmRegNum
+  +6: [0x3343] sGmUserID
+  +262: [0x1349] sCharID
+  +282: unsigned short nCharSessHandler
+  +284: unsigned short nCharZoneHandle
+  +286: unsigned long nCharRegNum
+  +290: unsigned short nMinute
+  +292: [0x12FA] sReason
+  +308: [0x16C8] sRemark
+  +372: unsigned short err
+
+## PROTO_NC_ZONE_PRISON_GO_REQ (sizeof 372)
+  +0: unsigned short nGmHandler
+  +2: unsigned long nGmRegNum
+  +6: [0x3343] sGmUserID
+  +262: [0x1349] sCharID
+  +282: unsigned short nCharSessHandle
+  +284: unsigned short nCharZoneHandle
+  +286: unsigned long nCharRegNum
+  +290: unsigned short nMinute
+  +292: [0x12FA] sReason
+  +308: [0x16C8] sRemark
+

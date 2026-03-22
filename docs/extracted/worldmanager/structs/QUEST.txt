@@ -1,0 +1,39 @@
+## PROTO_NC_QUEST_RESET_TIME_CMD (sizeof 16)
+  +0: long tResetYearQuest
+  +4: long tResetMonthQuest
+  +8: long tResetWeekQuest
+  +12: long tResetDayQuest
+
+## PROTO_NC_QUEST_RESET_TIME_ZONE_CMD (sizeof 20)
+  +0: unsigned long nCharNo
+  +4: long tResetYearQuest
+  +8: long tResetMonthQuest
+  +12: long tResetWeekQuest
+  +16: long tResetDayQuest
+
+## PROTO_NC_QUEST_RESET_TIME_CMD (sizeof 16)
+  +0: long tResetYearQuest
+  +4: long tResetMonthQuest
+  +8: long tResetWeekQuest
+  +12: long tResetDayQuest
+
+## PROTO_NC_QUEST_RESET_TIME_ZONE_CMD (sizeof 20)
+  +0: unsigned long nCharNo
+  +4: long tResetYearQuest
+  +8: long tResetMonthQuest
+  +12: long tResetWeekQuest
+  +16: long tResetDayQuest
+
+## PROTO_NC_QUEST_RESET_TIME_CMD (sizeof 16)
+  +0: long tResetYearQuest
+  +4: long tResetMonthQuest
+  +8: long tResetWeekQuest
+  +12: long tResetDayQuest
+
+## PROTO_NC_QUEST_RESET_TIME_ZONE_CMD (sizeof 20)
+  +0: unsigned long nCharNo
+  +4: long tResetYearQuest
+  +8: long tResetMonthQuest
+  +12: long tResetWeekQuest
+  +16: long tResetDayQuest
+

@@ -1,0 +1,137 @@
+## PROTO_NC_AVATAR_CREATE_REQ (sizeof 25)
+  +0: unsigned char slotnum
+  +1: Name5 name
+  +21: PROTO_AVATAR_SHAPE_INFO char_shape
+
+## PROTO_NC_AVATAR_CREATEDATA_REQ (sizeof 33)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long usrregnum
+  +6: unsigned char createworld
+  +7: unsigned char adminlevel
+  +8: PROTO_NC_AVATAR_CREATE_REQ clientdata
+
+## PROTO_NC_AVATAR_CREATEDATA_REQ_SEND (sizeof 36)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_CREATEDATA_REQ req
+
+## PROTO_NC_AVATAR_CREATEDATAFAIL_ACK (sizeof 22)
+  +0: Name5 charid
+  +20: unsigned short err
+
+## PROTO_NC_AVATAR_CREATEDATASUC_ACK (sizeof 1)
+  +0: unsigned char numofavatar
+  +1: PROTO_AVATARINFORMATION[0] avatar
+
+## PROTO_NC_AVATAR_CREATEFAIL_ACK (sizeof 2)
+  +0: unsigned short err
+
+## PROTO_NC_AVATAR_CREATEFAIL_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_CREATEFAIL_ACK ack
+
+## PROTO_NC_AVATAR_CREATESUCC_ACK (sizeof 131)
+  +0: unsigned char numofavatar
+  +1: PROTO_AVATARINFORMATION avatar
+
+## PROTO_NC_AVATAR_CREATESUCC_ACK_SEND (sizeof 134)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_CREATESUCC_ACK ack
+
+## PROTO_NC_AVATAR_ERASE_REQ (sizeof 1)
+  +0: unsigned char slot
+
+## PROTO_NC_AVATAR_ERASEDATA_REQ (sizeof 15)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long usrregnum
+  +6: unsigned long avatar
+  +10: unsigned char slot
+  +11: unsigned long nNo
+
+## PROTO_NC_AVATAR_ERASEDATA_REQ_SEND (sizeof 18)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_ERASEDATA_REQ req
+
+## PROTO_NC_AVATAR_ERASEDATAFAIL_ACK (sizeof 4)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned short err
+
+## PROTO_NC_AVATAR_ERASEDATASUC_ACK (sizeof 15)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long usrregnum
+  +6: unsigned long avatar
+  +10: unsigned char slot
+  +11: unsigned long nNo
+
+## PROTO_NC_AVATAR_ERASEFAIL_ACK (sizeof 2)
+  +0: unsigned short err
+
+## PROTO_NC_AVATAR_ERASEFAIL_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_ERASEFAIL_ACK ack
+
+## PROTO_NC_AVATAR_ERASESUC_ACK (sizeof 1)
+  +0: unsigned char slot
+
+## PROTO_NC_AVATAR_ERASESUC_ACK_SEND (sizeof 4)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_ERASESUC_ACK ack
+
+## PROTO_NC_AVATAR_GUILD_DATA_ACK (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: unsigned long chrregnum
+  +8: unsigned char slot
+  +9: GUILD_CLIENT[0] Guild
+
+## PROTO_NC_AVATAR_GUILD_DATA_REQ (sizeof 7)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long chrregnum
+  +6: unsigned char slot
+
+## PROTO_NC_AVATAR_GUILD_DATA_REQ_SEND (sizeof 10)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_AVATAR_GUILD_DATA_REQ req
+
+## PROTO_NC_AVATAR_GUILD_MEMBER_DATA_ACK (sizeof 14)
+  +0: unsigned long chrregnum
+  +4: unsigned char slot
+  +5: unsigned long nNo
+  +9: unsigned short Error
+  +11: unsigned char PartMask
+  +12: unsigned short NumOfMember
+  +14: GUILD_MEMEBER_INFO[0] MemberList
+
+## PROTO_NC_AVATAR_GUILD_MEMBER_DATA_REQ (sizeof 11)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long chrregnum
+  +6: unsigned long nNo
+  +10: unsigned char slot
+
+## PROTO_NC_AVATAR_RENAME_ACK (sizeof 23)
+  +0: unsigned char SlotNo
+  +1: Name5 NewName
+  +21: unsigned short Error
+
+## PROTO_NC_AVATAR_RENAME_DB_ACK (sizeof 29)
+  +0: NETPACKETHEADER NetPacketHeader
+  +2: unsigned long nCharNo
+  +6: unsigned char SlotNo
+  +7: Name5 NewName
+  +27: unsigned short Error
+
+## PROTO_NC_AVATAR_RENAME_DB_REQ (sizeof 27)
+  +0: NETPACKETHEADER NetPacketHeader
+  +2: unsigned long nCharNo
+  +6: unsigned char SlotNo
+  +7: Name5 NewName
+
+## PROTO_NC_AVATAR_RENAME_REQ (sizeof 21)
+  +0: unsigned char SlotNo
+  +1: Name5 NewName
+

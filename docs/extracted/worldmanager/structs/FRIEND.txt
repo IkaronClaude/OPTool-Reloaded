@@ -1,0 +1,128 @@
+## PROTO_NC_FRIEND_ADD_CMD (sizeof 72)
+  +0: PROTO_FRIEND_INFO friendinfo
+
+## PROTO_NC_FRIEND_CLASS_CHANGE_CMD (sizeof 21)
+  +0: Name5 charid
+  +20: unsigned char new_class
+
+## PROTO_NC_FRIEND_DB_DEL_ACK (sizeof 48)
+  +0: unsigned short handle_charno
+  +2: unsigned long charno
+  +6: Name5 charid
+  +26: Name5 friendid
+  +46: unsigned short err
+
+## PROTO_NC_FRIEND_DB_DEL_REQ (sizeof 46)
+  +0: unsigned short handle_charno
+  +2: unsigned long charno
+  +6: Name5 charid
+  +26: Name5 friendid
+
+## PROTO_NC_FRIEND_DB_GET_ACK (sizeof 84)
+  +0: unsigned short handle_char
+  +2: unsigned long charno
+  +6: unsigned long friendno
+  +10: unsigned short err
+  +12: PROTO_FRIEND_INFO friendinfo
+
+## PROTO_NC_FRIEND_DB_GET_REQ (sizeof 10)
+  +0: unsigned short handle_char
+  +2: unsigned long charno
+  +6: unsigned long friendno
+
+## PROTO_NC_FRIEND_DB_POINT (sizeof 8)
+  +0: unsigned long charregnum
+  +4: unsigned short friendpoint
+  +6: unsigned short diffpoint
+
+## PROTO_NC_FRIEND_DB_POINT_CMD (sizeof 2)
+  +0: unsigned short numoffriend
+  +2: PROTO_NC_FRIEND_DB_POINT[0] pointinfo
+
+## PROTO_NC_FRIEND_DB_SET_ACK (sizeof 14)
+  +0: unsigned short handle_charno
+  +2: unsigned short handle_friendno
+  +4: unsigned long charno
+  +8: unsigned long friendno
+  +12: unsigned short err
+
+## PROTO_NC_FRIEND_DB_SET_REQ (sizeof 13)
+  +0: unsigned short handle_charno
+  +2: unsigned short handle_friendno
+  +4: unsigned long charno
+  +8: unsigned long friendno
+  +12: unsigned char flag
+
+## PROTO_NC_FRIEND_DEL_ACK (sizeof 42)
+  +0: Name5 charid
+  +20: Name5 friendid
+  +40: unsigned short err
+
+## PROTO_NC_FRIEND_DEL_CMD (sizeof 20)
+  +0: Name5 charid
+
+## PROTO_NC_FRIEND_DEL_REQ (sizeof 40)
+  +0: Name5 charid
+  +20: Name5 friendid
+
+## PROTO_NC_FRIEND_FIND_FRIENDS_ACK (sizeof 4)
+  +0: unsigned short error
+  +2: unsigned short numoffriend
+  +4: PROTO_FRIEND_INFO[0] friendinfo
+
+## PROTO_NC_FRIEND_GET_DIFF_FRIEND_POINT_CMD (sizeof 2)
+  +0: unsigned short diffpoint
+
+## PROTO_NC_FRIEND_LEVEL_CMD (sizeof 21)
+  +0: Name5 charid
+  +20: unsigned char level
+
+## PROTO_NC_FRIEND_LIST_CMD (sizeof 1)
+  +0: unsigned char numoffriend
+  +1: PROTO_FRIEND_INFO[0] friendinfo
+
+## PROTO_NC_FRIEND_LOGIN_CMD (sizeof 32)
+  +0: Name5 charid
+  +20: Name3 map
+
+## PROTO_NC_FRIEND_LOGOUT_CMD (sizeof 20)
+  +0: Name5 charid
+
+## PROTO_NC_FRIEND_MAP_CMD (sizeof 32)
+  +0: Name5 charid
+  +20: Name3 map
+
+## PROTO_NC_FRIEND_PARTY_CMD (sizeof 21)
+  +0: Name5 charid
+  +20: unsigned char is_party
+
+## PROTO_NC_FRIEND_POINT_ACK (sizeof 2)
+  +0: unsigned short friendpoint
+
+## PROTO_NC_FRIEND_REFUSE_CMD (sizeof 20)
+  +0: Name5 friendid
+
+## PROTO_NC_FRIEND_SET_ACK (sizeof 42)
+  +0: Name5 charid
+  +20: Name5 friendid
+  +40: unsigned short err
+
+## PROTO_NC_FRIEND_SET_CONFIRM_ACK (sizeof 41)
+  +0: Name5 charid
+  +20: Name5 friendid
+  +40: unsigned char accept_friend
+
+## PROTO_NC_FRIEND_SET_CONFIRM_REQ (sizeof 40)
+  +0: Name5 charid
+  +20: Name5 friendid
+
+## PROTO_NC_FRIEND_SET_REQ (sizeof 40)
+  +0: Name5 charid
+  +20: Name5 friendid
+
+## PROTO_NC_FRIEND_SOMEONE_GET_SPECIALITEM_WORLD_CMD (sizeof 20)
+  +0: Name5 charid
+
+## PROTO_NC_FRIEND_SOMEONE_GET_SPECIALITEM_ZONE_CMD (sizeof 20)
+  +0: Name5 charid
+

@@ -1,0 +1,552 @@
+## PROTO_NC_KQ_JOIN_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_JOIN_LIST_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nNum
+  +3: KQ_JOIN_CHAR_INFO[0] CharInfoList
+
+## PROTO_NC_KQ_JOIN_LIST_REQ (sizeof 4)
+  +0: unsigned long nHandle
+
+## PROTO_NC_KQ_JOIN_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_JOINER (sizeof 5)
+  +0: unsigned long chrregnum
+  +4: unsigned char nTeamType
+
+## PROTO_NC_KQ_JOINING_ALARM_CMD (sizeof 9)
+  +0: KQ_JOINING_ALARM_INFO KQInfo
+  +8: unsigned char MsgLength
+  +9: unsigned char[0] Msg
+
+## PROTO_NC_KQ_JOINING_ALARM_END_CMD (sizeof 6)
+  +0: unsigned long nHandle
+  +4: unsigned short nID
+
+## PROTO_NC_KQ_JOINING_ALARM_LIST (sizeof 2)
+  +0: unsigned short nNumOfKQ
+  +2: KQ_JOINING_ALARM_INFO[0] KQList
+
+## PROTO_NC_KQ_LINK_TO_FORCE_BY_BAN_CMD (sizeof 52)
+  +0: unsigned long nCharNum
+  +4: Name3[4] sMapName
+
+## PROTO_NC_KQ_LIST_ACK (sizeof 50)
+  +0: long ServerTime
+  +4: tm tm_ServerTime
+  +40: unsigned long NewStartHandle
+  +44: unsigned long NewEndHandle
+  +48: unsigned short NumOfNewQuest
+  +50: PROTO_KQ_INFO_CLIENT[0] NewQuestArray
+
+## PROTO_NC_KQ_LIST_ADD_ACK (sizeof 2)
+  +0: unsigned short NumOfAdd
+  +2: PROTO_KQ_INFO_CLIENT[0] AddQuestArray
+
+## PROTO_NC_KQ_LIST_DELETE_ACK (sizeof 2)
+  +0: unsigned short NumOfDelete
+  +2: unsigned long[0] DeleteQuestArray
+
+## PROTO_NC_KQ_LIST_REFRESH_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_KQ_LIST_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_LIST_TIME_ACK (sizeof 40)
+  +0: long ServerTime
+  +4: tm tm_ServerTime
+
+## PROTO_NC_KQ_LIST_UPDATE_ACK (sizeof 2)
+  +0: unsigned short NumOfUpdate
+  +2: KQ_UPDATE_ITEMS[0] UpdateQuestArray
+
+## PROTO_NC_KQ_NOTIFY_CMD (sizeof 1)
+  +0: unsigned char MsgLength
+  +1: unsigned char[0] Msg
+
+## PROTO_NC_KQ_PLAYER_DISJOIN_CMD (sizeof 8)
+  +0: unsigned long nHandle
+  +4: unsigned long nCharNum
+
+## PROTO_NC_KQ_SCHEDULE_ACK (sizeof 10)
+  +0: unsigned long NewStartHandle
+  +4: unsigned long NewEndHandle
+  +8: unsigned short NumOfNewQuest
+  +10: PROTO_KQ_INFO_CLIENT[0] NewQuestArray
+
+## PROTO_NC_KQ_SCHEDULE_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_STATUS_ACK (sizeof 7)
+  +0: unsigned long Handle
+  +4: unsigned char Status
+  +5: unsigned short NumOfJoiner
+  +7: Name5[0] JoinerNameList
+
+## PROTO_NC_KQ_STATUS_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_TEAM_SELECT_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_CMD (sizeof 21)
+  +0: Name5 sCharID
+  +20: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_REQ (sizeof 1)
+  +0: unsigned char nTeamType
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_CMD (sizeof 4)
+  +0: unsigned char nVoteRate
+  +1: unsigned char nYesNum
+  +2: unsigned char nNoNum
+  +3: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_LOGOFF_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_KQ_VOTE_CANCEL_CMD (sizeof 20)
+  +0: Name5 sTarget
+
+## PROTO_NC_KQ_VOTE_RESULT_FAIL_CMD (sizeof 23)
+  +0: Name5 sTarget
+  +20: unsigned char nYesNum
+  +21: unsigned char nNoNum
+  +22: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_RESULT_SUC_CMD (sizeof 24)
+  +0: Name5 sTarget
+  +20: unsigned char nVoteRate
+  +21: unsigned char nYesNum
+  +22: unsigned char nNoNum
+  +23: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_START_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_KQ_VOTE_START_REQ (sizeof 22)
+  +0: Name5 sTarget
+  +20: unsigned char nVoteType
+  +21: unsigned char nLen
+  +22: unsigned char[0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_VOTING_CMD (sizeof 78)
+  +0: Name5 sStarter
+  +20: Name5 sTarget
+  +40: unsigned char nVoteType
+  +41: tm tEndTime
+  +77: unsigned char nLen
+  +78: unsigned char[0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_REQ (sizeof 4)
+  +0: [0x1782] eVoteType
+
+## PROTO_NC_KQ_W2Z_DESTROY_CMD (sizeof 4)
+  +0: unsigned long hquest
+
+## PROTO_NC_KQ_W2Z_MAKE_REQ (sizeof 377)
+  +0: PROTO_KQ_INFO KQInfo
+
+## PROTO_NC_KQ_W2Z_START_CMD (sizeof 379)
+  +0: PROTO_KQ_INFO KQInfo
+  +377: unsigned short NumOfJoiner
+  +379: PROTO_NC_KQ_JOINER[0] JoinerArray
+
+## PROTO_NC_KQ_Z2W_END_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_Z2W_MAKE_ACK (sizeof 6)
+  +0: unsigned long hquest
+  +4: unsigned short err
+
+## PROTO_NC_KQ_JOINER (sizeof 5)
+  +0: unsigned long chrregnum
+  +4: unsigned char nTeamType
+
+## PROTO_NC_KQ_JOINING_ALARM_CMD (sizeof 9)
+  +0: [0x4064] KQInfo
+  +8: unsigned char MsgLength
+  +9: [0x14E0] Msg
+
+## PROTO_NC_KQ_JOINING_ALARM_END_CMD (sizeof 6)
+  +0: unsigned long nHandle
+  +4: unsigned short nID
+
+## PROTO_NC_KQ_JOINING_ALARM_LIST (sizeof 2)
+  +0: unsigned short nNumOfKQ
+  +2: [0x4065] KQList
+
+## PROTO_NC_KQ_JOIN_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_JOIN_LIST_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nNum
+  +3: [0x3DCE] CharInfoList
+
+## PROTO_NC_KQ_JOIN_LIST_REQ (sizeof 4)
+  +0: unsigned long nHandle
+
+## PROTO_NC_KQ_JOIN_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_LINK_TO_FORCE_BY_BAN_CMD (sizeof 52)
+  +0: unsigned long nCharNum
+  +4: [0x4046] sMapName
+
+## PROTO_NC_KQ_LIST_ACK (sizeof 50)
+  +0: long ServerTime
+  +4: [0x136B] tm_ServerTime
+  +40: unsigned long NewStartHandle
+  +44: unsigned long NewEndHandle
+  +48: unsigned short NumOfNewQuest
+  +50: [0x3794] NewQuestArray
+
+## PROTO_NC_KQ_LIST_ADD_ACK (sizeof 2)
+  +0: unsigned short NumOfAdd
+  +2: [0x3794] AddQuestArray
+
+## PROTO_NC_KQ_LIST_DELETE_ACK (sizeof 2)
+  +0: unsigned short NumOfDelete
+  +2: [0x1C40] DeleteQuestArray
+
+## PROTO_NC_KQ_LIST_REFRESH_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_LIST_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_LIST_TIME_ACK (sizeof 40)
+  +0: long ServerTime
+  +4: [0x136B] tm_ServerTime
+
+## PROTO_NC_KQ_LIST_UPDATE_ACK (sizeof 2)
+  +0: unsigned short NumOfUpdate
+  +2: [0x229D] UpdateQuestArray
+
+## PROTO_NC_KQ_NOTIFY_CMD (sizeof 1)
+  +0: unsigned char MsgLength
+  +1: [0x14E0] Msg
+
+## PROTO_NC_KQ_PLAYER_DISJOIN_CMD (sizeof 8)
+  +0: unsigned long nHandle
+  +4: unsigned long nCharNum
+
+## PROTO_NC_KQ_SCHEDULE_ACK (sizeof 10)
+  +0: unsigned long NewStartHandle
+  +4: unsigned long NewEndHandle
+  +8: unsigned short NumOfNewQuest
+  +10: [0x3794] NewQuestArray
+
+## PROTO_NC_KQ_SCHEDULE_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_STATUS_ACK (sizeof 7)
+  +0: unsigned long Handle
+  +4: unsigned char Status
+  +5: unsigned short NumOfJoiner
+  +7: [0x5441] JoinerNameList
+
+## PROTO_NC_KQ_STATUS_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_TEAM_SELECT_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_CMD (sizeof 21)
+  +0: [0x1349] sCharID
+  +20: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_REQ (sizeof 1)
+  +0: unsigned char nTeamType
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_CMD (sizeof 4)
+  +0: unsigned char nVoteRate
+  +1: unsigned char nYesNum
+  +2: unsigned char nNoNum
+  +3: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_LOGOFF_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_VOTE_CANCEL_CMD (sizeof 20)
+  +0: [0x1349] sTarget
+
+## PROTO_NC_KQ_VOTE_RESULT_FAIL_CMD (sizeof 23)
+  +0: [0x1349] sTarget
+  +20: unsigned char nYesNum
+  +21: unsigned char nNoNum
+  +22: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_RESULT_SUC_CMD (sizeof 24)
+  +0: [0x1349] sTarget
+  +20: unsigned char nVoteRate
+  +21: unsigned char nYesNum
+  +22: unsigned char nNoNum
+  +23: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_START_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_VOTE_START_REQ (sizeof 22)
+  +0: [0x1349] sTarget
+  +20: unsigned char nVoteType
+  +21: unsigned char nLen
+  +22: [0x14E0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_VOTING_CMD (sizeof 78)
+  +0: [0x1349] sStarter
+  +20: [0x1349] sTarget
+  +40: unsigned char nVoteType
+  +41: [0x136B] tEndTime
+  +77: unsigned char nLen
+  +78: [0x14E0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_REQ (sizeof 4)
+  +0: [0x1782] eVoteType
+
+## PROTO_NC_KQ_W2Z_DESTROY_CMD (sizeof 4)
+  +0: unsigned long hquest
+
+## PROTO_NC_KQ_W2Z_MAKE_REQ (sizeof 377)
+  +0: [0x202F] KQInfo
+
+## PROTO_NC_KQ_W2Z_START_CMD (sizeof 379)
+  +0: [0x202F] KQInfo
+  +377: unsigned short NumOfJoiner
+  +379: [0x3DC1] JoinerArray
+
+## PROTO_NC_KQ_Z2W_END_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_Z2W_MAKE_ACK (sizeof 6)
+  +0: unsigned long hquest
+  +4: unsigned short err
+
+## PROTO_NC_KQ_JOINER (sizeof 5)
+  +0: unsigned long chrregnum
+  +4: unsigned char nTeamType
+
+## PROTO_NC_KQ_JOINING_ALARM_CMD (sizeof 9)
+  +0: [0x4064] KQInfo
+  +8: unsigned char MsgLength
+  +9: [0x14E0] Msg
+
+## PROTO_NC_KQ_JOINING_ALARM_END_CMD (sizeof 6)
+  +0: unsigned long nHandle
+  +4: unsigned short nID
+
+## PROTO_NC_KQ_JOINING_ALARM_LIST (sizeof 2)
+  +0: unsigned short nNumOfKQ
+  +2: [0x4065] KQList
+
+## PROTO_NC_KQ_JOIN_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_ACK (sizeof 6)
+  +0: unsigned long Handle
+  +4: unsigned short Error
+
+## PROTO_NC_KQ_JOIN_CANCEL_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_JOIN_LIST_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nNum
+  +3: [0x3DCE] CharInfoList
+
+## PROTO_NC_KQ_JOIN_LIST_REQ (sizeof 4)
+  +0: unsigned long nHandle
+
+## PROTO_NC_KQ_JOIN_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_LINK_TO_FORCE_BY_BAN_CMD (sizeof 52)
+  +0: unsigned long nCharNum
+  +4: [0x4046] sMapName
+
+## PROTO_NC_KQ_LIST_ACK (sizeof 50)
+  +0: long ServerTime
+  +4: [0x136B] tm_ServerTime
+  +40: unsigned long NewStartHandle
+  +44: unsigned long NewEndHandle
+  +48: unsigned short NumOfNewQuest
+  +50: [0x3794] NewQuestArray
+
+## PROTO_NC_KQ_LIST_ADD_ACK (sizeof 2)
+  +0: unsigned short NumOfAdd
+  +2: [0x3794] AddQuestArray
+
+## PROTO_NC_KQ_LIST_DELETE_ACK (sizeof 2)
+  +0: unsigned short NumOfDelete
+  +2: [0x1C40] DeleteQuestArray
+
+## PROTO_NC_KQ_LIST_REFRESH_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_LIST_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_LIST_TIME_ACK (sizeof 40)
+  +0: long ServerTime
+  +4: [0x136B] tm_ServerTime
+
+## PROTO_NC_KQ_LIST_UPDATE_ACK (sizeof 2)
+  +0: unsigned short NumOfUpdate
+  +2: [0x229D] UpdateQuestArray
+
+## PROTO_NC_KQ_NOTIFY_CMD (sizeof 1)
+  +0: unsigned char MsgLength
+  +1: [0x14E0] Msg
+
+## PROTO_NC_KQ_PLAYER_DISJOIN_CMD (sizeof 8)
+  +0: unsigned long nHandle
+  +4: unsigned long nCharNum
+
+## PROTO_NC_KQ_SCHEDULE_ACK (sizeof 10)
+  +0: unsigned long NewStartHandle
+  +4: unsigned long NewEndHandle
+  +8: unsigned short NumOfNewQuest
+  +10: [0x3794] NewQuestArray
+
+## PROTO_NC_KQ_SCHEDULE_REQ (sizeof 8)
+  +0: unsigned long StartHandle
+  +4: unsigned long EndHandle
+
+## PROTO_NC_KQ_STATUS_ACK (sizeof 7)
+  +0: unsigned long Handle
+  +4: unsigned char Status
+  +5: unsigned short NumOfJoiner
+  +7: [0x5441] JoinerNameList
+
+## PROTO_NC_KQ_STATUS_REQ (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_TEAM_SELECT_ACK (sizeof 3)
+  +0: unsigned short nError
+  +2: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_CMD (sizeof 21)
+  +0: [0x1349] sCharID
+  +20: unsigned char nTeamType
+
+## PROTO_NC_KQ_TEAM_SELECT_REQ (sizeof 1)
+  +0: unsigned char nTeamType
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_CMD (sizeof 4)
+  +0: unsigned char nVoteRate
+  +1: unsigned char nYesNum
+  +2: unsigned char nNoNum
+  +3: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_BAN_MSG_LOGOFF_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_VOTE_CANCEL_CMD (sizeof 20)
+  +0: [0x1349] sTarget
+
+## PROTO_NC_KQ_VOTE_RESULT_FAIL_CMD (sizeof 23)
+  +0: [0x1349] sTarget
+  +20: unsigned char nYesNum
+  +21: unsigned char nNoNum
+  +22: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_RESULT_SUC_CMD (sizeof 24)
+  +0: [0x1349] sTarget
+  +20: unsigned char nVoteRate
+  +21: unsigned char nYesNum
+  +22: unsigned char nNoNum
+  +23: unsigned char nCancelNum
+
+## PROTO_NC_KQ_VOTE_START_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_START_CHECK_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_KQ_VOTE_START_REQ (sizeof 22)
+  +0: [0x1349] sTarget
+  +20: unsigned char nVoteType
+  +21: unsigned char nLen
+  +22: [0x14E0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_KQ_VOTE_VOTING_CMD (sizeof 78)
+  +0: [0x1349] sStarter
+  +20: [0x1349] sTarget
+  +40: unsigned char nVoteType
+  +41: [0x136B] tEndTime
+  +77: unsigned char nLen
+  +78: [0x14E0] sContents
+
+## PROTO_NC_KQ_VOTE_VOTING_REQ (sizeof 4)
+  +0: [0x1782] eVoteType
+
+## PROTO_NC_KQ_W2Z_DESTROY_CMD (sizeof 4)
+  +0: unsigned long hquest
+
+## PROTO_NC_KQ_W2Z_MAKE_REQ (sizeof 377)
+  +0: [0x202F] KQInfo
+
+## PROTO_NC_KQ_W2Z_START_CMD (sizeof 379)
+  +0: [0x202F] KQInfo
+  +377: unsigned short NumOfJoiner
+  +379: [0x3DC1] JoinerArray
+
+## PROTO_NC_KQ_Z2W_END_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_KQ_Z2W_MAKE_ACK (sizeof 6)
+  +0: unsigned long hquest
+  +4: unsigned short err
+

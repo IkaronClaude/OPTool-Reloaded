@@ -1,0 +1,96 @@
+## PROTO_NC_SYSLOG_ACCOUNT_LOGOUT (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long LoginKeepTime
+
+## PROTO_NC_SYSLOG_CHAR_CREATED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_DELETED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_ENTER_GAME (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+
+## PROTO_NC_SYSLOG_CHAR_LEAVE_GAME (sizeof 12)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned long PlayTime
+
+## PROTO_NC_SYSLOG_CHAR_LEVEL_UP (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharLev
+
+## PROTO_NC_SYSLOG_SERVER_CCU (sizeof 5)
+  +0: unsigned long UserCount
+  +4: unsigned char WorldNo
+
+## PROTO_NC_SYSLOG_ACCOUNT_LOGOUT (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long LoginKeepTime
+
+## PROTO_NC_SYSLOG_CHAR_CREATED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_DELETED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_ENTER_GAME (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+
+## PROTO_NC_SYSLOG_CHAR_LEAVE_GAME (sizeof 12)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned long PlayTime
+
+## PROTO_NC_SYSLOG_CHAR_LEVEL_UP (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharLev
+
+## PROTO_NC_SYSLOG_SERVER_CCU (sizeof 5)
+  +0: unsigned long UserCount
+  +4: unsigned char WorldNo
+
+## PROTO_NC_SYSLOG_ACCOUNT_LOGOUT (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long LoginKeepTime
+
+## PROTO_NC_SYSLOG_CHAR_CREATED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_DELETED (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharClass
+
+## PROTO_NC_SYSLOG_CHAR_ENTER_GAME (sizeof 8)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+
+## PROTO_NC_SYSLOG_CHAR_LEAVE_GAME (sizeof 12)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned long PlayTime
+
+## PROTO_NC_SYSLOG_CHAR_LEVEL_UP (sizeof 9)
+  +0: unsigned long UserNo
+  +4: unsigned long CharNo
+  +8: unsigned char CharLev
+
+## PROTO_NC_SYSLOG_SERVER_CCU (sizeof 5)
+  +0: unsigned long UserCount
+  +4: unsigned char WorldNo
+

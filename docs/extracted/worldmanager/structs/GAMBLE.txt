@@ -1,0 +1,11 @@
+## PROTO_NC_GAMBLE_EXCHANGEDCOIN_INIT_CMD (sizeof 4)
+  +0: long dChackDate
+
+## PROTO_NC_GAMBLE_WORLD_PREVMAPNAME_CMD (sizeof 18)
+  +0: unsigned short nWldHandle
+  +2: Name3 sPrevMapName
+  +14: unsigned long nCharNo
+
+## PROTO_NC_GAMBLE_ZONE_PREVMAPNAME_CMD (sizeof 12)
+  +0: Name3 sPrevMapName
+

@@ -1,0 +1,15 @@
+## PROTO_NC_CT_ADD_FRIEND_CMD (sizeof 8)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned short NumberOfFriends
+
+## PROTO_NC_CT_CHARTTING_CMD (sizeof 6)
+  +0: NETPACKETZONEHEADER header
+
+## PROTO_NC_CT_LUASCRIPT_SET_WORLD_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: CT_INFO CTInfo
+
+## PROTO_NC_CT_LUASCRIPT_SET_ZONE_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: CT_INFO CTInfo
+

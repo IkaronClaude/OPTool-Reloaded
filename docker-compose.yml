@@ -1,0 +1,14 @@
+services:
+  optool:
+    build: .
+    container_name: optool
+    restart: unless-stopped
+    ports:
+      - "5160:5160"
+    volumes:
+      - ${SERVER_DATA:-/root/fiesta-files}:/data:ro
+    environment:
+      - Fiesta__ServerInfoPath=/data/9Data/ServerInfo/ServerInfo.txt
+      - Fiesta__HandshakeKey=0
+      - Fiesta__HeartbeatIntervalSeconds=30
+    network_mode: host

@@ -1,0 +1,4 @@
+# ITEMDB (0x0D) - 1 opcodes
+# Full opcode = 0x0D << 8 | cmd_value
+#
+NC_ITEMDB_CLOSE_GUILD_STORAGE_CMD = 160

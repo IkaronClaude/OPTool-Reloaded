@@ -1,0 +1,570 @@
+## PROTO_NC_INSTANCE_DUNGEON_DELETE_DUNGEON_CMD (sizeof 9)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+  +5: unsigned long ReaderRegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_EMPTY_DUNGEON_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ACK (sizeof 12)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_ACK (sizeof 13)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_REQ (sizeof 35)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: ORToken Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_REQ (sizeof 36)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: ORToken Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ACK (sizeof 24)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+  +12: Name3 sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_ACK (sizeof 25)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+  +13: Name3 sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_REQ (sizeof 39)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: ORToken Argument
+  +35: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_REQ (sizeof 40)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: ORToken Argument
+  +36: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: SHINE_INDUN_INFO[0] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_ACK (sizeof 1972)
+  +0: SHINE_INDUN_INFO sIndunInfo
+  +13: PROTO_AVATAR_SHAPE_INFO damageDealtShapeInfo1st
+  +17: PROTO_AVATAR_SHAPE_INFO damageDealtShapeInfo2nd
+  +21: PROTO_AVATAR_SHAPE_INFO damageDealtShapeInfo3th
+  +25: PROTO_AVATAR_SHAPE_INFO damageTakenShapeInfo1st
+  +29: PROTO_AVATAR_SHAPE_INFO damageTakenShapeInfo2nd
+  +33: PROTO_AVATAR_SHAPE_INFO damageTakenShapeInfo3th
+  +37: PROTO_AVATAR_SHAPE_INFO healingDoneShapeInfo1st
+  +41: PROTO_AVATAR_SHAPE_INFO healingDoneShapeInfo2nd
+  +45: PROTO_AVATAR_SHAPE_INFO healingDoneShapeInfo3th
+  +49: unsigned char nDamageDealtCount
+  +50: unsigned char nDamageTakenCount
+  +51: unsigned char nHealingDoneCount
+  +52: SHINE_INDUN_RANK_CLIENT_VALUE[20] damageDealtRanks
+  +692: SHINE_INDUN_RANK_CLIENT_VALUE[20] damageTakenRanks
+  +1332: SHINE_INDUN_RANK_CLIENT_VALUE[20] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_MYRANK_CMD (sizeof 6)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nMyRankCount
+  +6: SHINE_INDUN_RANK_MYRANK[0] MyRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_NEW_RANK_MSG (sizeof 38)
+  +0: Name5 nCharID
+  +20: SHINE_INDUN_INFO sIndunInfo
+  +33: unsigned char rankType
+  +34: unsigned long nRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_REQ (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: SHINE_INDUN_INFO[0] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_SAVE_WORLD_CMD (sizeof 19)
+  +0: SHINE_INDUN_INFO sIndunInfo
+  +13: unsigned long nPlayTime
+  +17: unsigned short nRankCount
+  +19: SHINE_INDUN_RANK[0] ranks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_ACK (sizeof 19)
+  +0: PROTO_AVATAR_SHAPE_INFO shapeInfo1st
+  +4: PROTO_AVATAR_SHAPE_INFO shapeInfo2nd
+  +8: PROTO_AVATAR_SHAPE_INFO shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageDealtRank
+  +18: unsigned char nDamageDealtCount
+  +19: SHINE_INDUN_RANK_CLIENT_VALUE[0] damageDealtRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_REQ (sizeof 13)
+  +0: SHINE_INDUN_INFO sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_ACK (sizeof 19)
+  +0: PROTO_AVATAR_SHAPE_INFO shapeInfo1st
+  +4: PROTO_AVATAR_SHAPE_INFO shapeInfo2nd
+  +8: PROTO_AVATAR_SHAPE_INFO shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageTakenRank
+  +18: unsigned char nDamageTakenCount
+  +19: SHINE_INDUN_RANK_CLIENT_VALUE[0] damageTakenRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_REQ (sizeof 13)
+  +0: SHINE_INDUN_INFO sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_ACK (sizeof 19)
+  +0: PROTO_AVATAR_SHAPE_INFO shapeInfo1st
+  +4: PROTO_AVATAR_SHAPE_INFO shapeInfo2nd
+  +8: PROTO_AVATAR_SHAPE_INFO shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nHealingDoneRank
+  +18: unsigned char nHealingDoneCount
+  +19: SHINE_INDUN_RANK_CLIENT_VALUE[0] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_REQ (sizeof 13)
+  +0: SHINE_INDUN_INFO sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_ACK (sizeof 62)
+  +0: unsigned short nErr
+  +2: unsigned __int64 nPrevDamageDealt
+  +10: unsigned __int64 nPrevDamageTaken
+  +18: unsigned __int64 nPrevHealingDone
+  +26: unsigned char nPrevPlayTimeHour
+  +27: unsigned char nPrevPlayTimeMinute
+  +28: unsigned char nPrevPlayTimeSecond
+  +29: unsigned char nPrevPlayTimeYear
+  +30: unsigned char nPrevPlayTimeMonth
+  +31: unsigned char nPrevPlayTimeDay
+  +32: unsigned __int64 nCurrDamageDealt
+  +40: unsigned __int64 nCurrDamageTaken
+  +48: unsigned __int64 nCurrHealingDone
+  +56: unsigned char nCurrPlayTimeHour
+  +57: unsigned char nCurrPlayTimeMinute
+  +58: unsigned char nCurrPlayTimeSecond
+  +59: unsigned char nCurrPlayTimeYear
+  +60: unsigned char nCurrPlayTimeMonth
+  +61: unsigned char nCurrPlayTimeDay
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_REQ (sizeof 13)
+  +0: SHINE_INDUN_INFO sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_ACK (sizeof 15)
+  +0: SHINE_INDUN_INFO sIndunInfo
+  +13: unsigned short CharListCount
+  +15: SHINE_INDUN_RANK_RANKING[0] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_REQ (sizeof 15)
+  +0: SHINE_INDUN_INFO sIndunInfo
+  +13: unsigned short CharListCount
+  +15: NETPACKETZONEHEADER[0] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RESET_COUNTDOWN_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_DELETE_DUNGEON_CMD (sizeof 9)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+  +5: unsigned long ReaderRegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_EMPTY_DUNGEON_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ACK (sizeof 12)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_ACK (sizeof 13)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_REQ (sizeof 35)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: [0x226D] Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_REQ (sizeof 36)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: [0x226D] Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ACK (sizeof 24)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+  +12: [0x1347] sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_ACK (sizeof 25)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+  +13: [0x1347] sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_REQ (sizeof 39)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: [0x226D] Argument
+  +35: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_REQ (sizeof 40)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: [0x226D] Argument
+  +36: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: [0x4A72] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_ACK (sizeof 1972)
+  +0: [0x1CFA] sIndunInfo
+  +13: [0x16B9] damageDealtShapeInfo1st
+  +17: [0x16B9] damageDealtShapeInfo2nd
+  +21: [0x16B9] damageDealtShapeInfo3th
+  +25: [0x16B9] damageTakenShapeInfo1st
+  +29: [0x16B9] damageTakenShapeInfo2nd
+  +33: [0x16B9] damageTakenShapeInfo3th
+  +37: [0x16B9] healingDoneShapeInfo1st
+  +41: [0x16B9] healingDoneShapeInfo2nd
+  +45: [0x16B9] healingDoneShapeInfo3th
+  +49: unsigned char nDamageDealtCount
+  +50: unsigned char nDamageTakenCount
+  +51: unsigned char nHealingDoneCount
+  +52: [0x16BB] damageDealtRanks
+  +692: [0x16BB] damageTakenRanks
+  +1332: [0x16BB] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_MYRANK_CMD (sizeof 6)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nMyRankCount
+  +6: [0x5A2C] MyRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_NEW_RANK_MSG (sizeof 38)
+  +0: [0x1349] nCharID
+  +20: [0x1CFA] sIndunInfo
+  +33: unsigned char rankType
+  +34: unsigned long nRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_REQ (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: [0x4A72] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_SAVE_WORLD_CMD (sizeof 19)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned long nPlayTime
+  +17: unsigned short nRankCount
+  +19: [0x5915] ranks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageDealtRank
+  +18: unsigned char nDamageDealtCount
+  +19: [0x4E01] damageDealtRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageTakenRank
+  +18: unsigned char nDamageTakenCount
+  +19: [0x4E01] damageTakenRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nHealingDoneRank
+  +18: unsigned char nHealingDoneCount
+  +19: [0x4E01] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_ACK (sizeof 62)
+  +0: unsigned short nErr
+  +2: unsigned __int64 nPrevDamageDealt
+  +10: unsigned __int64 nPrevDamageTaken
+  +18: unsigned __int64 nPrevHealingDone
+  +26: unsigned char nPrevPlayTimeHour
+  +27: unsigned char nPrevPlayTimeMinute
+  +28: unsigned char nPrevPlayTimeSecond
+  +29: unsigned char nPrevPlayTimeYear
+  +30: unsigned char nPrevPlayTimeMonth
+  +31: unsigned char nPrevPlayTimeDay
+  +32: unsigned __int64 nCurrDamageDealt
+  +40: unsigned __int64 nCurrDamageTaken
+  +48: unsigned __int64 nCurrHealingDone
+  +56: unsigned char nCurrPlayTimeHour
+  +57: unsigned char nCurrPlayTimeMinute
+  +58: unsigned char nCurrPlayTimeSecond
+  +59: unsigned char nCurrPlayTimeYear
+  +60: unsigned char nCurrPlayTimeMonth
+  +61: unsigned char nCurrPlayTimeDay
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_ACK (sizeof 15)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned short CharListCount
+  +15: [0x5AB0] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_REQ (sizeof 15)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned short CharListCount
+  +15: [0x5A78] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RESET_COUNTDOWN_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_DELETE_DUNGEON_CMD (sizeof 9)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+  +5: unsigned long ReaderRegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_EMPTY_DUNGEON_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ACK (sizeof 12)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_ACK (sizeof 13)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_ECHO_REQ (sizeof 35)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: [0x226D] Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_CHECK_REQ (sizeof 36)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: [0x226D] Argument
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ACK (sizeof 24)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nNPCHandle
+  +6: unsigned short nError
+  +8: [0x4952] eLevelType
+  +12: [0x1347] sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_ACK (sizeof 25)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned short nNPCHandle
+  +7: unsigned short nError
+  +9: [0x4952] eLevelType
+  +13: [0x1347] sMapName
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_ECHO_REQ (sizeof 39)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned long nCharRegNum
+  +5: unsigned long nInDunRegNum
+  +9: [0x4950] IndunCategory
+  +13: unsigned short nNPCHandle
+  +15: [0x226D] Argument
+  +35: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_LEVEL_SELECT_JOIN_REQ (sizeof 40)
+  +0: unsigned char nStartZoneNum
+  +1: unsigned char nDestZoneNum
+  +2: unsigned long nCharRegNum
+  +6: unsigned long nInDunRegNum
+  +10: [0x4950] IndunCategory
+  +14: unsigned short nNPCHandle
+  +16: [0x226D] Argument
+  +36: [0x4952] eLevelType
+
+## PROTO_NC_INSTANCE_DUNGEON_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: [0x4A72] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_ACK (sizeof 1972)
+  +0: [0x1CFA] sIndunInfo
+  +13: [0x16B9] damageDealtShapeInfo1st
+  +17: [0x16B9] damageDealtShapeInfo2nd
+  +21: [0x16B9] damageDealtShapeInfo3th
+  +25: [0x16B9] damageTakenShapeInfo1st
+  +29: [0x16B9] damageTakenShapeInfo2nd
+  +33: [0x16B9] damageTakenShapeInfo3th
+  +37: [0x16B9] healingDoneShapeInfo1st
+  +41: [0x16B9] healingDoneShapeInfo2nd
+  +45: [0x16B9] healingDoneShapeInfo3th
+  +49: unsigned char nDamageDealtCount
+  +50: unsigned char nDamageTakenCount
+  +51: unsigned char nHealingDoneCount
+  +52: [0x16BB] damageDealtRanks
+  +692: [0x16BB] damageTakenRanks
+  +1332: [0x16BB] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_MYRANK_CMD (sizeof 6)
+  +0: unsigned long nCharRegNum
+  +4: unsigned short nMyRankCount
+  +6: [0x5A2C] MyRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_NEW_RANK_MSG (sizeof 38)
+  +0: [0x1349] nCharID
+  +20: [0x1CFA] sIndunInfo
+  +33: unsigned char rankType
+  +34: unsigned long nRank
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_REQ (sizeof 2)
+  +0: unsigned short nMapCount
+  +2: [0x4A72] sIndunInfos
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_SAVE_WORLD_CMD (sizeof 19)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned long nPlayTime
+  +17: unsigned short nRankCount
+  +19: [0x5915] ranks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageDealtRank
+  +18: unsigned char nDamageDealtCount
+  +19: [0x4E01] damageDealtRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGEDEALT_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nDamageTakenRank
+  +18: unsigned char nDamageTakenCount
+  +19: [0x4E01] damageTakenRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_DAMAGETAKEN_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_ACK (sizeof 19)
+  +0: [0x16B9] shapeInfo1st
+  +4: [0x16B9] shapeInfo2nd
+  +8: [0x16B9] shapeInfo3th
+  +12: unsigned short nErr
+  +14: unsigned long nHealingDoneRank
+  +18: unsigned char nHealingDoneCount
+  +19: [0x4E01] healingDoneRanks
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_HEALINGDONE_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_ACK (sizeof 62)
+  +0: unsigned short nErr
+  +2: unsigned __int64 nPrevDamageDealt
+  +10: unsigned __int64 nPrevDamageTaken
+  +18: unsigned __int64 nPrevHealingDone
+  +26: unsigned char nPrevPlayTimeHour
+  +27: unsigned char nPrevPlayTimeMinute
+  +28: unsigned char nPrevPlayTimeSecond
+  +29: unsigned char nPrevPlayTimeYear
+  +30: unsigned char nPrevPlayTimeMonth
+  +31: unsigned char nPrevPlayTimeDay
+  +32: unsigned __int64 nCurrDamageDealt
+  +40: unsigned __int64 nCurrDamageTaken
+  +48: unsigned __int64 nCurrHealingDone
+  +56: unsigned char nCurrPlayTimeHour
+  +57: unsigned char nCurrPlayTimeMinute
+  +58: unsigned char nCurrPlayTimeSecond
+  +59: unsigned char nCurrPlayTimeYear
+  +60: unsigned char nCurrPlayTimeMonth
+  +61: unsigned char nCurrPlayTimeDay
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_TAB_MYRANK_REQ (sizeof 13)
+  +0: [0x1CFA] sIndunInfo
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_ACK (sizeof 15)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned short CharListCount
+  +15: [0x5AB0] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RANK_UPDATE_DB_REQ (sizeof 15)
+  +0: [0x1CFA] sIndunInfo
+  +13: unsigned short CharListCount
+  +15: [0x5A78] CharList
+
+## PROTO_NC_INSTANCE_DUNGEON_RESET_COUNTDOWN_CMD (sizeof 5)
+  +0: unsigned char Category
+  +1: unsigned long RegisterNumber
+

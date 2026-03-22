@@ -1,0 +1,114 @@
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACADEMY_MASTER_CMD (sizeof 20)
+  +0: Name5 sMasterID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACK (sizeof 23)
+  +0: unsigned short nError
+  +2: unsigned char nSlotNo
+  +3: Name5 sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_CMD (sizeof 41)
+  +0: unsigned char bInit
+  +1: Name5 sOldID
+  +21: Name5 sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_REQ (sizeof 21)
+  +0: unsigned char nSlotNo
+  +1: Name5 sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned short nError
+  +4: unsigned long nUserNo
+  +8: unsigned long nCharNo
+  +12: Name5 sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_REQ (sizeof 35)
+  +0: unsigned short hWMChar
+  +2: unsigned long nRowNo
+  +6: unsigned long nUserNo
+  +10: unsigned long nCharNo
+  +14: Name5 sNewID
+  +34: unsigned char bInit
+
+## PROTO_NC_USER_CONNECTION_ZONE_CHANGE_CHAR_ID_CMD (sizeof 45)
+  +0: unsigned long nCharNo
+  +4: unsigned char bInit
+  +5: Name5 sOldID
+  +25: Name5 sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACADEMY_MASTER_CMD (sizeof 20)
+  +0: [0x1349] sMasterID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACK (sizeof 23)
+  +0: unsigned short nError
+  +2: unsigned char nSlotNo
+  +3: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_CMD (sizeof 41)
+  +0: unsigned char bInit
+  +1: [0x1349] sOldID
+  +21: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_REQ (sizeof 21)
+  +0: unsigned char nSlotNo
+  +1: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned short nError
+  +4: unsigned long nUserNo
+  +8: unsigned long nCharNo
+  +12: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_REQ (sizeof 35)
+  +0: unsigned short hWMChar
+  +2: unsigned long nRowNo
+  +6: unsigned long nUserNo
+  +10: unsigned long nCharNo
+  +14: [0x1349] sNewID
+  +34: unsigned char bInit
+
+## PROTO_NC_USER_CONNECTION_ZONE_CHANGE_CHAR_ID_CMD (sizeof 45)
+  +0: unsigned long nCharNo
+  +4: unsigned char bInit
+  +5: [0x1349] sOldID
+  +25: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACADEMY_MASTER_CMD (sizeof 20)
+  +0: [0x1349] sMasterID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_ACK (sizeof 23)
+  +0: unsigned short nError
+  +2: unsigned char nSlotNo
+  +3: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_CMD (sizeof 41)
+  +0: unsigned char bInit
+  +1: [0x1349] sOldID
+  +21: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_CHANGE_CHAR_ID_REQ (sizeof 21)
+  +0: unsigned char nSlotNo
+  +1: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned short nError
+  +4: unsigned long nUserNo
+  +8: unsigned long nCharNo
+  +12: [0x1349] sNewID
+
+## PROTO_NC_USER_CONNECTION_DB_CHANGE_CHAR_ID_REQ (sizeof 35)
+  +0: unsigned short hWMChar
+  +2: unsigned long nRowNo
+  +6: unsigned long nUserNo
+  +10: unsigned long nCharNo
+  +14: [0x1349] sNewID
+  +34: unsigned char bInit
+
+## PROTO_NC_USER_CONNECTION_ZONE_CHANGE_CHAR_ID_CMD (sizeof 45)
+  +0: unsigned long nCharNo
+  +4: unsigned char bInit
+  +5: [0x1349] sOldID
+  +25: [0x1349] sNewID
+

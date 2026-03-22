@@ -1,0 +1,5 @@
+## PROTO_NC_BRIEFINFO_ABSTATE_CHANGE_LIST_CMD (sizeof 3)
+  +0: unsigned short handle
+  +2: unsigned char count
+  +3: ABSTATE_INFORMATION[0] infoList
+

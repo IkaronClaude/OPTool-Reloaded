@@ -1,0 +1,453 @@
+## PROTO_NC_OPTOOL_ACK_CLIENT_NUM_OF_USER_LIMIT (sizeof 9)
+  +0: unsigned char WorldNo
+  +1: int NumOfUserLimit
+  +5: int NumOfMax
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_ACK (sizeof 1)
+  +0: unsigned char status
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CLOSE_SERVER_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_ACK (sizeof 170)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: unsigned short[2][2][21] count
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_FIND_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bIsLogin
+  +5: Name256Byte sUserID
+  +261: unsigned long nCharNo
+  +265: Name5 sCharID
+  +285: Name3 sMapName
+
+## PROTO_NC_OPTOOL_FIND_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ (sizeof 10)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nOldGrade
+  +9: unsigned char nNewGrade
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_REQ (sizeof 739)
+  +0: unsigned long nNo
+  +4: Name4 sName
+  +20: Name3 sPassword
+  +32: unsigned __int64 nMoney
+  +40: unsigned char nType
+  +41: unsigned char nGrade
+  +42: unsigned long nFame
+  +46: unsigned short nStoneLevel
+  +48: unsigned __int64 nExp
+  +56: unsigned short nMaxMembers
+  +58: unsigned long nWarWinCount
+  +62: unsigned long nWarLoseCount
+  +66: unsigned long nWarDrawCount
+  +70: unsigned char nDismissStatus
+  +71: long dDismissDate
+  +75: long dNotifyDate
+  +79: Name5 sNotifyCharID
+  +99: char[128] sIntro
+  +227: char[512] sNotify
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD (sizeof 688)
+  +0: unsigned char nMatchType
+  +1: long Time_Start
+  +5: long Time_Practic
+  +9: long Time_PracticEnd
+  +13: long Time_Match_161
+  +17: long Time_Match_162
+  +21: long Time_Match_8
+  +25: long Time_Match_4
+  +29: long Time_Match_2
+  +33: long Time_Match_End
+  +37: GUILD_TOURNAMENT_LIST[31] TournamentTree
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_ACK (sizeof 4)
+  +0: long nGTNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_OPTOOL_KICK_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bKick
+  +5: Name256Byte sUserID
+  +261: unsigned long nCharNo
+  +265: Name5 sCharID
+  +285: Name3 sMapName
+
+## PROTO_NC_OPTOOL_KICK_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_KQ_CHANGE_CMD (sizeof 377)
+  +0: PROTO_KQ_INFO KQInfo
+
+## PROTO_NC_OPTOOL_KQ_DELETE_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_ACK (sizeof 4)
+  +0: int nNumOfMapArray
+  +4: KQ_MAP_ALLOC_TABLE[0] MapArray
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_ACK (sizeof 7)
+  +0: unsigned short NumOfTotal
+  +2: unsigned char bPart
+  +3: unsigned short StartDataIndex
+  +5: unsigned short NumOfQuest
+  +7: PROTO_KQ_INFO[0] QuestArray
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT (sizeof 1)
+  (no fields)
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_ACK (sizeof 4)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: unsigned short num_of_connections
+  +4: SERVER_CONN_INFO[0] connection_info
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT (sizeof 4)
+  +0: int NumOfUserLimit
+
+## PROTO_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_ACK (sizeof 3)
+  +0: unsigned char bPart
+  +1: unsigned short nDataCount
+  +3: PROTO_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_ACK::<unnamed-type-Data>[0] Data
+
+## PROTO_NC_OPTOOL_ACK_CLIENT_NUM_OF_USER_LIMIT (sizeof 9)
+  +0: unsigned char WorldNo
+  +1: int NumOfUserLimit
+  +5: int NumOfMax
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_ACK (sizeof 1)
+  +0: unsigned char status
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CLOSE_SERVER_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_ACK (sizeof 170)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: [0x1D50] count
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_FIND_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bIsLogin
+  +5: [0x3343] sUserID
+  +261: unsigned long nCharNo
+  +265: [0x1349] sCharID
+  +285: [0x1347] sMapName
+
+## PROTO_NC_OPTOOL_FIND_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ (sizeof 10)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nOldGrade
+  +9: unsigned char nNewGrade
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_REQ (sizeof 739)
+  +0: unsigned long nNo
+  +4: [0x1346] sName
+  +20: [0x1347] sPassword
+  +32: unsigned __int64 nMoney
+  +40: unsigned char nType
+  +41: unsigned char nGrade
+  +42: unsigned long nFame
+  +46: unsigned short nStoneLevel
+  +48: unsigned __int64 nExp
+  +56: unsigned short nMaxMembers
+  +58: unsigned long nWarWinCount
+  +62: unsigned long nWarLoseCount
+  +66: unsigned long nWarDrawCount
+  +70: unsigned char nDismissStatus
+  +71: long dDismissDate
+  +75: long dNotifyDate
+  +79: [0x1349] sNotifyCharID
+  +99: [0x1348] sIntro
+  +227: [0x134A] sNotify
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD (sizeof 688)
+  +0: unsigned char nMatchType
+  +1: long Time_Start
+  +5: long Time_Practic
+  +9: long Time_PracticEnd
+  +13: long Time_Match_161
+  +17: long Time_Match_162
+  +21: long Time_Match_8
+  +25: long Time_Match_4
+  +29: long Time_Match_2
+  +33: long Time_Match_End
+  +37: [0x15F8] TournamentTree
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_ACK (sizeof 4)
+  +0: long nGTNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_KICK_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bKick
+  +5: [0x3343] sUserID
+  +261: unsigned long nCharNo
+  +265: [0x1349] sCharID
+  +285: [0x1347] sMapName
+
+## PROTO_NC_OPTOOL_KICK_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_KQ_CHANGE_CMD (sizeof 377)
+  +0: [0x202F] KQInfo
+
+## PROTO_NC_OPTOOL_KQ_DELETE_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_ACK (sizeof 4)
+  +0: int nNumOfMapArray
+  +4: [0x4D6B] MapArray
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_ACK (sizeof 7)
+  +0: unsigned short NumOfTotal
+  +2: unsigned char bPart
+  +3: unsigned short StartDataIndex
+  +5: unsigned short NumOfQuest
+  +7: [0x4D16] QuestArray
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_ACK (sizeof 4)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: unsigned short num_of_connections
+  +4: [0x4D02] connection_info
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT (sizeof 4)
+  +0: int NumOfUserLimit
+
+## PROTO_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_ACK (sizeof 3)
+  +0: unsigned char bPart
+  +1: unsigned short nDataCount
+  +3: [0x4D43] Data
+
+## PROTO_NC_OPTOOL_ACK_CLIENT_NUM_OF_USER_LIMIT (sizeof 9)
+  +0: unsigned char WorldNo
+  +1: int NumOfUserLimit
+  +5: int NumOfMax
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_ACK (sizeof 1)
+  +0: unsigned char status
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CHARACTER_DELETE_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_OPTOOL_CLOSE_SERVER_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_ACK (sizeof 170)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: [0x1D50] count
+
+## PROTO_NC_OPTOOL_CONNECT_BRIF_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_FIND_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bIsLogin
+  +5: [0x3343] sUserID
+  +261: unsigned long nCharNo
+  +265: [0x1349] sCharID
+  +285: [0x1347] sMapName
+
+## PROTO_NC_OPTOOL_FIND_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ (sizeof 10)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nOldGrade
+  +9: unsigned char nNewGrade
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_REQ (sizeof 739)
+  +0: unsigned long nNo
+  +4: [0x1346] sName
+  +20: [0x1347] sPassword
+  +32: unsigned __int64 nMoney
+  +40: unsigned char nType
+  +41: unsigned char nGrade
+  +42: unsigned long nFame
+  +46: unsigned short nStoneLevel
+  +48: unsigned __int64 nExp
+  +56: unsigned short nMaxMembers
+  +58: unsigned long nWarWinCount
+  +62: unsigned long nWarLoseCount
+  +66: unsigned long nWarDrawCount
+  +70: unsigned char nDismissStatus
+  +71: long dDismissDate
+  +75: long dNotifyDate
+  +79: [0x1349] sNotifyCharID
+  +99: [0x1348] sIntro
+  +227: [0x134A] sNotify
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD (sizeof 688)
+  +0: unsigned char nMatchType
+  +1: long Time_Start
+  +5: long Time_Practic
+  +9: long Time_PracticEnd
+  +13: long Time_Match_161
+  +17: long Time_Match_162
+  +21: long Time_Match_8
+  +25: long Time_Match_4
+  +29: long Time_Match_2
+  +33: long Time_Match_End
+  +37: [0x15F8] TournamentTree
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_ACK (sizeof 4)
+  +0: long nGTNo
+
+## PROTO_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_KICK_USER_ACK (sizeof 297)
+  +0: unsigned long nUserNo
+  +4: unsigned char bKick
+  +5: [0x3343] sUserID
+  +261: unsigned long nCharNo
+  +265: [0x1349] sCharID
+  +285: [0x1347] sMapName
+
+## PROTO_NC_OPTOOL_KICK_USER_REQ (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_OPTOOL_KQ_CHANGE_CMD (sizeof 377)
+  +0: [0x202F] KQInfo
+
+## PROTO_NC_OPTOOL_KQ_DELETE_CMD (sizeof 4)
+  +0: unsigned long Handle
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_ACK (sizeof 4)
+  +0: int nNumOfMapArray
+  +4: [0x4D6B] MapArray
+
+## PROTO_NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_ACK (sizeof 7)
+  +0: unsigned short NumOfTotal
+  +2: unsigned char bPart
+  +3: unsigned short StartDataIndex
+  +5: unsigned short NumOfQuest
+  +7: [0x4D16] QuestArray
+
+## PROTO_NC_OPTOOL_KQ_SCHEDULE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_ACK (sizeof 4)
+  +0: unsigned char echo_data
+  +1: unsigned char my_server_id
+  +2: unsigned short num_of_connections
+  +4: [0x4D02] connection_info
+
+## PROTO_NC_OPTOOL_S2SCONNECT_LIST_REQ (sizeof 1)
+  +0: unsigned char echo_data
+
+## PROTO_NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT (sizeof 4)
+  +0: int NumOfUserLimit
+
+## PROTO_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_ACK (sizeof 3)
+  +0: unsigned char bPart
+  +1: unsigned short nDataCount
+  +3: [0x4D43] Data
+

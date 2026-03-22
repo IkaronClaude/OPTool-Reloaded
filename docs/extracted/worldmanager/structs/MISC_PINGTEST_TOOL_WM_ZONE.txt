@@ -1,0 +1,17 @@
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE_DB (sizeof 58)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneSendToDB
+  +30: unsigned long ZoneRecvFromDB
+  +34: unsigned long ZoneSendToWMS
+  +38: unsigned long ZoneRecvFromWMS
+  +42: unsigned long DBRecvFromZone
+  +46: unsigned long DBSendToZone
+  +50: unsigned long DBSendToODBC
+  +54: unsigned long DBRecvFromODBC
+

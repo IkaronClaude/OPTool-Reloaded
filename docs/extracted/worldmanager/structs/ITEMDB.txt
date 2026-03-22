@@ -1,0 +1,30 @@
+## PROTO_NC_ITEMDB_BUYLOT_REQ (sizeof 38)
+  +0: unsigned short lockindex
+  +2: PROTO_ITEM_ATTRCHANGE iteminfo
+  +14: unsigned short itemid
+  +16: unsigned __int64 price_cen
+  +24: unsigned long price_fame
+  +28: unsigned long price_gamblecoin
+  +32: unsigned long UserNo
+  +36: unsigned short Vendor
+
+## PROTO_NC_ITEMDB_BUYLOT_REQ (sizeof 38)
+  +0: unsigned short lockindex
+  +2: [0x4CEF] iteminfo
+  +14: unsigned short itemid
+  +16: unsigned __int64 price_cen
+  +24: unsigned long price_fame
+  +28: unsigned long price_gamblecoin
+  +32: unsigned long UserNo
+  +36: unsigned short Vendor
+
+## PROTO_NC_ITEMDB_BUYLOT_REQ (sizeof 38)
+  +0: unsigned short lockindex
+  +2: [0x4CEF] iteminfo
+  +14: unsigned short itemid
+  +16: unsigned __int64 price_cen
+  +24: unsigned long price_fame
+  +28: unsigned long price_gamblecoin
+  +32: unsigned long UserNo
+  +36: unsigned short Vendor
+

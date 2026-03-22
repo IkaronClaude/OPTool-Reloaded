@@ -1,0 +1,11 @@
+## PROTO_NC_BAT_CLIENT_MOB_KILL_ANNOUNCE_CMD (sizeof 4)
+  +0: [0x4b2f] nTextIndex
+
+## PROTO_NC_BAT_PKINPKFIELD_WMS_CMD (sizeof 10)
+  +0: unsigned short wldmanhandle
+  +2: unsigned long chrregnum
+  +6: unsigned long pkcount
+
+## PROTO_NC_BAT_WORLD_MOB_KILL_ANNOUNCE_CMD (sizeof 4)
+  +0: [0x4b2f] nTextIndex
+

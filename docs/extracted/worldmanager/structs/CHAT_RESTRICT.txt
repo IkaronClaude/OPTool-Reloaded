@@ -1,0 +1,54 @@
+## PROTO_NC_CHAT_RESTRICT_ADD_ACK (sizeof 24)
+  +0: unsigned short nError
+  +2: PROTO_CHAT_RESTRICT_INFO ChatRestrictData
+
+## PROTO_NC_CHAT_RESTRICT_ADD_REQ (sizeof 20)
+  +0: Name5 sChatRestrictCharID
+
+## PROTO_NC_CHAT_RESTRICT_DB_ADD_ACK (sizeof 30)
+  +0: unsigned short nError
+  +2: unsigned short nSessionHandle
+  +4: PROTO_CHAT_RESTRICT_INFO ChatRestrictData
+  +26: unsigned long nChatRestrictCharNo
+
+## PROTO_NC_CHAT_RESTRICT_DB_ADD_REQ (sizeof 26)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nUserNo
+  +6: Name5 sChatRestrictCharID
+
+## PROTO_NC_CHAT_RESTRICT_DB_DEL_ACK (sizeof 8)
+  +0: unsigned short nError
+  +2: unsigned short nSessionHandle
+  +4: unsigned long nChatRestrictCharNo
+
+## PROTO_NC_CHAT_RESTRICT_DB_DEL_ALL_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nSessionHandle
+
+## PROTO_NC_CHAT_RESTRICT_DB_DEL_ALL_REQ (sizeof 6)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_CHAT_RESTRICT_DB_DEL_REQ (sizeof 10)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nUserNo
+  +6: unsigned long nChatRestrictCharNo
+
+## PROTO_NC_CHAT_RESTRICT_DB_LIST_CMD (sizeof 2)
+  +0: unsigned short nChatRestrictListCnt
+  +2: PROTO_CHAT_RESTRICT_DB_INFO[0] ChatRestrictData
+
+## PROTO_NC_CHAT_RESTRICT_DEL_ACK (sizeof 22)
+  +0: unsigned short nError
+  +2: Name5 sChatRestrictCharID
+
+## PROTO_NC_CHAT_RESTRICT_DEL_ALL_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_CHAT_RESTRICT_DEL_REQ (sizeof 20)
+  +0: Name5 sChatRestrictCharID
+
+## PROTO_NC_CHAT_RESTRICT_LIST_CMD (sizeof 2)
+  +0: unsigned short nChatRestrictListCnt
+  +2: PROTO_CHAT_RESTRICT_INFO[0] ChatRestrictData
+

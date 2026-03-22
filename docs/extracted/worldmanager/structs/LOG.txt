@@ -1,0 +1,102 @@
+## PROTO_NC_LOG_GAME_CREATE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_CREATE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_LOG_GAME_CREATE_AVATAR log
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_LOG_GAME_DELETE_AVATAR log
+
+## PROTO_NC_LOG_GAME_LINK (sizeof 41)
+  +0: unsigned long chrregnum
+  +4: MAPPOS mappos
+  +24: unsigned char StoreType
+  +25: unsigned __int64 CharExp
+  +33: unsigned __int64 CharMoney
+
+## PROTO_NC_LOG_USER_LOGOUT (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+
+## PROTO_NC_LOG_USER_LOGOUT_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_LOG_USER_LOGOUT log
+
+## PROTO_NC_LOG_GAME_CREATE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5924] log
+
+## PROTO_NC_LOG_GAME_CREATE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x59AB] log
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_LINK (sizeof 41)
+  +0: unsigned long chrregnum
+  +4: [0x48CA] mappos
+  +24: unsigned char StoreType
+  +25: unsigned __int64 CharExp
+  +33: unsigned __int64 CharMoney
+
+## PROTO_NC_LOG_USER_LOGOUT_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x48BA] log
+
+## PROTO_NC_LOG_USER_LOGOUT (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+
+## PROTO_NC_LOG_GAME_CREATE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5924] log
+
+## PROTO_NC_LOG_GAME_CREATE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR_SEND (sizeof 7)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x59AB] log
+
+## PROTO_NC_LOG_GAME_DELETE_AVATAR (sizeof 4)
+  +0: unsigned long chrregnum
+
+## PROTO_NC_LOG_GAME_LINK (sizeof 41)
+  +0: unsigned long chrregnum
+  +4: [0x48CA] mappos
+  +24: unsigned char StoreType
+  +25: unsigned __int64 CharExp
+  +33: unsigned __int64 CharMoney
+
+## PROTO_NC_LOG_USER_LOGOUT_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x48BA] log
+
+## PROTO_NC_LOG_USER_LOGOUT (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+

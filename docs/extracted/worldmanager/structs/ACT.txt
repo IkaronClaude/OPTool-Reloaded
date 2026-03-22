@@ -1,0 +1,62 @@
+## PROTO_NC_ACT_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+  +2: unsigned char[0] content
+
+## PROTO_NC_ACT_NOTICE_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_ACT_CHAT_REQ cmd
+
+## PROTO_NC_ACT_PARTYCHAT_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_ACT_PARTYCHAT_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_ACT_PARTYCHAT_ACK ack
+
+## PROTO_NC_ACT_PARTYCHAT_CMD (sizeof 22)
+  +0: Name5 talker
+  +20: PROTO_NC_ACT_PARTYCHAT_REQ chat
+
+## PROTO_NC_ACT_PARTYCHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+  +2: unsigned char[0] content
+
+## PROTO_NC_ACT_SCRIPT_MSG_CMD (sizeof 39)
+  +0: unsigned short nHandle
+  +2: unsigned char[32] sScriptMsgIndex
+  +34: unsigned char[5] nlen
+  +39: unsigned char[0] sContent
+
+## PROTO_NC_ACT_SCRIPT_MSG_WORLD_CMD (sizeof 39)
+  +0: unsigned short nHandle
+  +2: unsigned char[32] sScriptMsgIndex
+  +34: unsigned char[5] nlen
+  +39: unsigned char[0] sContent
+
+## PROTO_NC_ACT_SOMEONEWHISPER_CMD (sizeof 23)
+  +0: unsigned char itemLinkDataCount
+  +1: Name5 talker
+  +21: PROTO_NC_ACT_SOMEONEWHISPER_CMD::<unnamed-type-flag> flag
+  +22: unsigned char len
+  +23: unsigned char[0] content
+
+## PROTO_NC_ACT_WHISPER_REQ (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: Name5 receiver
+  +21: unsigned char len
+  +22: unsigned char[0] content
+
+## PROTO_NC_ACT_WHISPERFAIL_ACK (sizeof 22)
+  +0: unsigned short ErrorType
+  +2: Name5 receiver
+
+## PROTO_NC_ACT_WHISPERSUCCESS_ACK (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: Name5 receiver
+  +21: unsigned char len
+  +22: unsigned char[0] content
+

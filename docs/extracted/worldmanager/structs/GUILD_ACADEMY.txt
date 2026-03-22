@@ -1,0 +1,1200 @@
+## PROTO_NC_GUILD_ACADEMY_CHAT_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_GUILD_ACADEMY_CHAT_CMD (sizeof 26)
+  +0: unsigned long nGuildNo
+  +4: Name5 talker
+  +24: PROTO_NC_GUILD_CHAT_REQ chat
+
+## PROTO_NC_GUILD_ACADEMY_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+  +2: unsigned char[0] content
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_ITEM_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_ITEM_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_MONEY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_MONEY_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_ITEM_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_ITEM_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_MONEY_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_MONEY_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_GRADUATE_ACK (sizeof 69)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char PartMask
+  +5: GRADUATE_DATA GraduateData
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_GRADUATE_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_RANKING_LIST_ACK (sizeof 53)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char PartMask
+  +5: GUILD_ACADEMY_RANKING_DATA RankData
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_RANKING_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_ITEM_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char NumOfRewardGood
+  +5: GUILD_ACADEMY_REWARD_ITEM[0] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_ITEM_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_MONEY_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char NumOfRewardGood
+  +5: GUILD_ACADEMY_REWARD_MONEY[0] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_MONEY_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GRADUATE_JOIN_ACK (sizeof 8)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_GRADUATE_JOIN_REQ (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: unsigned long nGuildNo
+  +10: Name5 sName
+  +30: unsigned char nClass
+  +31: unsigned char nGraduateLevel
+
+## PROTO_NC_GUILD_ACADEMY_DB_LEVEL_UP_ACK (sizeof 16)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nGuildNo
+  +8: unsigned long nAddAcademyPoint
+  +12: long dAddBuffEndTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_LEVEL_UP_REQ (sizeof 14)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned long nAddAcademyPoint
+  +10: long dAddBuffEndTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_ACK (sizeof 9)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+  +6: unsigned char PartMask
+  +7: unsigned short NumOfAcademyMember
+  +9: GUILD_ACADEMY_MEMEBER_INFO[0] AcademyMemberList
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_GUILD_JOIN_ACK (sizeof 33)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: Name5 sInviteCharID
+  +26: unsigned long nTargetCharNo
+  +30: unsigned char nGrade
+  +31: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_GUILD_JOIN_REQ (sizeof 51)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: Name5 sInviteCharID
+  +26: unsigned long nTargetCharNo
+  +30: Name5 sTargetCharID
+  +50: unsigned char nGrade
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_JOIN_ACK (sizeof 18)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned char nGrade
+  +11: SHINE_GUILD_ACADEMY_MEMBER_LOGON_INFO dJoinInfo
+  +15: unsigned char nJoinLevel
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_JOIN_REQ (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: Name5 sCharID
+  +30: unsigned char nJoinLevel
+  +31: unsigned char nGrade
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_LEAVE_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_LEAVE_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: Name5 sCharID
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_VANISH_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_VANISH_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_NOTIFY_ACK (sizeof 14)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nNo
+  +8: long dNotifyDate
+  +12: unsigned short nNotifyLength
+  +14: char[0] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_DB_NOTIFY_REQ (sizeof 8)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned short nNotifyLength
+  +8: char[0] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_DB_RANK_BALANCE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_RANK_BALANCE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_DB_REWARD_WANT_CMD (sizeof 22)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: unsigned __int64 nWant_Cen
+  +16: unsigned short nWant_ItemID
+  +18: unsigned long nWant_ItemLot
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_ACK (sizeof 36)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nCharNo
+  +8: Name5 sName
+  +28: unsigned long nGuildNo
+  +32: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_BY_LEAVE_ACK (sizeof 54)
+  +0: unsigned short Error
+  +2: unsigned long nGuildNo
+  +6: unsigned long nOldAcademyMasterCharNo
+  +10: Name5 sOldAcademyMasterName
+  +30: unsigned long nNewAcademyMasterCharNo
+  +34: Name5 sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_BY_LEAVE_REQ (sizeof 52)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nOldAcademyMasterCharNo
+  +8: Name5 sOldAcademyMasterName
+  +28: unsigned long nNewAcademyMasterCharNo
+  +32: Name5 sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_REQ (sizeof 34)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: Name5 sName
+  +26: unsigned long nGuildNo
+  +30: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_ITEM_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_ITEM_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char NumOfRewardGood
+  +7: GUILD_ACADEMY_REWARD_ITEM[0] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_MONEY_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_MONEY_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char NumOfRewardGood
+  +7: GUILD_ACADEMY_REWARD_MONEY[0] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_DELETE_CMD (sizeof 16)
+  +0: Name4 Name
+
+## PROTO_NC_GUILD_ACADEMY_DISMISS_CMD (sizeof 57)
+  +0: Name4 Name
+  +16: unsigned char nDismissStatus
+  +17: long dDismissDate
+  +21: tm tm_dDismissDate
+
+## PROTO_NC_GUILD_ACADEMY_GET_GRADUATE_ACK (sizeof 67)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: GRADUATE_DATA GraduateData
+
+## PROTO_NC_GUILD_ACADEMY_GET_GRADUATE_REQ (sizeof 16)
+  +0: Name4 sGuildName
+
+## PROTO_NC_GUILD_ACADEMY_GET_RANKING_LIST_ACK (sizeof 51)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: GUILD_ACADEMY_RANKING_DATA RankData
+
+## PROTO_NC_GUILD_ACADEMY_GET_RANKING_LIST_REQ (sizeof 4)
+  +0: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_ITEM_ACK (sizeof 3)
+  +0: unsigned short Error
+  +2: unsigned char NumOfRewardGood
+  +3: GUILD_ACADEMY_REWARD_ITEM[0] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_ITEM_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_MONEY_ACK (sizeof 3)
+  +0: unsigned short Error
+  +2: unsigned char NumOfRewardGood
+  +3: GUILD_ACADEMY_REWARD_MONEY[0] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_MONEY_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_DB_LIST_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned short TotalHistoryCount
+  +6: unsigned short HistoryCount
+  +8: unsigned short HistoryIndex
+  +10: GUILD_HISTORY[0] HistoryList
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_DB_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildAcademyNo
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_LIST_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned short TotalHistoryCount
+  +4: unsigned short HistoryCount
+  +6: unsigned short HistoryIndex
+  +8: GUILD_HISTORY[0] HistoryList
+
+## PROTO_NC_GUILD_ACADEMY_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned long TotalNumOfGuildAcademy
+  +7: unsigned long NumOfGuildAcademy
+  +11: SHINE_GUILD_ACADEMY_LIST[0] GuildAcademyList
+
+## PROTO_NC_GUILD_ACADEMY_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_MASTER_TELEPORT_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MASTER_TELEPORT_REQ (sizeof 20)
+  +0: Name5 sTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_CMD (sizeof 40)
+  +0: Name5 sChatBanCancelSourceCharID
+  +20: Name5 sChatBanCancelTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_REQ (sizeof 20)
+  +0: Name5 sChatBanCancelTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CMD (sizeof 40)
+  +0: Name5 sChatBanSourceCharID
+  +20: Name5 sChatBanTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_REQ (sizeof 20)
+  +0: Name5 sChatBanTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CLASS_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char ClassID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_ACK (sizeof 18)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCharNo
+  +12: unsigned long nRestTime
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_CANCEL_ACK (sizeof 14)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCancelCharNo
+  +12: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_CANCEL_REQ (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCancelCharNo
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_REQ (sizeof 16)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCharNo
+  +12: unsigned long nRestTime
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_SAVE_CHAT_BAN_TIME_CMD (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nRestTime
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_INVITE_ACK (sizeof 22)
+  +0: Name5 sInviteTargetCharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_INVITE_REQ (sizeof 20)
+  +0: Name5 sInviteTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_ACK (sizeof 37)
+  +0: Name4 GuildName
+  +16: Name5 sInviteSourceCharID
+  +36: unsigned char JoinAck
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_CMD (sizeof 130)
+  +0: Name5 sInviteSourceCharID
+  +20: GUILD_MEMBER_CLIENT Member
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_ERR (sizeof 18)
+  +0: Name4 GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_REQ (sizeof 36)
+  +0: Name4 GuildName
+  +16: Name5 sInviteSourceCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_INTRO_CMD (sizeof 22)
+  +0: Name5 CharID
+  +20: unsigned short nMemberIntroLength
+  +22: char[0] sMemberIntro
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_ACK (sizeof 18)
+  +0: Name4 GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_CMD (sizeof 109)
+  +0: GUILD_ACADEMY_MEMBER_CLIENT Member
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_REQ (sizeof 16)
+  +0: Name4 sGuildName
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEVEL_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Level
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LIST_ACK (sizeof 6)
+  +0: unsigned short TotalAcademyMemberCount
+  +2: unsigned short AcademyMemberIndex
+  +4: unsigned short AcademyMemberCount
+  +6: GUILD_ACADEMY_MEMBER_CLIENT[0] AcademyMemberList
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LOGOFF_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LOGON_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_MAP_CMD (sizeof 32)
+  +0: Name5 CharID
+  +20: Name3 sMap
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_PARTY_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Party
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_ACK (sizeof 22)
+  +0: Name5 CharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_REQ (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_ACADEMY_MY_ACADEMY_RANK_INFO_ACK (sizeof 14)
+  +0: unsigned short Error
+  +2: unsigned long nAcademyPoint
+  +6: unsigned long nAcademyRank
+  +10: long dAcademyBuffUntilTime
+
+## PROTO_NC_GUILD_ACADEMY_MY_ACADEMY_RANK_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_MY_GUILD_ACADEMY_INFO_ACK (sizeof 2)
+  +0: unsigned short Error
+  +2: GUILD_ACADEMY_CLIENT[0] GuildAcademyInfo
+
+## PROTO_NC_GUILD_ACADEMY_MY_GUILD_ACADEMY_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_CMD (sizeof 62)
+  +0: long dNotifyDate
+  +4: tm tm_dNotifyDate
+  +40: Name5 sNotifyCharID
+  +60: unsigned short nNotifyLength
+  +62: char[0] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_REQ (sizeof 2)
+  +0: unsigned short nNotifyLength
+  +2: char[0] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_STORAGE_WITHDRAW_GRADE_ACK (sizeof 9)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned short err
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_STORAGE_WITHDRAW_GRADE_REQ (sizeof 6)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_WANT_CMD (sizeof 14)
+  +0: unsigned __int64 nWant_Cen
+  +8: unsigned short nWant_ItemID
+  +10: unsigned long nWant_ItemLot
+
+## PROTO_NC_GUILD_ACADEMY_REWARDSTORAGE_GRADE_INFO_CMD (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_BY_LEAVE_CMD (sizeof 40)
+  +0: Name5 sOldAcademyMasterName
+  +20: Name5 sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_CMD (sizeof 20)
+  +0: Name5 sName
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_REQ (sizeof 20)
+  +0: Name5 sName
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_ITEM_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_ITEM_REQ (sizeof 1)
+  +0: unsigned char NumOfRewardGood
+  +1: GUILD_ACADEMY_REWARD_ITEM[0] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_MONEY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_MONEY_REQ (sizeof 1)
+  +0: unsigned char NumOfRewardGood
+  +1: GUILD_ACADEMY_REWARD_MONEY[0] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuildAcademy
+  +5: GUILD_ACADEMY_DB[0] GuildAcademyDB
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_ALL_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_GET_RANKING_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: GUILD_ACADEMY_START_RANKING_DATA RankData
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_GET_RANKING_LIST_REQ (sizeof 4)
+  +0: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_RANK_BALANCE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_RANK_BALANCE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ACADEMY_WAR_END_CMD (sizeof 5)
+  +0: unsigned long EnemyGuildNo
+  +4: unsigned char WarStatus
+
+## PROTO_NC_GUILD_ACADEMY_WAR_INFO_LIST_CMD (sizeof 2)
+  +0: unsigned short NumOfWarInfo
+  +2: PROTO_NC_GUILD_ACADEMY_WAR_INFO_LIST_CMD::WAR_INFO_LIST[0] WarInfoList
+
+## PROTO_NC_GUILD_ACADEMY_WAR_START_CMD (sizeof 5)
+  +0: unsigned long EnemyGuildNo
+  +4: unsigned char WarStatus
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_GUILD_ACADEMY_MASTER_BUFF_CMD (sizeof 4)
+  +0: unsigned long NumOfMaster
+  +4: GUILD_MASTER_BUFF[0] Master
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_GUILD_BUFF_CMD (sizeof 36)
+  +0: char[32] BuffName
+  +32: unsigned long NumOfGuild
+  +36: unsigned long[0] Guild
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MASTER_TELEPORT_CMD (sizeof 24)
+  +0: unsigned long nMasterCharNo
+  +4: Name5 sTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_GUILD_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_CHAT_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_GUILD_ACADEMY_CHAT_CMD (sizeof 26)
+  +0: unsigned long nGuildNo
+  +4: [0x1349] talker
+  +24: [0x1C11] chat
+
+## PROTO_NC_GUILD_ACADEMY_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+  +2: [0x14E0] content
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_ITEM_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_ITEM_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_MONEY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_CLEAR_REWARD_MONEY_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_ITEM_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_ITEM_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_MONEY_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_CLEAR_REWARD_MONEY_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_GRADUATE_ACK (sizeof 69)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char PartMask
+  +5: [0x1486] GraduateData
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_GRADUATE_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_RANKING_LIST_ACK (sizeof 53)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char PartMask
+  +5: [0x14D4] RankData
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_RANKING_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_ITEM_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char NumOfRewardGood
+  +5: [0x1B98] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_ITEM_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_MONEY_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned char NumOfRewardGood
+  +5: [0x1554] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_DB_GET_REWARD_MONEY_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_GRADUATE_JOIN_ACK (sizeof 8)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_GRADUATE_JOIN_REQ (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: unsigned long nGuildNo
+  +10: [0x1349] sName
+  +30: unsigned char nClass
+  +31: unsigned char nGraduateLevel
+
+## PROTO_NC_GUILD_ACADEMY_DB_LEVEL_UP_ACK (sizeof 16)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nGuildNo
+  +8: unsigned long nAddAcademyPoint
+  +12: long dAddBuffEndTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_LEVEL_UP_REQ (sizeof 14)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned long nAddAcademyPoint
+  +10: long dAddBuffEndTime
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_ACK (sizeof 9)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+  +6: unsigned char PartMask
+  +7: unsigned short NumOfAcademyMember
+  +9: [0x174A] AcademyMemberList
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_GUILD_JOIN_ACK (sizeof 33)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: [0x1349] sInviteCharID
+  +26: unsigned long nTargetCharNo
+  +30: unsigned char nGrade
+  +31: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_GUILD_JOIN_REQ (sizeof 51)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: [0x1349] sInviteCharID
+  +26: unsigned long nTargetCharNo
+  +30: [0x1349] sTargetCharID
+  +50: unsigned char nGrade
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_JOIN_ACK (sizeof 18)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned char nGrade
+  +11: [0x16C9] dJoinInfo
+  +15: unsigned char nJoinLevel
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_JOIN_REQ (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: [0x1349] sCharID
+  +30: unsigned char nJoinLevel
+  +31: unsigned char nGrade
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_LEAVE_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_LEAVE_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: [0x1349] sCharID
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_VANISH_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: [0x1349] sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_MEMBER_VANISH_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: [0x1349] sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_NOTIFY_ACK (sizeof 14)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nNo
+  +8: long dNotifyDate
+  +12: unsigned short nNotifyLength
+  +14: [0x138F] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_DB_NOTIFY_REQ (sizeof 8)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned short nNotifyLength
+  +8: [0x138F] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_DB_RANK_BALANCE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_RANK_BALANCE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_DB_REWARD_WANT_CMD (sizeof 22)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: unsigned __int64 nWant_Cen
+  +16: unsigned short nWant_ItemID
+  +18: unsigned long nWant_ItemLot
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_ACK (sizeof 36)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nCharNo
+  +8: [0x1349] sName
+  +28: unsigned long nGuildNo
+  +32: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_BY_LEAVE_ACK (sizeof 54)
+  +0: unsigned short Error
+  +2: unsigned long nGuildNo
+  +6: unsigned long nOldAcademyMasterCharNo
+  +10: [0x1349] sOldAcademyMasterName
+  +30: unsigned long nNewAcademyMasterCharNo
+  +34: [0x1349] sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_BY_LEAVE_REQ (sizeof 52)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nOldAcademyMasterCharNo
+  +8: [0x1349] sOldAcademyMasterName
+  +28: unsigned long nNewAcademyMasterCharNo
+  +32: [0x1349] sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_MASTER_REQ (sizeof 34)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: [0x1349] sName
+  +26: unsigned long nGuildNo
+  +30: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_ITEM_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_ITEM_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char NumOfRewardGood
+  +7: [0x1B98] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_MONEY_ACK (sizeof 4)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_DB_SET_REWARD_MONEY_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char NumOfRewardGood
+  +7: [0x1554] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_DELETE_CMD (sizeof 16)
+  +0: [0x1346] Name
+
+## PROTO_NC_GUILD_ACADEMY_DISMISS_CMD (sizeof 57)
+  +0: [0x1346] Name
+  +16: unsigned char nDismissStatus
+  +17: long dDismissDate
+  +21: [0x136B] tm_dDismissDate
+
+## PROTO_NC_GUILD_ACADEMY_GET_GRADUATE_ACK (sizeof 67)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: [0x1486] GraduateData
+
+## PROTO_NC_GUILD_ACADEMY_GET_GRADUATE_REQ (sizeof 16)
+  +0: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_ACADEMY_GET_RANKING_LIST_ACK (sizeof 51)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: [0x14D4] RankData
+
+## PROTO_NC_GUILD_ACADEMY_GET_RANKING_LIST_REQ (sizeof 4)
+  +0: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_ITEM_ACK (sizeof 3)
+  +0: unsigned short Error
+  +2: unsigned char NumOfRewardGood
+  +3: [0x1B98] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_ITEM_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_MONEY_ACK (sizeof 3)
+  +0: unsigned short Error
+  +2: unsigned char NumOfRewardGood
+  +3: [0x1554] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_GET_REWARD_MONEY_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_DB_LIST_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned short TotalHistoryCount
+  +6: unsigned short HistoryCount
+  +8: unsigned short HistoryIndex
+  +10: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_DB_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildAcademyNo
+
+## PROTO_NC_GUILD_ACADEMY_HISTORY_LIST_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned short TotalHistoryCount
+  +4: unsigned short HistoryCount
+  +6: unsigned short HistoryIndex
+  +8: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_ACADEMY_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned long TotalNumOfGuildAcademy
+  +7: unsigned long NumOfGuildAcademy
+  +11: [0x4263] GuildAcademyList
+
+## PROTO_NC_GUILD_ACADEMY_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_MASTER_TELEPORT_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MASTER_TELEPORT_REQ (sizeof 20)
+  +0: [0x1349] sTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_CMD (sizeof 40)
+  +0: [0x1349] sChatBanCancelSourceCharID
+  +20: [0x1349] sChatBanCancelTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CANCEL_REQ (sizeof 20)
+  +0: [0x1349] sChatBanCancelTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_CMD (sizeof 40)
+  +0: [0x1349] sChatBanSourceCharID
+  +20: [0x1349] sChatBanTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CHAT_BAN_REQ (sizeof 20)
+  +0: [0x1349] sChatBanTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_CLASS_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char ClassID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_ACK (sizeof 18)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCharNo
+  +12: unsigned long nRestTime
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_CANCEL_ACK (sizeof 14)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCancelCharNo
+  +12: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_CANCEL_REQ (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCancelCharNo
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_CHAT_BAN_REQ (sizeof 16)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nBanCharNo
+  +12: unsigned long nRestTime
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_DB_SAVE_CHAT_BAN_TIME_CMD (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nCharNo
+  +8: unsigned long nRestTime
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_INVITE_ACK (sizeof 22)
+  +0: [0x1349] sInviteTargetCharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_INVITE_REQ (sizeof 20)
+  +0: [0x1349] sInviteTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_ACK (sizeof 37)
+  +0: [0x1346] GuildName
+  +16: [0x1349] sInviteSourceCharID
+  +36: unsigned char JoinAck
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_CMD (sizeof 130)
+  +0: [0x1349] sInviteSourceCharID
+  +20: [0x13EC] Member
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_ERR (sizeof 18)
+  +0: [0x1346] GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_GUILD_JOIN_REQ (sizeof 36)
+  +0: [0x1346] GuildName
+  +16: [0x1349] sInviteSourceCharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_INTRO_CMD (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short nMemberIntroLength
+  +22: [0x138F] sMemberIntro
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_ACK (sizeof 18)
+  +0: [0x1346] GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_CMD (sizeof 109)
+  +0: [0x14F2] Member
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_JOIN_REQ (sizeof 16)
+  +0: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEAVE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LEVEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Level
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LIST_ACK (sizeof 6)
+  +0: unsigned short TotalAcademyMemberCount
+  +2: unsigned short AcademyMemberIndex
+  +4: unsigned short AcademyMemberCount
+  +6: [0x15C2] AcademyMemberList
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LOGOFF_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_LOGON_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_MAP_CMD (sizeof 32)
+  +0: [0x1349] CharID
+  +20: [0x1347] sMap
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_PARTY_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Party
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_ACK (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_ACADEMY_MEMBER_VANISH_REQ (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_ACADEMY_MY_ACADEMY_RANK_INFO_ACK (sizeof 14)
+  +0: unsigned short Error
+  +2: unsigned long nAcademyPoint
+  +6: unsigned long nAcademyRank
+  +10: long dAcademyBuffUntilTime
+
+## PROTO_NC_GUILD_ACADEMY_MY_ACADEMY_RANK_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_MY_GUILD_ACADEMY_INFO_ACK (sizeof 2)
+  +0: unsigned short Error
+  +2: [0x43C1] GuildAcademyInfo
+
+## PROTO_NC_GUILD_ACADEMY_MY_GUILD_ACADEMY_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_CMD (sizeof 62)
+  +0: long dNotifyDate
+  +4: [0x136B] tm_dNotifyDate
+  +40: [0x1349] sNotifyCharID
+  +60: unsigned short nNotifyLength
+  +62: [0x138F] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_NOTIFY_REQ (sizeof 2)
+  +0: unsigned short nNotifyLength
+  +2: [0x138F] sNotify
+
+## PROTO_NC_GUILD_ACADEMY_REWARDSTORAGE_GRADE_INFO_CMD (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_STORAGE_WITHDRAW_GRADE_ACK (sizeof 9)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned short err
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_STORAGE_WITHDRAW_GRADE_REQ (sizeof 6)
+  +0: [0x14EF] netpacketzoneheader
+
+## PROTO_NC_GUILD_ACADEMY_REWARD_WANT_CMD (sizeof 14)
+  +0: unsigned __int64 nWant_Cen
+  +8: unsigned short nWant_ItemID
+  +10: unsigned long nWant_ItemLot
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_BY_LEAVE_CMD (sizeof 40)
+  +0: [0x1349] sOldAcademyMasterName
+  +20: [0x1349] sNewAcademyMasterName
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_CMD (sizeof 20)
+  +0: [0x1349] sName
+
+## PROTO_NC_GUILD_ACADEMY_SET_MASTER_REQ (sizeof 20)
+  +0: [0x1349] sName
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_ITEM_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_ITEM_REQ (sizeof 1)
+  +0: unsigned char NumOfRewardGood
+  +1: [0x1B98] RewardItem
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_MONEY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_SET_REWARD_MONEY_REQ (sizeof 1)
+  +0: unsigned char NumOfRewardGood
+  +1: [0x1554] RewardMoney
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuildAcademy
+  +5: [0x184A] GuildAcademyDB
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_ALL_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_GET_RANKING_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: [0x1A82] RankData
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_GET_RANKING_LIST_REQ (sizeof 4)
+  +0: unsigned long nRoundTime
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_RANK_BALANCE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_ACADEMY_START_DB_RANK_BALANCE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ACADEMY_WAR_END_CMD (sizeof 5)
+  +0: unsigned long EnemyGuildNo
+  +4: unsigned char WarStatus
+
+## PROTO_NC_GUILD_ACADEMY_WAR_INFO_LIST_CMD (sizeof 2)
+  +0: unsigned short NumOfWarInfo
+  +2: [0x42D9] WarInfoList
+
+## PROTO_NC_GUILD_ACADEMY_WAR_START_CMD (sizeof 5)
+  +0: unsigned long EnemyGuildNo
+  +4: unsigned char WarStatus
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_GUILD_ACADEMY_MASTER_BUFF_CMD (sizeof 4)
+  +0: unsigned long NumOfMaster
+  +4: [0x4417] Master
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_GUILD_BUFF_CMD (sizeof 36)
+  +0: [0x1626] BuffName
+  +32: unsigned long NumOfGuild
+  +36: [0x1C40] Guild
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MASTER_TELEPORT_CMD (sizeof 24)
+  +0: unsigned long nMasterCharNo
+  +4: [0x1349] sTargetCharID
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_GUILD_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ACADEMY_ZONE_MEMBER_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+

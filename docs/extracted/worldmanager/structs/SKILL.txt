@@ -1,0 +1,15 @@
+## PROTO_NC_SKILL_PASSIVESKILL_LEARN_CMD (sizeof 8)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+  +6: unsigned short passiveskillid
+
+## PROTO_NC_SKILL_PASSIVESKILL_LEARN_CMD (sizeof 8)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+  +6: unsigned short passiveskillid
+
+## PROTO_NC_SKILL_PASSIVESKILL_LEARN_CMD (sizeof 8)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+  +6: unsigned short passiveskillid
+

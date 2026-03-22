@@ -1,0 +1,6 @@
+## PROTO_NC_ANNOUNCE_W2C_CMD (sizeof 2)
+  +0: ANNOUNCE_MESSAGE AnnounceMessage
+
+## PROTO_NC_ANNOUNCE_Z2W_CMD (sizeof 2)
+  +0: ANNOUNCE_MESSAGE AnnounceMessage
+

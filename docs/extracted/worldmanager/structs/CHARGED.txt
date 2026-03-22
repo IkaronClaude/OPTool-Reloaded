@@ -1,0 +1,13 @@
+## PROTO_NC_CHARGED_RESETBUFF_CMD (sizeof 14)
+  +0: unsigned long CharRegistNumber
+  +4: unsigned long ChargedBuffKey
+  +8: unsigned short ChargedBuffID
+  +10: unsigned long nUserNo
+
+## PROTO_NC_CHARGED_SETBUFF_CMD (sizeof 32)
+  +0: unsigned long CharRegistNumber
+  +4: SHINE_ITEM_REGISTNUMBER ItemKey
+  +12: unsigned short ItemId
+  +14: PROTO_CHARGEDBUFF_INFO ChargedBuff
+  +28: unsigned long nUserNo
+

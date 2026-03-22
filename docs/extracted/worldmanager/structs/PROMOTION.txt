@@ -1,0 +1,42 @@
+## PROTO_NC_PROMOTION_DB_REWARD_ACK (sizeof 14)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: unsigned char nClass
+  +10: unsigned char nLevel
+  +11: unsigned short DBError
+  +13: unsigned char nNumOfItems
+  +14: PROTO_NC_PROMOTION_DB_REWARD_ACK::<unnamed-type-RewardList>[0] RewardList
+
+## PROTO_NC_PROMOTION_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: PROTO_NC_PROMOTION_REWARD_ITEM_CMD::<unnamed-type-RewardList>[0] RewardList
+
+## PROTO_NC_PROMOTION_DB_REWARD_ACK (sizeof 14)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: unsigned char nClass
+  +10: unsigned char nLevel
+  +11: unsigned short DBError
+  +13: unsigned char nNumOfItems
+  +14: [0x59B6] RewardList
+
+## PROTO_NC_PROMOTION_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: [0x5A86] RewardList
+
+## PROTO_NC_PROMOTION_DB_REWARD_ACK (sizeof 14)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: unsigned char nClass
+  +10: unsigned char nLevel
+  +11: unsigned short DBError
+  +13: unsigned char nNumOfItems
+  +14: [0x59B6] RewardList
+
+## PROTO_NC_PROMOTION_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: [0x5A86] RewardList
+

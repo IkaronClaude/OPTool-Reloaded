@@ -1,0 +1,468 @@
+## PROTO_NC_HOLY_PROMISE_ADD_CMD (sizeof 28)
+  +0: unsigned short Error
+  +2: PROTO_HOLY_PROMISE_INFO MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_CLIENT_GET_REMAIN_MONEY_CMD (sizeof 8)
+  +0: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_ACK (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_ACK (sizeof 30)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: Name5 DownCharID
+  +28: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_REQ (sizeof 28)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: Name5 DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_ACK (sizeof 11)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+  +9: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_REQ (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_MEMBER_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: unsigned char nPart
+  +7: unsigned char nMemberCount
+  +8: PROTO_HOLY_PROMISE_INFO_DB[0] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_REMAIN_MONEY_CMD (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_UP_ACK (sizeof 48)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: PROTO_HOLY_PROMISE_INFO_DB UpMemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_ACK (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+  +6: unsigned short DBError
+  +8: unsigned char nNumOfItems
+  +9: PROTO_NC_HOLY_PROMISE_DB_REWARD_ACK::<unnamed-type-RewardList>[0] RewardList
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_REQ (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_ACK (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: PROTO_HOLY_PROMISE_DATE RejoinableDate
+  +8: PROTO_HOLY_PROMISE_DATE MemberAcceptableDate
+  +12: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_REQ (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: PROTO_HOLY_PROMISE_DATE RejoinableDate
+  +8: PROTO_HOLY_PROMISE_DATE MemberAcceptableDate
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_ACK (sizeof 86)
+  +0: PROTO_HOLY_PROMISE_INFO_DB ReqInfo
+  +42: PROTO_HOLY_PROMISE_INFO_DB UpInfo
+  +84: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_REQ (sizeof 84)
+  +0: PROTO_HOLY_PROMISE_INFO_DB ReqInfo
+  +42: PROTO_HOLY_PROMISE_INFO_DB UpInfo
+
+## PROTO_NC_HOLY_PROMISE_DEL_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_ACK (sizeof 22)
+  +0: Name5 DownCharID
+  +20: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_REQ (sizeof 20)
+  +0: Name5 DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_ACK (sizeof 3)
+  +0: unsigned char nDelCmdType
+  +1: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_HOLY_PROMISE_LEVEL_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Level
+
+## PROTO_NC_HOLY_PROMISE_LIST_CMD (sizeof 29)
+  +0: PROTO_HOLY_PROMISE_INFO UpInfo
+  +26: unsigned char nPart
+  +27: unsigned short MemberCount
+  +29: PROTO_HOLY_PROMISE_INFO[0] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_LOGIN_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_HOLY_PROMISE_LOGOUT_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_HOLY_PROMISE_MY_UP_ZONE (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_ACK (sizeof 10)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_REQ (sizeof 6)
+  +0: NETPACKETZONEHEADER header
+
+## PROTO_NC_HOLY_PROMISE_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: PROTO_NC_HOLY_PROMISE_REWARD_ITEM_CMD::<unnamed-type-RewardList>[0] RewardList
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_ACK (sizeof 68)
+  +0: unsigned short Error
+  +2: PROTO_HOLY_PROMISE_INFO UpInfo
+  +28: long ResetableDateTime
+  +32: tm tm_ResetableDateTime
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ACK (sizeof 41)
+  +0: Name5 CharID
+  +20: Name5 UpCharID
+  +40: unsigned char bAccept
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ING (sizeof 20)
+  +0: Name5 UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_REQ (sizeof 40)
+  +0: Name5 CharID
+  +20: Name5 UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_REQ (sizeof 40)
+  +0: Name5 CharID
+  +20: Name5 UpCharID
+
+## PROTO_NC_HOLY_PROMISE_ADD_CMD (sizeof 28)
+  +0: unsigned short Error
+  +2: [0x19A4] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_CLIENT_GET_REMAIN_MONEY_CMD (sizeof 8)
+  +0: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_ACK (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_ACK (sizeof 30)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: [0x1349] DownCharID
+  +28: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_REQ (sizeof 28)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: [0x1349] DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_ACK (sizeof 11)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+  +9: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_REQ (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_MEMBER_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: unsigned char nPart
+  +7: unsigned char nMemberCount
+  +8: [0x1BA1] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_REMAIN_MONEY_CMD (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_UP_ACK (sizeof 48)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: [0x1BA0] UpMemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_ACK (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+  +6: unsigned short DBError
+  +8: unsigned char nNumOfItems
+  +9: [0x59D7] RewardList
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_REQ (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_ACK (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: [0x19A7] RejoinableDate
+  +8: [0x19A7] MemberAcceptableDate
+  +12: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_REQ (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: [0x19A7] RejoinableDate
+  +8: [0x19A7] MemberAcceptableDate
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_ACK (sizeof 86)
+  +0: [0x1BA0] ReqInfo
+  +42: [0x1BA0] UpInfo
+  +84: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_REQ (sizeof 84)
+  +0: [0x1BA0] ReqInfo
+  +42: [0x1BA0] UpInfo
+
+## PROTO_NC_HOLY_PROMISE_DEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_ACK (sizeof 22)
+  +0: [0x1349] DownCharID
+  +20: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_REQ (sizeof 20)
+  +0: [0x1349] DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_ACK (sizeof 3)
+  +0: unsigned char nDelCmdType
+  +1: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_HOLY_PROMISE_LEVEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Level
+
+## PROTO_NC_HOLY_PROMISE_LIST_CMD (sizeof 29)
+  +0: [0x19A4] UpInfo
+  +26: unsigned char nPart
+  +27: unsigned short MemberCount
+  +29: [0x1C67] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_LOGIN_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_HOLY_PROMISE_LOGOUT_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_ACK (sizeof 10)
+  +0: [0x14EF] header
+  +6: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_REQ (sizeof 6)
+  +0: [0x14EF] header
+
+## PROTO_NC_HOLY_PROMISE_MY_UP_ZONE (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: [0x5A5C] RewardList
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_ACK (sizeof 68)
+  +0: unsigned short Error
+  +2: [0x19A4] UpInfo
+  +28: long ResetableDateTime
+  +32: [0x136B] tm_ResetableDateTime
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ACK (sizeof 41)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+  +40: unsigned char bAccept
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ING (sizeof 20)
+  +0: [0x1349] UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_REQ (sizeof 40)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_REQ (sizeof 40)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+
+## PROTO_NC_HOLY_PROMISE_ADD_CMD (sizeof 28)
+  +0: unsigned short Error
+  +2: [0x19A4] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_CLIENT_GET_REMAIN_MONEY_CMD (sizeof 8)
+  +0: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_ACK (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_CHAR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_ACK (sizeof 30)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: [0x1349] DownCharID
+  +28: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_DOWN_REQ (sizeof 28)
+  +0: unsigned long nCharNo
+  +4: unsigned long nDownCharNo
+  +8: [0x1349] DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_ACK (sizeof 11)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+  +9: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_DEL_UP_REQ (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+  +8: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_MEMBER_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: unsigned char nPart
+  +7: unsigned char nMemberCount
+  +8: [0x1BA1] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_REMAIN_MONEY_CMD (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: unsigned __int64 nMoney
+
+## PROTO_NC_HOLY_PROMISE_DB_GET_UP_ACK (sizeof 48)
+  +0: unsigned long nCharNo
+  +4: unsigned short DBError
+  +6: [0x1BA0] UpMemberInfo
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_ACK (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+  +6: unsigned short DBError
+  +8: unsigned char nNumOfItems
+  +9: [0x59D7] RewardList
+
+## PROTO_NC_HOLY_PROMISE_DB_REWARD_REQ (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned char nClass
+  +5: unsigned char nLevel
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_ACK (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: [0x19A7] RejoinableDate
+  +8: [0x19A7] MemberAcceptableDate
+  +12: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_DATE_REQ (sizeof 12)
+  +0: unsigned long nCharNo
+  +4: [0x19A7] RejoinableDate
+  +8: [0x19A7] MemberAcceptableDate
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_ACK (sizeof 86)
+  +0: [0x1BA0] ReqInfo
+  +42: [0x1BA0] UpInfo
+  +84: unsigned short DBError
+
+## PROTO_NC_HOLY_PROMISE_DB_SET_UP_REQ (sizeof 84)
+  +0: [0x1BA0] ReqInfo
+  +42: [0x1BA0] UpInfo
+
+## PROTO_NC_HOLY_PROMISE_DEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char nDelCmdType
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_ACK (sizeof 22)
+  +0: [0x1349] DownCharID
+  +20: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_DOWN_REQ (sizeof 20)
+  +0: [0x1349] DownCharID
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_ACK (sizeof 3)
+  +0: unsigned char nDelCmdType
+  +1: unsigned short Error
+
+## PROTO_NC_HOLY_PROMISE_DEL_UP_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_HOLY_PROMISE_LEVEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Level
+
+## PROTO_NC_HOLY_PROMISE_LIST_CMD (sizeof 29)
+  +0: [0x19A4] UpInfo
+  +26: unsigned char nPart
+  +27: unsigned short MemberCount
+  +29: [0x1C67] MemberInfo
+
+## PROTO_NC_HOLY_PROMISE_LOGIN_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_HOLY_PROMISE_LOGOUT_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_ACK (sizeof 10)
+  +0: [0x14EF] header
+  +6: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_MYUPPER_REQ (sizeof 6)
+  +0: [0x14EF] header
+
+## PROTO_NC_HOLY_PROMISE_MY_UP_ZONE (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUpCharNo
+
+## PROTO_NC_HOLY_PROMISE_REWARD_ITEM_CMD (sizeof 1)
+  +0: unsigned char nNumOfItems
+  +1: [0x5A5C] RewardList
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_ACK (sizeof 68)
+  +0: unsigned short Error
+  +2: [0x19A4] UpInfo
+  +28: long ResetableDateTime
+  +32: [0x136B] tm_ResetableDateTime
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ACK (sizeof 41)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+  +40: unsigned char bAccept
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_ING (sizeof 20)
+  +0: [0x1349] UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_CONFIRM_REQ (sizeof 40)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+
+## PROTO_NC_HOLY_PROMISE_SET_UP_REQ (sizeof 40)
+  +0: [0x1349] CharID
+  +20: [0x1349] UpCharID
+

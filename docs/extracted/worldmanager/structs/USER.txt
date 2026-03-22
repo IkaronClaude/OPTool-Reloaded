@@ -1,0 +1,441 @@
+## PROTO_NC_USER_AVATAR_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_USER_AVATARINFO_ACK (sizeof 1)
+  +0: unsigned char numofavatar
+  +1: PROTO_AVATARINFORMATION[0] avatar
+
+## PROTO_NC_USER_AVATARINFO_REQ (sizeof 6)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long usrregnum
+
+## PROTO_NC_USER_AVATARINFO_REQ_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_USER_AVATARINFO_REQ req
+
+## PROTO_NC_USER_CONNECTCUT_CMD (sizeof 2)
+  +0: unsigned short reason
+
+## PROTO_NC_USER_CONNECTCUT_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_USER_CONNECTCUT_CMD cmd
+
+## PROTO_NC_USER_CONNECTCUT2WORLDMANAGER_CMD (sizeof 8)
+  +0: unsigned long usrregnum
+  +4: unsigned short wldmanhandle
+  +6: unsigned short reason
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: NETPACKETZONEHEADER netpacketzoneheader
+  +9: PROTO_NC_USER_CONNECTCUT2ZONE_CMD cmd
+
+## PROTO_NC_USER_CREATE_OTP_ACK (sizeof 36)
+  +0: unsigned short nError
+  +2: unsigned short hWM
+  +4: Name8 sOTP
+
+## PROTO_NC_USER_CREATE_OTP_REQ (sizeof 266)
+  +0: unsigned short hWM
+  +2: unsigned long nUserNo
+  +6: Name256Byte sUserID
+  +262: in_addr nClientIP
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: NETPACKETZONEHEADER netpacketzoneheader
+  +9: PROTO_NC_USER_KICKOFFFROMWORLD_CMD cmd
+
+## PROTO_NC_USER_LOGINWORLD_ACK (sizeof 3)
+  +0: unsigned short worldmanager
+  +2: unsigned char numofavatar
+  +3: PROTO_AVATARINFORMATION[0] avatar
+
+## PROTO_NC_USER_LOGINWORLD_REQ (sizeof 320)
+  +0: Name256Byte user
+  +256: unsigned short[32] validate_new
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK (sizeof 2)
+  +0: PROTO_ERRORCODE errorcode
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_USER_LOGINWORLDFAIL_ACK Ack
+
+## PROTO_NC_USER_LOGOUT_DB (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+
+## PROTO_NC_USER_LOGOUT_DB_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_USER_LOGOUT_DB db
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_ACK (sizeof 10)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: long tLastSec
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_NORMALLOGOUT_CMD (sizeof 1)
+  +0: unsigned char LogoutType
+
+## PROTO_NC_USER_POSSIBLE_NEW_CONNECT_CMD (sizeof 6)
+  +0: unsigned short nWorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_USER_RETURN_CHECK_ACK (sizeof 11)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char bReturnUser
+  +7: long tLastSec
+
+## PROTO_NC_USER_RETURN_CHECK_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_SET_RETURN_CMD (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_USER_TEENAGER_ACK (sizeof 313)
+  +0: Name256Byte sUserID
+  +256: unsigned short nHandle
+  +258: PROTO_NC_USER_TEENAGER_CMD Data
+
+## PROTO_NC_USER_TEENAGER_CMD (sizeof 55)
+  +0: unsigned char[50] sUserKey
+  +50: unsigned char nType
+  +51: unsigned long nMinute
+
+## PROTO_NC_USER_TUTORIAL_CAN_SKIP_CMD (sizeof 1)
+  +0: unsigned char bCanSkip
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_ACK (sizeof 34)
+  +0: unsigned short nError
+  +2: Name8 sOTP
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_USER_WILLLOGIN_ACK (sizeof 348)
+  +0: PROTO_NC_USER_WILLLOGIN_REQ will_login_req
+  +347: unsigned char ok
+
+## PROTO_NC_USER_WILLLOGIN_REQ (sizeof 347)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned char willlogin_worldno
+  +3: unsigned long usrregnum
+  +7: Name256Byte userid
+  +263: unsigned short[32] validate_new
+  +327: Name5 spawnapps
+
+## PROTO_NC_USER_AVATARINFO_ACK (sizeof 1)
+  +0: unsigned char numofavatar
+  +1: [0x5902] avatar
+
+## PROTO_NC_USER_AVATARINFO_REQ_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5551] req
+
+## PROTO_NC_USER_AVATARINFO_REQ (sizeof 6)
+  +0: [0x3481] netpacketheader
+  +2: unsigned long usrregnum
+
+## PROTO_NC_USER_AVATAR_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_USER_CONNECTCUT2WORLDMANAGER_CMD (sizeof 8)
+  +0: unsigned long usrregnum
+  +4: unsigned short wldmanhandle
+  +6: unsigned short reason
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x14EF] netpacketzoneheader
+  +9: [0x47A5] cmd
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_CONNECTCUT_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x47C3] cmd
+
+## PROTO_NC_USER_CONNECTCUT_CMD (sizeof 2)
+  +0: unsigned short reason
+
+## PROTO_NC_USER_CREATE_OTP_ACK (sizeof 36)
+  +0: unsigned short nError
+  +2: unsigned short hWM
+  +4: [0x137A] sOTP
+
+## PROTO_NC_USER_CREATE_OTP_REQ (sizeof 266)
+  +0: unsigned short hWM
+  +2: unsigned long nUserNo
+  +6: [0x3343] sUserID
+  +262: [0x12A5] nClientIP
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x14EF] netpacketzoneheader
+  +9: [0x46EE] cmd
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x51D9] Ack
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK (sizeof 2)
+  +0: [0x4B92] errorcode
+
+## PROTO_NC_USER_LOGINWORLD_ACK (sizeof 3)
+  +0: unsigned short worldmanager
+  +2: unsigned char numofavatar
+  +3: [0x5902] avatar
+
+## PROTO_NC_USER_LOGINWORLD_REQ (sizeof 320)
+  +0: [0x3343] user
+  +256: [0x3344] validate_new
+
+## PROTO_NC_USER_LOGOUT_DB_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4830] db
+
+## PROTO_NC_USER_LOGOUT_DB (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_ACK (sizeof 10)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: long tLastSec
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_NORMALLOGOUT_CMD (sizeof 1)
+  +0: unsigned char LogoutType
+
+## PROTO_NC_USER_POSSIBLE_NEW_CONNECT_CMD (sizeof 6)
+  +0: unsigned short nWorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_USER_RETURN_CHECK_ACK (sizeof 11)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char bReturnUser
+  +7: long tLastSec
+
+## PROTO_NC_USER_RETURN_CHECK_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_SET_RETURN_CMD (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_USER_TEENAGER_ACK (sizeof 313)
+  +0: [0x3343] sUserID
+  +256: unsigned short nHandle
+  +258: [0x5C00] Data
+
+## PROTO_NC_USER_TEENAGER_CMD (sizeof 55)
+  +0: [0x223E] sUserKey
+  +50: unsigned char nType
+  +51: unsigned long nMinute
+
+## PROTO_NC_USER_TUTORIAL_CAN_SKIP_CMD (sizeof 1)
+  +0: unsigned char bCanSkip
+
+## PROTO_NC_USER_WILLLOGIN_ACK (sizeof 348)
+  +0: [0x3482] will_login_req
+  +347: unsigned char ok
+
+## PROTO_NC_USER_WILLLOGIN_REQ (sizeof 347)
+  +0: [0x3481] netpacketheader
+  +2: unsigned char willlogin_worldno
+  +3: unsigned long usrregnum
+  +7: [0x3343] userid
+  +263: [0x3344] validate_new
+  +327: [0x1349] spawnapps
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_ACK (sizeof 34)
+  +0: unsigned short nError
+  +2: [0x137A] sOTP
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_USER_AVATARINFO_ACK (sizeof 1)
+  +0: unsigned char numofavatar
+  +1: [0x5902] avatar
+
+## PROTO_NC_USER_AVATARINFO_REQ_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5551] req
+
+## PROTO_NC_USER_AVATARINFO_REQ (sizeof 6)
+  +0: [0x3481] netpacketheader
+  +2: unsigned long usrregnum
+
+## PROTO_NC_USER_AVATAR_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_USER_CONNECTCUT2WORLDMANAGER_CMD (sizeof 8)
+  +0: unsigned long usrregnum
+  +4: unsigned short wldmanhandle
+  +6: unsigned short reason
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x14EF] netpacketzoneheader
+  +9: [0x47A5] cmd
+
+## PROTO_NC_USER_CONNECTCUT2ZONE_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_CONNECTCUT_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x47C3] cmd
+
+## PROTO_NC_USER_CONNECTCUT_CMD (sizeof 2)
+  +0: unsigned short reason
+
+## PROTO_NC_USER_CREATE_OTP_ACK (sizeof 36)
+  +0: unsigned short nError
+  +2: unsigned short hWM
+  +4: [0x137A] sOTP
+
+## PROTO_NC_USER_CREATE_OTP_REQ (sizeof 266)
+  +0: unsigned short hWM
+  +2: unsigned long nUserNo
+  +6: [0x3343] sUserID
+  +262: [0x12A5] nClientIP
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD_SEND (sizeof 13)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x14EF] netpacketzoneheader
+  +9: [0x46EE] cmd
+
+## PROTO_NC_USER_KICKOFFFROMWORLD_CMD (sizeof 4)
+  +0: unsigned long usrregnum
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x51D9] Ack
+
+## PROTO_NC_USER_LOGINWORLDFAIL_ACK (sizeof 2)
+  +0: [0x4B92] errorcode
+
+## PROTO_NC_USER_LOGINWORLD_ACK (sizeof 3)
+  +0: unsigned short worldmanager
+  +2: unsigned char numofavatar
+  +3: [0x5902] avatar
+
+## PROTO_NC_USER_LOGINWORLD_REQ (sizeof 320)
+  +0: [0x3343] user
+  +256: [0x3344] validate_new
+
+## PROTO_NC_USER_LOGOUT_DB_SEND (sizeof 12)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4830] db
+
+## PROTO_NC_USER_LOGOUT_DB (sizeof 9)
+  +0: unsigned long usrregnum
+  +4: unsigned char worldnum
+  +5: unsigned short playmin
+  +7: unsigned short error
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_ACK (sizeof 10)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: long tLastSec
+
+## PROTO_NC_USER_LOGOUT_LAST_DAY_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_NORMALLOGOUT_CMD (sizeof 1)
+  +0: unsigned char LogoutType
+
+## PROTO_NC_USER_POSSIBLE_NEW_CONNECT_CMD (sizeof 6)
+  +0: unsigned short nWorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_USER_RETURN_CHECK_ACK (sizeof 11)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char bReturnUser
+  +7: long tLastSec
+
+## PROTO_NC_USER_RETURN_CHECK_REQ (sizeof 6)
+  +0: unsigned short nHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_USER_SET_RETURN_CMD (sizeof 4)
+  +0: unsigned long nUserNo
+
+## PROTO_NC_USER_TEENAGER_ACK (sizeof 313)
+  +0: [0x3343] sUserID
+  +256: unsigned short nHandle
+  +258: [0x5C00] Data
+
+## PROTO_NC_USER_TEENAGER_CMD (sizeof 55)
+  +0: [0x223E] sUserKey
+  +50: unsigned char nType
+  +51: unsigned long nMinute
+
+## PROTO_NC_USER_TUTORIAL_CAN_SKIP_CMD (sizeof 1)
+  +0: unsigned char bCanSkip
+
+## PROTO_NC_USER_WILLLOGIN_ACK (sizeof 348)
+  +0: [0x3482] will_login_req
+  +347: unsigned char ok
+
+## PROTO_NC_USER_WILLLOGIN_REQ (sizeof 347)
+  +0: [0x3481] netpacketheader
+  +2: unsigned char willlogin_worldno
+  +3: unsigned long usrregnum
+  +7: [0x3343] userid
+  +263: [0x3344] validate_new
+  +327: [0x1349] spawnapps
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_ACK (sizeof 34)
+  +0: unsigned short nError
+  +2: [0x137A] sOTP
+
+## PROTO_NC_USER_WILL_WORLD_SELECT_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+

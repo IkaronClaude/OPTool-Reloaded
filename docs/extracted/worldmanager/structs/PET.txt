@@ -1,0 +1,24 @@
+## PROTO_NC_PET_LINK_RESUMMON_CMD (sizeof 23)
+  +0: unsigned long nCharNo
+  +4: unsigned char bDoResummon
+  +5: unsigned __int64 xResummonCode
+  +13: unsigned short nSummonSlot
+  +15: unsigned long nId
+  +19: unsigned long nRegNum
+
+## PROTO_NC_PET_LINK_RESUMMON_CMD (sizeof 23)
+  +0: unsigned long nCharNo
+  +4: unsigned char bDoResummon
+  +5: unsigned __int64 xResummonCode
+  +13: unsigned short nSummonSlot
+  +15: unsigned long nId
+  +19: unsigned long nRegNum
+
+## PROTO_NC_PET_LINK_RESUMMON_CMD (sizeof 23)
+  +0: unsigned long nCharNo
+  +4: unsigned char bDoResummon
+  +5: unsigned __int64 xResummonCode
+  +13: unsigned short nSummonSlot
+  +15: unsigned long nId
+  +19: unsigned long nRegNum
+

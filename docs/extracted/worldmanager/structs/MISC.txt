@@ -1,0 +1,1111 @@
+## PROTO_NC_MISC_CHAR_LOGOFF_STATISTICS (sizeof 21)
+  +0: unsigned char WorldNo
+  +1: unsigned long UserNo
+  +5: unsigned long CharNo
+  +9: unsigned char CharClass
+  +10: unsigned char CharLevel
+  +11: unsigned __int64 CharGetExp
+  +19: unsigned short CharPlayMin
+
+## PROTO_NC_MISC_CLIENT_DEBUG_MSG_CMD (sizeof 4)
+  +0: unsigned short wldmanhandle
+  +2: unsigned short msg_size
+  +4: unsigned char[0] msg
+
+## PROTO_NC_MISC_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 64)
+  +0: Name3 sLoadingMapName
+  +12: unsigned short nFailType
+  +14: unsigned short nLoadingFailCnt
+  +16: Name3 sFromMapName
+  +28: Name4 sFromZoneIP
+  +44: Name4 sToZoneIP
+  +60: unsigned short nToZonePort
+  +62: unsigned short nErrorDataCnt
+  +64: CLBD_ErrorData[0] ErrorData
+
+## PROTO_NC_MISC_CONNECTER_ACK (sizeof 131)
+  +0: unsigned char worldno
+  +1: unsigned short connectercount
+  +3: unsigned short[64] nEachClass
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_ACK (sizeof 7)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char connectfrom
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_ACK (sizeof 9)
+  +0: unsigned short hZone
+  +2: PROTO_NC_MISC_CONNECTFROMWHERE_ACK ToZoneAck
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_REQ (sizeof 12)
+  +0: unsigned short hZone
+  +2: PROTO_NC_MISC_CONNECTFROMWHERE_REQ FromZoneReq
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_REQ (sizeof 10)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char[4] connectip
+
+## PROTO_NC_MISC_CS_ACK (sizeof 2)
+  +0: unsigned short DataSize
+  +2: unsigned char[0] Data
+
+## PROTO_NC_MISC_DB_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 72)
+  +0: unsigned long nCharNo
+  +4: long nWorldTime
+  +8: Name3 sLoadingMapName
+  +20: unsigned short nFailType
+  +22: unsigned short nLoadingFailCnt
+  +24: Name3 sFromMapName
+  +36: Name4 sFromZoneIP
+  +52: Name4 sToZoneIP
+  +68: unsigned short nToZonePort
+  +70: unsigned short nErrorDataCnt
+  +72: CLBD_ErrorData[0] ErrorData
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_ACC2WM (sizeof 15)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short hZone
+  +13: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2ACC (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short hZone
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2Z (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_Z2WM (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_L20_CMD (sizeof 3)
+  +0: unsigned char nEventNo
+  +1: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_L20_DB_ACK (sizeof 13)
+  +0: unsigned short nWMHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char nEventNo
+  +7: unsigned long nCharNo
+  +11: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_LONG_TIME_PLAY_CMD (sizeof 6)
+  +0: unsigned long nUserNo
+  +4: unsigned short nPlayTime
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_CLIENT_CMD (sizeof 32)
+  +0: Name8 sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_ZONE_CMD (sizeof 32)
+  +0: Name8 sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_CLIENT_CMD (sizeof 32)
+  +0: Name8 sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_ZONE_CMD (sizeof 32)
+  +0: Name8 sMobIndex
+
+## PROTO_NC_MISC_GAMETIME_ACK (sizeof 3)
+  +0: unsigned char hour
+  +1: unsigned char minute
+  +2: unsigned char second
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GM_CHAT_COLOR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_CMD (sizeof 2)
+  +0: unsigned short nDescSize
+  +2: unsigned char[0] sDesc
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_DB_CMD (sizeof 51)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: unsigned char[20] sIP
+  +29: Name5 sCharID
+  +49: PROTO_NC_MISC_HACK_SCAN_STORE_CMD ScanInfo
+
+## PROTO_NC_MISC_HEARTBEAT_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+
+## PROTO_NC_MISC_HEARTBEAT_REQ_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+
+## PROTO_NC_MISC_ITEMSHOP_URL_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nLen
+  +4: char[0] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short nError
+  +6: unsigned short nLen
+  +8: char[0] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_REQ (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUserNo
+
+## PROTO_NC_MISC_ITEMSHOP_URL_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_CLIENT_ZONE_DB (sizeof 130)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: Name5 TargetCharName
+  +34: unsigned short hWMClient
+  +36: unsigned long WMSendClient
+  +40: unsigned long WMRecvFromClient
+  +44: unsigned long ClientSendZone
+  +48: unsigned long ClientRecvZone
+  +52: unsigned short hZoneClient
+  +54: unsigned long ZoneSendToDB
+  +58: unsigned long ZoneRecvFromDB
+  +62: unsigned long ZoneSendToClient
+  +66: unsigned long ZoneRecvFromClient
+  +70: unsigned long DBRecvFromZone
+  +74: unsigned long DBSendToZone
+  +78: unsigned long DBSendToODBC
+  +82: unsigned long DBRecvFromODBC
+  +86: NETPACKETZONEHEADER header
+  +92: PROTO_NC_ITEMDB_BUYLOT_REQ buylot
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_DB (sizeof 38)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMSendDB
+  +18: unsigned long WMRecvFromDB
+  +22: unsigned long DBRecvFromWM
+  +26: unsigned long DBSendToWM
+  +30: unsigned long DBSendToODBC
+  +34: unsigned long DBRecvFromODBC
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE (sizeof 34)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneRecvFromWMS
+  +30: unsigned long ZoneSendToWMS
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE_DB (sizeof 58)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneSendToDB
+  +30: unsigned long ZoneRecvFromDB
+  +34: unsigned long ZoneSendToWMS
+  +38: unsigned long ZoneRecvFromWMS
+  +42: unsigned long DBRecvFromZone
+  +46: unsigned long DBSendToZone
+  +50: unsigned long DBSendToODBC
+  +54: unsigned long DBRecvFromODBC
+
+## PROTO_NC_MISC_RESTMINUTE_CMD (sizeof 3)
+  +0: unsigned char flag
+  +1: unsigned short second
+
+## PROTO_NC_MISC_RESTMINUTE_CMD_SEND (sizeof 6)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_MISC_RESTMINUTE_CMD cmd
+
+## PROTO_NC_MISC_S2SCONNECTION_ACK (sizeof 3)
+  +0: unsigned char echo_data
+  +1: unsigned short error
+
+## PROTO_NC_MISC_S2SCONNECTION_RDY_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ (sizeof 7)
+  +0: unsigned char echo_data
+  +1: unsigned char server_to_id
+  +2: unsigned char server_from_id
+  +3: unsigned char server_from_world_num
+  +4: unsigned char server_from_zone_num
+  +5: unsigned short key
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ_SEND (sizeof 10)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_MISC_S2SCONNECTION_REQ req
+
+## PROTO_NC_MISC_SEED_ACK (sizeof 2)
+  +0: unsigned short seed
+
+## PROTO_NC_MISC_SERVER_TIME_NOTIFY_CMD (sizeof 37)
+  +0: tm dCurrentTM
+  +36: char nTimeZone
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_ACK (sizeof 22)
+  +0: Name5 sSpammerName
+  +20: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_REQ (sizeof 20)
+  +0: Name5 sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: Name5 sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: Name5 sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_REQ (sizeof 24)
+  +0: unsigned long nGMCharNo
+  +4: Name5 sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_REPORT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_REPORT_REQ (sizeof 20)
+  +0: Name5 sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: Name5 sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: Name5 sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_ZONE_CHAT_BAN_CMD (sizeof 24)
+  +0: Name5 sSpammerName
+  +20: unsigned long nChatBan
+
+## PROTO_NC_MISC_TIMEFROMWORLD_CMD (sizeof 36)
+  +0: tm TimeStr
+
+## PROTO_NC_MISC_USER_COUNT_CMD (sizeof 4)
+  +0: unsigned short NumOfUser
+  +2: unsigned short MaxOfUser
+
+## PROTO_NC_MISC_WEB_DB_KEY_ACK (sizeof 40)
+  +0: unsigned short Error
+  +2: unsigned short nWorldSessionHandle
+  +4: unsigned long nUserNo
+  +8: unsigned char[32] WebKey
+
+## PROTO_NC_MISC_WEB_DB_KEY_REQ (sizeof 6)
+  +0: unsigned short nWorldSessionHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_MISC_WEB_KEY_ACK (sizeof 34)
+  +0: unsigned short Error
+  +2: unsigned char[32] WebKey
+
+## PROTO_NC_MISC_WEB_KEY_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_MISC_WHSHANDLEFIX_CMD (sizeof 9)
+  +0: NETPACKETZONEHEADER packheader
+  +6: unsigned short whshandle
+  +8: unsigned char flag
+
+## PROTO_NC_MISC_WHSHANDLEREPAIR_CMD (sizeof 11)
+  +0: NETPACKETZONEHEADER packheader
+  +6: unsigned short whshandle_old
+  +8: unsigned short whshandle_new
+  +10: unsigned char flag
+
+## PROTO_NC_MISC_XTRAP2_CLIENT_DATA_CMD (sizeof 2)
+  +0: unsigned short DataSize
+  +2: unsigned char[0] Data
+
+## PROTO_NC_MISC_XTRAP2_OPTOOL_READ_CODEMAP_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_MISC_CHAR_LOGOFF_STATISTICS (sizeof 21)
+  +0: unsigned char WorldNo
+  +1: unsigned long UserNo
+  +5: unsigned long CharNo
+  +9: unsigned char CharClass
+  +10: unsigned char CharLevel
+  +11: unsigned __int64 CharGetExp
+  +19: unsigned short CharPlayMin
+
+## PROTO_NC_MISC_CLIENT_DEBUG_MSG_CMD (sizeof 4)
+  +0: unsigned short wldmanhandle
+  +2: unsigned short msg_size
+  +4: [0x14E0] msg
+
+## PROTO_NC_MISC_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 64)
+  +0: [0x1347] sLoadingMapName
+  +12: unsigned short nFailType
+  +14: unsigned short nLoadingFailCnt
+  +16: [0x1347] sFromMapName
+  +28: [0x1346] sFromZoneIP
+  +44: [0x1346] sToZoneIP
+  +60: unsigned short nToZonePort
+  +62: unsigned short nErrorDataCnt
+  +64: [0x50B5] ErrorData
+
+## PROTO_NC_MISC_CONNECTER_ACK (sizeof 131)
+  +0: unsigned char worldno
+  +1: unsigned short connectercount
+  +3: [0x5BD4] nEachClass
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_ACK (sizeof 7)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char connectfrom
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_ACK (sizeof 9)
+  +0: unsigned short hZone
+  +2: [0x5BFD] ToZoneAck
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_REQ (sizeof 12)
+  +0: unsigned short hZone
+  +2: [0x4A9C] FromZoneReq
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_REQ (sizeof 10)
+  +0: [0x14EF] netpacketzoneheader
+  +6: [0x336A] connectip
+
+## PROTO_NC_MISC_CS_ACK (sizeof 2)
+  +0: unsigned short DataSize
+  +2: [0x14E0] Data
+
+## PROTO_NC_MISC_DB_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 72)
+  +0: unsigned long nCharNo
+  +4: long nWorldTime
+  +8: [0x1347] sLoadingMapName
+  +20: unsigned short nFailType
+  +22: unsigned short nLoadingFailCnt
+  +24: [0x1347] sFromMapName
+  +36: [0x1346] sFromZoneIP
+  +52: [0x1346] sToZoneIP
+  +68: unsigned short nToZonePort
+  +70: unsigned short nErrorDataCnt
+  +72: [0x50B5] ErrorData
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_CLIENT_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_ZONE_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_CLIENT_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_ZONE_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_ACC2WM (sizeof 15)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short hZone
+  +13: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2ACC (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short hZone
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2Z (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_Z2WM (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_L20_CMD (sizeof 3)
+  +0: unsigned char nEventNo
+  +1: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_L20_DB_ACK (sizeof 13)
+  +0: unsigned short nWMHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char nEventNo
+  +7: unsigned long nCharNo
+  +11: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_LONG_TIME_PLAY_CMD (sizeof 6)
+  +0: unsigned long nUserNo
+  +4: unsigned short nPlayTime
+
+## PROTO_NC_MISC_GAMETIME_ACK (sizeof 3)
+  +0: unsigned char hour
+  +1: unsigned char minute
+  +2: unsigned char second
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GM_CHAT_COLOR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_CMD (sizeof 2)
+  +0: unsigned short nDescSize
+  +2: [0x14E0] sDesc
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_DB_CMD (sizeof 51)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: [0x2256] sIP
+  +29: [0x1349] sCharID
+  +49: [0x56B7] ScanInfo
+
+## PROTO_NC_MISC_HEARTBEAT_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_HEARTBEAT_REQ_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_ITEMSHOP_URL_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nLen
+  +4: [0x138F] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short nError
+  +6: unsigned short nLen
+  +8: [0x138F] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_REQ (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUserNo
+
+## PROTO_NC_MISC_ITEMSHOP_URL_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_CLIENT_ZONE_DB (sizeof 130)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: [0x1349] TargetCharName
+  +34: unsigned short hWMClient
+  +36: unsigned long WMSendClient
+  +40: unsigned long WMRecvFromClient
+  +44: unsigned long ClientSendZone
+  +48: unsigned long ClientRecvZone
+  +52: unsigned short hZoneClient
+  +54: unsigned long ZoneSendToDB
+  +58: unsigned long ZoneRecvFromDB
+  +62: unsigned long ZoneSendToClient
+  +66: unsigned long ZoneRecvFromClient
+  +70: unsigned long DBRecvFromZone
+  +74: unsigned long DBSendToZone
+  +78: unsigned long DBSendToODBC
+  +82: unsigned long DBRecvFromODBC
+  +86: [0x14EF] header
+  +92: [0x4D4F] buylot
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_DB (sizeof 38)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMSendDB
+  +18: unsigned long WMRecvFromDB
+  +22: unsigned long DBRecvFromWM
+  +26: unsigned long DBSendToWM
+  +30: unsigned long DBSendToODBC
+  +34: unsigned long DBRecvFromODBC
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE (sizeof 34)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneRecvFromWMS
+  +30: unsigned long ZoneSendToWMS
+
+## PROTO_NC_MISC_RESTMINUTE_CMD_SEND (sizeof 6)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4A9F] cmd
+
+## PROTO_NC_MISC_RESTMINUTE_CMD (sizeof 3)
+  +0: unsigned char flag
+  +1: unsigned short second
+
+## PROTO_NC_MISC_S2SCONNECTION_ACK (sizeof 3)
+  +0: unsigned char echo_data
+  +1: unsigned short error
+
+## PROTO_NC_MISC_S2SCONNECTION_RDY_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ_SEND (sizeof 10)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4D94] req
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ (sizeof 7)
+  +0: unsigned char echo_data
+  +1: unsigned char server_to_id
+  +2: unsigned char server_from_id
+  +3: unsigned char server_from_world_num
+  +4: unsigned char server_from_zone_num
+  +5: unsigned short key
+
+## PROTO_NC_MISC_SEED_ACK (sizeof 2)
+  +0: unsigned short seed
+
+## PROTO_NC_MISC_SERVER_TIME_NOTIFY_CMD (sizeof 37)
+  +0: [0x136B] dCurrentTM
+  +36: char nTimeZone
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_ACK (sizeof 22)
+  +0: [0x1349] sSpammerName
+  +20: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_REQ (sizeof 20)
+  +0: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_REQ (sizeof 24)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_REPORT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_REPORT_REQ (sizeof 20)
+  +0: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_ZONE_CHAT_BAN_CMD (sizeof 24)
+  +0: [0x1349] sSpammerName
+  +20: unsigned long nChatBan
+
+## PROTO_NC_MISC_TIMEFROMWORLD_CMD (sizeof 36)
+  +0: [0x136B] TimeStr
+
+## PROTO_NC_MISC_USER_COUNT_CMD (sizeof 4)
+  +0: unsigned short NumOfUser
+  +2: unsigned short MaxOfUser
+
+## PROTO_NC_MISC_WEB_DB_KEY_ACK (sizeof 40)
+  +0: unsigned short Error
+  +2: unsigned short nWorldSessionHandle
+  +4: unsigned long nUserNo
+  +8: [0x1378] WebKey
+
+## PROTO_NC_MISC_WEB_DB_KEY_REQ (sizeof 6)
+  +0: unsigned short nWorldSessionHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_MISC_WEB_KEY_ACK (sizeof 34)
+  +0: unsigned short Error
+  +2: [0x1378] WebKey
+
+## PROTO_NC_MISC_WEB_KEY_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_MISC_WHSHANDLEFIX_CMD (sizeof 9)
+  +0: [0x14EF] packheader
+  +6: unsigned short whshandle
+  +8: unsigned char flag
+
+## PROTO_NC_MISC_WHSHANDLEREPAIR_CMD (sizeof 11)
+  +0: [0x14EF] packheader
+  +6: unsigned short whshandle_old
+  +8: unsigned short whshandle_new
+  +10: unsigned char flag
+
+## PROTO_NC_MISC_XTRAP2_CLIENT_DATA_CMD (sizeof 2)
+  +0: unsigned short DataSize
+  +2: [0x14E0] Data
+
+## PROTO_NC_MISC_XTRAP2_OPTOOL_READ_CODEMAP_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_MISC_CHAR_LOGOFF_STATISTICS (sizeof 21)
+  +0: unsigned char WorldNo
+  +1: unsigned long UserNo
+  +5: unsigned long CharNo
+  +9: unsigned char CharClass
+  +10: unsigned char CharLevel
+  +11: unsigned __int64 CharGetExp
+  +19: unsigned short CharPlayMin
+
+## PROTO_NC_MISC_CLIENT_DEBUG_MSG_CMD (sizeof 4)
+  +0: unsigned short wldmanhandle
+  +2: unsigned short msg_size
+  +4: [0x14E0] msg
+
+## PROTO_NC_MISC_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 64)
+  +0: [0x1347] sLoadingMapName
+  +12: unsigned short nFailType
+  +14: unsigned short nLoadingFailCnt
+  +16: [0x1347] sFromMapName
+  +28: [0x1346] sFromZoneIP
+  +44: [0x1346] sToZoneIP
+  +60: unsigned short nToZonePort
+  +62: unsigned short nErrorDataCnt
+  +64: [0x50B5] ErrorData
+
+## PROTO_NC_MISC_CONNECTER_ACK (sizeof 131)
+  +0: unsigned char worldno
+  +1: unsigned short connectercount
+  +3: [0x5BD4] nEachClass
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_ACK (sizeof 7)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char connectfrom
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_ACK (sizeof 9)
+  +0: unsigned short hZone
+  +2: [0x5BFD] ToZoneAck
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_DB_REQ (sizeof 12)
+  +0: unsigned short hZone
+  +2: [0x4A9C] FromZoneReq
+
+## PROTO_NC_MISC_CONNECTFROMWHERE_REQ (sizeof 10)
+  +0: [0x14EF] netpacketzoneheader
+  +6: [0x336A] connectip
+
+## PROTO_NC_MISC_CS_ACK (sizeof 2)
+  +0: unsigned short DataSize
+  +2: [0x14E0] Data
+
+## PROTO_NC_MISC_DB_CLIENT_LOADING_BUG_DETECT_CMD (sizeof 72)
+  +0: unsigned long nCharNo
+  +4: long nWorldTime
+  +8: [0x1347] sLoadingMapName
+  +20: unsigned short nFailType
+  +22: unsigned short nLoadingFailCnt
+  +24: [0x1347] sFromMapName
+  +36: [0x1346] sFromZoneIP
+  +52: [0x1346] sToZoneIP
+  +68: unsigned short nToZonePort
+  +70: unsigned short nErrorDataCnt
+  +72: [0x50B5] ErrorData
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_CLIENT_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDEND_ZONE_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_CLIENT_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENTNPC_STANDSTART_ZONE_CMD (sizeof 32)
+  +0: [0x137A] sMobIndex
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_ACC2WM (sizeof 15)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short hZone
+  +13: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2ACC (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short hZone
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_WM2Z (sizeof 13)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nError
+  +11: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_DONE_MUNSANG_Z2WM (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char nWorldNo
+  +9: unsigned short nQuestID
+
+## PROTO_NC_MISC_EVENT_L20_CMD (sizeof 3)
+  +0: unsigned char nEventNo
+  +1: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_L20_DB_ACK (sizeof 13)
+  +0: unsigned short nWMHandle
+  +2: unsigned long nUserNo
+  +6: unsigned char nEventNo
+  +7: unsigned long nCharNo
+  +11: unsigned short nError
+
+## PROTO_NC_MISC_EVENT_LONG_TIME_PLAY_CMD (sizeof 6)
+  +0: unsigned long nUserNo
+  +4: unsigned short nPlayTime
+
+## PROTO_NC_MISC_GAMETIME_ACK (sizeof 3)
+  +0: unsigned char hour
+  +1: unsigned char minute
+  +2: unsigned char second
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_GM_CHAT_COLOR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_CMD (sizeof 2)
+  +0: unsigned short nDescSize
+  +2: [0x14E0] sDesc
+
+## PROTO_NC_MISC_HACK_SCAN_STORE_DB_CMD (sizeof 51)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: [0x2256] sIP
+  +29: [0x1349] sCharID
+  +49: [0x56B7] ScanInfo
+
+## PROTO_NC_MISC_HEARTBEAT_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_HEARTBEAT_REQ_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_ITEMSHOP_URL_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: unsigned short nLen
+  +4: [0x138F] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned short nError
+  +6: unsigned short nLen
+  +8: [0x138F] sURL
+
+## PROTO_NC_MISC_ITEMSHOP_URL_DB_REQ (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned long nUserNo
+
+## PROTO_NC_MISC_ITEMSHOP_URL_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_CLIENT_ZONE_DB (sizeof 130)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: [0x1349] TargetCharName
+  +34: unsigned short hWMClient
+  +36: unsigned long WMSendClient
+  +40: unsigned long WMRecvFromClient
+  +44: unsigned long ClientSendZone
+  +48: unsigned long ClientRecvZone
+  +52: unsigned short hZoneClient
+  +54: unsigned long ZoneSendToDB
+  +58: unsigned long ZoneRecvFromDB
+  +62: unsigned long ZoneSendToClient
+  +66: unsigned long ZoneRecvFromClient
+  +70: unsigned long DBRecvFromZone
+  +74: unsigned long DBSendToZone
+  +78: unsigned long DBSendToODBC
+  +82: unsigned long DBRecvFromODBC
+  +86: [0x14EF] header
+  +92: [0x4D4F] buylot
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_DB (sizeof 38)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMSendDB
+  +18: unsigned long WMRecvFromDB
+  +22: unsigned long DBRecvFromWM
+  +26: unsigned long DBSendToWM
+  +30: unsigned long DBSendToODBC
+  +34: unsigned long DBRecvFromODBC
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE_DB (sizeof 58)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneSendToDB
+  +30: unsigned long ZoneRecvFromDB
+  +34: unsigned long ZoneSendToWMS
+  +38: unsigned long ZoneRecvFromWMS
+  +42: unsigned long DBRecvFromZone
+  +46: unsigned long DBSendToZone
+  +50: unsigned long DBSendToODBC
+  +54: unsigned long DBRecvFromODBC
+
+## PROTO_NC_MISC_PINGTEST_TOOL_WM_ZONE (sizeof 34)
+  +0: unsigned long ID
+  +4: unsigned short hTool
+  +6: unsigned long ToolSendToWM
+  +10: unsigned long ToolRecvFromWM
+  +14: unsigned long WMTargetZoneNo
+  +18: unsigned long WMSendZone
+  +22: unsigned long WMRecvFromZone
+  +26: unsigned long ZoneRecvFromWMS
+  +30: unsigned long ZoneSendToWMS
+
+## PROTO_NC_MISC_RESTMINUTE_CMD_SEND (sizeof 6)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4A9F] cmd
+
+## PROTO_NC_MISC_RESTMINUTE_CMD (sizeof 3)
+  +0: unsigned char flag
+  +1: unsigned short second
+
+## PROTO_NC_MISC_S2SCONNECTION_ACK (sizeof 3)
+  +0: unsigned char echo_data
+  +1: unsigned short error
+
+## PROTO_NC_MISC_S2SCONNECTION_RDY_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ_SEND (sizeof 10)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4D94] req
+
+## PROTO_NC_MISC_S2SCONNECTION_REQ (sizeof 7)
+  +0: unsigned char echo_data
+  +1: unsigned char server_to_id
+  +2: unsigned char server_from_id
+  +3: unsigned char server_from_world_num
+  +4: unsigned char server_from_zone_num
+  +5: unsigned short key
+
+## PROTO_NC_MISC_SEED_ACK (sizeof 2)
+  +0: unsigned short seed
+
+## PROTO_NC_MISC_SERVER_TIME_NOTIFY_CMD (sizeof 37)
+  +0: [0x136B] dCurrentTM
+  +36: char nTimeZone
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_CMD (sizeof 3)
+  +0: unsigned char bIsSpamSpread
+  +1: unsigned char bIsSpamBlock
+  +2: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SET_CHAT_BLOCK_SPAM_FILTER_DB_CMD (sizeof 11)
+  +0: unsigned long nUserNo
+  +4: unsigned long nCharNo
+  +8: unsigned char bIsSpamSpread
+  +9: unsigned char bIsSpamBlock
+  +10: unsigned char nSpamFilterRate
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_ACK (sizeof 22)
+  +0: [0x1349] sSpammerName
+  +20: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_CHAT_BAN_REQ (sizeof 20)
+  +0: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_DB_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_RELEASE_CHAT_BAN_REQ (sizeof 24)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_REPORT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_REPORT_REQ (sizeof 20)
+  +0: [0x1349] sSpammerName
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_ACK (sizeof 30)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+  +28: unsigned short nError
+
+## PROTO_NC_MISC_SPAMMER_SET_DB_CHAT_BAN_REQ (sizeof 28)
+  +0: unsigned long nGMCharNo
+  +4: [0x1349] sSpammerName
+  +24: unsigned long nChatBan
+
+## PROTO_NC_MISC_SPAMMER_ZONE_CHAT_BAN_CMD (sizeof 24)
+  +0: [0x1349] sSpammerName
+  +20: unsigned long nChatBan
+
+## PROTO_NC_MISC_TIMEFROMWORLD_CMD (sizeof 36)
+  +0: [0x136B] TimeStr
+
+## PROTO_NC_MISC_USER_COUNT_CMD (sizeof 4)
+  +0: unsigned short NumOfUser
+  +2: unsigned short MaxOfUser
+
+## PROTO_NC_MISC_WEB_DB_KEY_ACK (sizeof 40)
+  +0: unsigned short Error
+  +2: unsigned short nWorldSessionHandle
+  +4: unsigned long nUserNo
+  +8: [0x1378] WebKey
+
+## PROTO_NC_MISC_WEB_DB_KEY_REQ (sizeof 6)
+  +0: unsigned short nWorldSessionHandle
+  +2: unsigned long nUserNo
+
+## PROTO_NC_MISC_WEB_KEY_ACK (sizeof 34)
+  +0: unsigned short Error
+  +2: [0x1378] WebKey
+
+## PROTO_NC_MISC_WEB_KEY_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_MISC_WHSHANDLEFIX_CMD (sizeof 9)
+  +0: [0x14EF] packheader
+  +6: unsigned short whshandle
+  +8: unsigned char flag
+
+## PROTO_NC_MISC_WHSHANDLEREPAIR_CMD (sizeof 11)
+  +0: [0x14EF] packheader
+  +6: unsigned short whshandle_old
+  +8: unsigned short whshandle_new
+  +10: unsigned char flag
+
+## PROTO_NC_MISC_XTRAP2_CLIENT_DATA_CMD (sizeof 2)
+  +0: unsigned short DataSize
+  +2: [0x14E0] Data
+
+## PROTO_NC_MISC_XTRAP2_OPTOOL_READ_CODEMAP_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+

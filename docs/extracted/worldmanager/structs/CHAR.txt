@@ -1,0 +1,455 @@
+## PROTO_NC_CHAR_ABSTATE_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short number
+  +6: ABSTATEREADBLOCK[0] abstate
+
+## PROTO_NC_CHAR_ARENA_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_BASE_CMD (sizeof 105)
+  +0: unsigned long chrregnum
+  +4: Name5 charid
+  +24: unsigned char slotno
+  +25: unsigned char Level
+  +26: unsigned __int64 Experience
+  +34: unsigned short CurPwrStone
+  +36: unsigned short CurGrdStone
+  +38: unsigned short CurHPStone
+  +40: unsigned short CurSPStone
+  +42: unsigned long CurHP
+  +46: unsigned long CurSP
+  +50: unsigned long CurLP
+  +54: unsigned long fame
+  +58: unsigned __int64 Cen
+  +66: PROTO_NC_CHAR_BASE_CMD::LoginLocation logininfo
+  +87: CHARSTATDISTSTR statdistribute
+  +93: unsigned char pkyellowtime
+  +94: unsigned long pkcount
+  +98: unsigned short prisonmin
+  +100: unsigned char adminlevel
+  +101: PROTO_NC_CHAR_BASE_CMD::<unnamed-type-flags> flags
+
+## PROTO_NC_CHAR_CARDCOLLECT_BOOKMARK_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short number
+  +6: PROTO_NC_CHAR_CARDCOLLECT_BOOKMARK_CMD::CardBookmarkInfo[0] ViewList
+
+## PROTO_NC_CHAR_CARDCOLLECT_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short number
+  +6: PROTO_NC_CHAR_CARDCOLLECT_CMD::CardInform[0] CardList
+
+## PROTO_NC_CHAR_CARDCOLLECT_REWARD_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short number
+  +6: unsigned short[0] RewardID
+
+## PROTO_NC_CHAR_CHARDATA_ACK (sizeof 2)
+  +0: NETPACKETHEADER netpacketheader
+
+## PROTO_NC_CHAR_CHARDATA_REQ (sizeof 14)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned long chrregnum
+  +6: unsigned long nUserNo
+  +10: long tExchangedCoinSumDate
+
+## PROTO_NC_CHAR_CHARDATAFAIL_ACK (sizeof 4)
+  +0: NETPACKETHEADER netpacketheader
+  +2: unsigned short err
+
+## PROTO_NC_CHAR_CHARGEDBUFF_CMD (sizeof 2)
+  +0: unsigned short NumOfChargedBuff
+  +2: PROTO_CHARGEDBUFF_INFO[0] ChargedBuff
+
+## PROTO_NC_CHAR_CHAT_COLOR_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned char nChatFontColorID
+  +5: unsigned char nChatBalloonColorID
+
+## PROTO_NC_CHAR_CHESTINFO_CMD (sizeof 2)
+  +0: unsigned short itemnum
+  +2: unsigned short[0] location
+
+## PROTO_NC_CHAR_CHESTINFO_REQ (sizeof 8)
+  +0: PROTO_NC_CHARSAVE_ALL_ACK handle
+  +6: unsigned short number
+  +8: unsigned short[0] loc
+
+## PROTO_NC_CHAR_CLASSCHANGE_CMD (sizeof 9)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned short wldmanhandle
+  +8: unsigned char newclass
+
+## PROTO_NC_CHAR_COININFO_CMD (sizeof 16)
+  +0: unsigned __int64 nCoin
+  +8: unsigned __int64 nExchangedCoin
+
+## PROTO_NC_CHAR_DB_AUTO_PICK_CMD (sizeof 5)
+  +0: unsigned long nCharNo
+  +4: unsigned char bEnable
+
+## PROTO_NC_CHAR_DB_NEWBIE_GUIDE_VIEW_SET_CMD (sizeof 5)
+  +0: unsigned long nCharNo
+  +4: unsigned char nGuideView
+
+## PROTO_NC_CHAR_DB_REST_EXP_LAST_EXEC_TIME_CMD (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: long dRestExpLastExecTime
+
+## PROTO_NC_CHAR_EMBLEM_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_CHANGE_DAY_CMD (sizeof 1)
+  +0: unsigned char nChangeIndex
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_CHECK_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_CHECK_DB_ACK (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: unsigned short nError
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_CHECK_DB_REQ (sizeof 40)
+  +0: unsigned long nCharNo
+  +4: tm tCheckTime
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_LIST_CLIENT_CMD (sizeof 66)
+  +0: tm tEventStart
+  +36: unsigned char nCurIndex
+  +37: unsigned char[28] AttendanceArray
+  +65: unsigned char RewardNum
+  +66: unsigned char[0] RewardList
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_LIST_DB_ACK (sizeof 1020)
+  +0: unsigned long nCharNo
+  +4: unsigned short nError
+  +6: long tConnect
+  +10: unsigned char AttendanceNum
+  +11: tm[28] AttendanceArray
+  +1019: unsigned char RewardNum
+  +1020: unsigned char[0] RewardList
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_LIST_DB_REQ (sizeof 80)
+  +0: unsigned long nCharNo
+  +4: tm tmEventStartDate
+  +40: tm tmEventEndDate
+  +76: long tConnect
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_REWARD_ACK (sizeof 4)
+  +0: unsigned char nIndex
+  +1: unsigned char nRewardID
+  +2: unsigned short nError
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_REWARD_DB_ACK (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: unsigned char nIndex
+  +5: unsigned char nRewardID
+  +6: unsigned short nError
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_REWARD_DB_REQ (sizeof 114)
+  +0: unsigned long nCharNo
+  +4: unsigned char nIndex
+  +5: tm tmEventDay
+  +41: unsigned char nRewardID
+  +42: tm tmCheckStartDay
+  +78: tm tmCheckEndDay
+
+## PROTO_NC_CHAR_EVENT_ATTENDANCE_REWARD_REQ (sizeof 2)
+  +0: unsigned char nIndex
+  +1: unsigned char nRewardID
+
+## PROTO_NC_CHAR_EXP_CHANGED_CMD (sizeof 14)
+  +0: unsigned short wmhandle
+  +2: unsigned long CharNo
+  +6: unsigned __int64 CurrentExp
+
+## PROTO_NC_CHAR_FRIEND_CMD (sizeof 2)
+  +0: unsigned short numberoffriend
+  +2: PROTO_NC_CHAR_FRIEND_CMD_INFO[0] friend_array
+
+## PROTO_NC_CHAR_FRIEND_CMD_INFO (sizeof 25)
+  +0: unsigned long charno
+  +4: Name5 charid
+  +24: unsigned char flag
+
+## PROTO_NC_CHAR_GET_CHAT_BLOCK_SPAMER_DB_CMD (sizeof 12)
+  +0: unsigned long CharNo
+  +4: unsigned long BlockTime
+  +8: unsigned long DelayTime
+
+## PROTO_NC_CHAR_GUILD_ACADEMY_CMD (sizeof 5)
+  +0: unsigned long nGuildAcademyNo
+  +4: unsigned char isGuildAcademyMember
+  +5: GUILD_ACADEMY_CLIENT[0] GuildAcademy
+
+## PROTO_NC_CHAR_GUILD_ACADEMY_ZONE_CMD (sizeof 4)
+  +0: unsigned long nGuildAcademyNo
+
+## PROTO_NC_CHAR_GUILD_CMD (sizeof 4)
+  +0: unsigned long nGuildNo
+  +4: GUILD_CLIENT[0] Guild
+
+## PROTO_NC_CHAR_HOUSE_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_ITEM_CMD (sizeof 3)
+  +0: PROTO_NC_CHAR_ITEM_CMD::<unnamed-type-PacketOrder> PacketOrder
+  +1: unsigned char nPartMark
+  +2: PROTO_ITEM_CMD ItemCmd
+
+## PROTO_NC_CHAR_KQMAP_CMD (sizeof 28)
+  +0: unsigned long nKQHandle
+  +4: Name3 sKQMapName
+  +16: SHINE_XY_TYPE nKQCoord
+  +24: SHINE_DATETIME dKQDate
+
+## PROTO_NC_CHAR_LEVEL_CHANGED_CMD (sizeof 7)
+  +0: unsigned short wmhandle
+  +2: unsigned long CharNo
+  +6: unsigned char CharNewLevel
+
+## PROTO_NC_CHAR_LINKFROM_CMD (sizeof 24)
+  +0: unsigned long chrregnum
+  +4: Name3 map
+  +16: SHINE_XY_TYPE coord
+
+## PROTO_NC_CHAR_LOGIN_ACK (sizeof 18)
+  +0: Name4 zoneip
+  +16: unsigned short zoneport
+
+## PROTO_NC_CHAR_LOGIN_DB (sizeof 56)
+  +0: unsigned long chrregnum
+  +4: MAPPOS mappos
+  +24: unsigned __int64 Cen
+  +32: unsigned long usrregnum
+  +36: Name5 spawnapps
+
+## PROTO_NC_CHAR_LOGIN_REQ (sizeof 1)
+  +0: unsigned char slot
+
+## PROTO_NC_CHAR_LOGINFAIL_ACK (sizeof 2)
+  +0: unsigned short err
+
+## PROTO_NC_CHAR_LOGOUT_DB (sizeof 35)
+  +0: unsigned long chrregnum
+  +4: MAPPOS mappos
+  +24: unsigned short playmin
+  +26: unsigned char state
+  +27: unsigned __int64 Cen
+
+## PROTO_NC_CHAR_MASPUP_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_NEWBIE_GUIDE_VIEW_LIST_CMD (sizeof 1)
+  +0: unsigned char nGuideViewNum
+  +1: unsigned char[0] nGuideViewList
+
+## PROTO_NC_CHAR_NEWBIE_GUIDE_VIEW_SET_CMD (sizeof 1)
+  +0: unsigned char nGuideView
+
+## PROTO_NC_CHAR_PET_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_QUEST_DOING_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned char bNeedClear
+  +5: unsigned char nNumOfDoingQuest
+  +6: PLAYER_QUEST_INFO[0] QuestDoingArray
+
+## PROTO_NC_CHAR_QUEST_DONE_CMD (sizeof 12)
+  +0: unsigned long chrregnum
+  +4: unsigned short nTotalDoneQuest
+  +6: unsigned short nTotalDoneQuestSize
+  +8: unsigned short nDoneQuestCount
+  +10: unsigned short nIndex
+  +12: PLAYER_QUEST_DONE_INFO[0] QuestDoneArray
+
+## PROTO_NC_CHAR_QUEST_READ_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short nNumOfReadQuest
+  +6: unsigned short[0] QuestReadIDArray
+
+## PROTO_NC_CHAR_QUEST_REPEAT_CMD (sizeof 6)
+  +0: unsigned long chrregnum
+  +4: unsigned short nNumOfRepeatQuest
+  +6: PLAYER_QUEST_INFO[0] QuestRepeatArray
+
+## PROTO_NC_CHAR_REGISTNUMBER_ACK (sizeof 30)
+  +0: unsigned long usrregnum
+  +4: unsigned long chrregnum
+  +8: PROTO_NC_CHAR_ZONE_CHARDATA_REQ loginreq
+
+## PROTO_NC_CHAR_REGISTNUMBER_ACK_SEND (sizeof 39)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: NETPACKETZONEHEADER netpacketzoneheader
+  +9: PROTO_NC_CHAR_REGISTNUMBER_ACK ack
+
+## PROTO_NC_CHAR_REGISTNUMBER_REQ (sizeof 22)
+  +0: PROTO_NC_CHAR_ZONE_CHARDATA_REQ loginreq
+
+## PROTO_NC_CHAR_REVIVEOTHER_CMD (sizeof 30)
+  +0: PROTO_NC_CHAR_REVIVESAME_CMD link
+  +10: PROTO_NC_CHAR_LOGIN_ACK sock
+  +28: unsigned short wldmanhandle
+
+## PROTO_NC_CHAR_REVIVESAME_CMD (sizeof 10)
+  +0: unsigned short mapid
+  +2: SHINE_XY_TYPE location
+
+## PROTO_NC_CHAR_SEAWAR_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_SELL_ITEM_INFO_ZONE_CMD (sizeof 1)
+  +0: unsigned char NumOfSellItem
+  +1: PROTO_SELL_ITEM_INFO_SERVER[0] SellItemList
+
+## PROTO_NC_CHAR_SET_STYLE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_CHAR_SET_STYLE_DB_ACK (sizeof 12)
+  +0: unsigned short Error
+  +2: unsigned short WMHandle
+  +4: unsigned long nCharNo
+  +8: PROTO_AVATAR_SHAPE_INFO Info
+
+## PROTO_NC_CHAR_SET_STYLE_DB_REQ (sizeof 10)
+  +0: unsigned short WMHandle
+  +2: unsigned long nCharNo
+  +6: PROTO_AVATAR_SHAPE_INFO Info
+
+## PROTO_NC_CHAR_SET_STYLE_GET_INFO_ACK (sizeof 26)
+  +0: unsigned short Error
+  +2: STYLE_ITEM_COUNTS[6] Items
+
+## PROTO_NC_CHAR_SET_STYLE_GET_INFO_DB_ACK (sizeof 32)
+  +0: unsigned short WMHandle
+  +2: unsigned long nCharNo
+  +6: unsigned short Error
+  +8: STYLE_ITEM_COUNTS[6] Items
+
+## PROTO_NC_CHAR_SET_STYLE_GET_INFO_DB_REQ (sizeof 6)
+  +0: unsigned short WMHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_SET_STYLE_GET_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_SET_STYLE_REQ (sizeof 4)
+  +0: PROTO_AVATAR_SHAPE_INFO Info
+
+## PROTO_NC_CHAR_SINGLE_OPTION_CMD (sizeof 15)
+  +0: unsigned long chrregnum
+  +4: long resttime
+  +8: unsigned char autopick
+  +9: unsigned char mystery_vault
+  +10: unsigned long nChatBan
+  +14: unsigned char bFirstJoin
+
+## PROTO_NC_CHAR_SKILL_CMD (sizeof 9)
+  +0: unsigned long chrregnum
+  +4: PARTMARK PartMark
+  +5: unsigned short nMaxNum
+  +7: unsigned short number
+  +9: PROTO_SKILLREADBLOCK[0] skill
+
+## PROTO_NC_CHAR_SKILL_PASSIVE_CMD (sizeof 2)
+  +0: unsigned short number
+  +2: unsigned short[0] passive
+
+## PROTO_NC_CHAR_SUPPORT_REWARD_CMD (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: [0x3c3a] eUserType
+
+## PROTO_NC_CHAR_TUTORIAL_INFO_WORLD_CMD (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: PROTO_TUTORIAL_INFO TutorialInfo
+
+## PROTO_NC_CHAR_TUTORIAL_INFO_ZONE_CMD (sizeof 11)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nCharNo
+  +6: PROTO_TUTORIAL_INFO TutorialInfo
+
+## PROTO_NC_CHAR_TUTORIAL_MAKE_ITEM_ACK (sizeof 9)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nCharNo
+  +6: unsigned short rErrorType
+  +8: unsigned char bIsSkip
+
+## PROTO_NC_CHAR_TUTORIAL_MAKE_ITEM_REQ (sizeof 12)
+  +0: unsigned short nSessionHandle
+  +2: unsigned char nCreateWorldNo
+  +3: unsigned long nCharNo
+  +7: unsigned long nUserNo
+  +11: unsigned char bIsSkip
+
+## PROTO_NC_CHAR_TUTORIAL_POPUP_ACK (sizeof 1)
+  +0: unsigned char bIsSkip
+
+## PROTO_NC_CHAR_TUTORIAL_POPUP_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_TUTORIAL_STEP_SAVE_CMD (sizeof 9)
+  +0: unsigned long nCharNo
+  +4: PROTO_TUTORIAL_INFO TutorialInfo
+
+## PROTO_NC_CHAR_USEITEM_MINIMON_INFO_CMD (sizeof 56)
+  +0: unsigned short nWorldHandle
+  +2: unsigned long nCharNo
+  +6: USEITEM_MINIMON_INFO UseItemMinimonInfo
+
+## PROTO_NC_CHAR_USEITEM_MINIMON_INFO_ZONE_CMD (sizeof 56)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nCharNo
+  +6: USEITEM_MINIMON_INFO UseItemMinimonInfo
+
+## PROTO_NC_CHAR_WEDDING_CANCEL_WEDDING (sizeof 4)
+  +0: unsigned long RegisterNumber
+
+## PROTO_NC_CHAR_WEDDINGDATA_ACK (sizeof 43)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned short Error
+  +8: PROTO_NC_CHAR_WEDDINGDATA_ACK::<unnamed-type-Status> Status
+  +9: ShineDateTime When
+  +13: ShineDateTime SubWhen
+  +13: ShineDateTime ApplicationLimit
+  +13: ShineDateTime DelayLimit
+  +13: ShineDateTime DivorceLimit
+  +13: ShineDateTime NewlyLimit
+  +17: PROTO_NC_CHAR_WEDDINGDATA_ACK::<unnamed-type-Partner> Partner
+  +41: unsigned char WeddingCount
+  +42: unsigned char RefusalCount
+
+## PROTO_NC_CHAR_ZONE_AUTO_PICK_CMD (sizeof 9)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned short wldmanhandle
+  +8: unsigned char bEnable
+
+## PROTO_NC_CHAR_ZONE_CHARDATA_ACK (sizeof 2)
+  +0: unsigned short wldmanhandle
+
+## PROTO_NC_CHAR_ZONE_CHARDATA_ACK_SEND (sizeof 11)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: NETPACKETZONEHEADER header
+  +9: PROTO_NC_CHAR_ZONE_CHARDATA_ACK ack
+
+## PROTO_NC_CHAR_ZONE_CHARDATA_REQ (sizeof 22)
+  +0: unsigned short wldmanhandle
+  +2: Name5 charid
+
+## PROTO_NC_CHAR_ZONE_CHARDATAFAIL_ACK_SEND (sizeof 11)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: NETPACKETZONEHEADER header
+  +9: PROTO_ERRORCODE ack
+
+## PROTO_NC_CHAR_ZONE_CHAT_COLOR_CMD (sizeof 8)
+  +0: unsigned short nSessionHandle
+  +2: unsigned long nCharNo
+  +6: unsigned char nChatFontColorID
+  +7: unsigned char nChatBalloonColorID
+
+## PROTO_NC_CHAR_ZONE_GUILD_CMD (sizeof 4)
+  +0: unsigned long nGuildNo
+

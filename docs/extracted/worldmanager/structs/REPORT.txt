@@ -1,0 +1,84 @@
+## PROTO_NC_REPORT_ADD_ACK (sizeof 26)
+  +0: Name5 sHarmer
+  +20: unsigned long nRegNumber
+  +24: unsigned short err
+
+## PROTO_NC_REPORT_ADD_REQ (sizeof 2342)
+  +0: Name5 sHarmer
+  +20: unsigned char[16] byReportType
+  +36: unsigned char[256] byReason
+  +292: unsigned short nChatLogSize
+  +294: unsigned char[2048] byChatLog
+
+## PROTO_NC_REPORT_CANCEL_ACK (sizeof 6)
+  +0: unsigned long nRegNumber
+  +4: unsigned short err
+
+## PROTO_NC_REPORT_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nRegNumber
+
+## PROTO_NC_REPORT_GET_ACK (sizeof 135)
+  +0: unsigned short err
+  +2: unsigned long nRegNumber
+  +6: unsigned char byReportResult
+  +7: unsigned char[128] byRemark
+
+## PROTO_NC_REPORT_GET_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_REPORT_ADD_ACK (sizeof 26)
+  +0: [0x1349] sHarmer
+  +20: unsigned long nRegNumber
+  +24: unsigned short err
+
+## PROTO_NC_REPORT_ADD_REQ (sizeof 2342)
+  +0: [0x1349] sHarmer
+  +20: [0x3391] byReportType
+  +36: [0x3801] byReason
+  +292: unsigned short nChatLogSize
+  +294: [0x52D4] byChatLog
+
+## PROTO_NC_REPORT_CANCEL_ACK (sizeof 6)
+  +0: unsigned long nRegNumber
+  +4: unsigned short err
+
+## PROTO_NC_REPORT_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nRegNumber
+
+## PROTO_NC_REPORT_GET_ACK (sizeof 135)
+  +0: unsigned short err
+  +2: unsigned long nRegNumber
+  +6: unsigned char byReportResult
+  +7: [0x1827] byRemark
+
+## PROTO_NC_REPORT_GET_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_REPORT_ADD_ACK (sizeof 26)
+  +0: [0x1349] sHarmer
+  +20: unsigned long nRegNumber
+  +24: unsigned short err
+
+## PROTO_NC_REPORT_ADD_REQ (sizeof 2342)
+  +0: [0x1349] sHarmer
+  +20: [0x3391] byReportType
+  +36: [0x3801] byReason
+  +292: unsigned short nChatLogSize
+  +294: [0x52D4] byChatLog
+
+## PROTO_NC_REPORT_CANCEL_ACK (sizeof 6)
+  +0: unsigned long nRegNumber
+  +4: unsigned short err
+
+## PROTO_NC_REPORT_CANCEL_REQ (sizeof 4)
+  +0: unsigned long nRegNumber
+
+## PROTO_NC_REPORT_GET_ACK (sizeof 135)
+  +0: unsigned short err
+  +2: unsigned long nRegNumber
+  +6: unsigned char byReportResult
+  +7: [0x1827] byRemark
+
+## PROTO_NC_REPORT_GET_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+

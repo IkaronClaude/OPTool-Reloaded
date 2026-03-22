@@ -1,0 +1,114 @@
+## PROTO_NC_PRISON_ADD_GM_ACK (sizeof 22)
+  +0: Name5 sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ADD_GM_REQ (sizeof 102)
+  +0: Name5 sImprison
+  +20: unsigned short nMinute
+  +22: char[16] sReason
+  +38: char[64] sRemark
+
+## PROTO_NC_PRISON_ALTER_GM_ACK (sizeof 22)
+  +0: Name5 sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ALTER_GM_REQ (sizeof 102)
+  +0: Name5 sImprison
+  +20: unsigned short nMin
+  +22: char[16] sReason
+  +38: char[64] sRemark
+
+## PROTO_NC_PRISON_END_ACK (sizeof 6)
+  +0: unsigned short err
+  +2: unsigned long nPrisonSecond
+
+## PROTO_NC_PRISON_END_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_PRISON_GET_ACK (sizeof 84)
+  +0: unsigned short err
+  +2: unsigned short nMinute
+  +4: char[16] sReason
+  +20: char[64] sRemark
+
+## PROTO_NC_PRISON_OK_CMD (sizeof 82)
+  +0: unsigned short nMinute
+  +2: char[16] sReason
+  +18: char[64] sRemark
+
+## PROTO_NC_PRISON_ADD_GM_ACK (sizeof 22)
+  +0: [0x1349] sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ADD_GM_REQ (sizeof 102)
+  +0: [0x1349] sImprison
+  +20: unsigned short nMinute
+  +22: [0x12FA] sReason
+  +38: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_ALTER_GM_ACK (sizeof 22)
+  +0: [0x1349] sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ALTER_GM_REQ (sizeof 102)
+  +0: [0x1349] sImprison
+  +20: unsigned short nMin
+  +22: [0x12FA] sReason
+  +38: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_END_ACK (sizeof 6)
+  +0: unsigned short err
+  +2: unsigned long nPrisonSecond
+
+## PROTO_NC_PRISON_END_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PRISON_GET_ACK (sizeof 84)
+  +0: unsigned short err
+  +2: unsigned short nMinute
+  +4: [0x12FA] sReason
+  +20: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_OK_CMD (sizeof 82)
+  +0: unsigned short nMinute
+  +2: [0x12FA] sReason
+  +18: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_ADD_GM_ACK (sizeof 22)
+  +0: [0x1349] sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ADD_GM_REQ (sizeof 102)
+  +0: [0x1349] sImprison
+  +20: unsigned short nMinute
+  +22: [0x12FA] sReason
+  +38: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_ALTER_GM_ACK (sizeof 22)
+  +0: [0x1349] sImprison
+  +20: unsigned short err
+
+## PROTO_NC_PRISON_ALTER_GM_REQ (sizeof 102)
+  +0: [0x1349] sImprison
+  +20: unsigned short nMin
+  +22: [0x12FA] sReason
+  +38: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_END_ACK (sizeof 6)
+  +0: unsigned short err
+  +2: unsigned long nPrisonSecond
+
+## PROTO_NC_PRISON_END_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PRISON_GET_ACK (sizeof 84)
+  +0: unsigned short err
+  +2: unsigned short nMinute
+  +4: [0x12FA] sReason
+  +20: [0x16C8] sRemark
+
+## PROTO_NC_PRISON_OK_CMD (sizeof 82)
+  +0: unsigned short nMinute
+  +2: [0x12FA] sReason
+  +18: [0x16C8] sRemark
+

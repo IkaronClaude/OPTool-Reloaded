@@ -1,0 +1,732 @@
+## PROTO_NC_PARTY_CHANGEMASTER_ACK (sizeof 22)
+  +0: Name5 newmaster
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_CHANGEMASTER_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_CHANGEMASTER_ACK ack
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long newmaster_chrregnum
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_CHANGEMASTER_CMD cmd
+
+## PROTO_NC_PARTY_CHANGEMASTER_REQ (sizeof 20)
+  +0: Name5 newmaster
+
+## PROTO_NC_PARTY_DISMISS_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+
+## PROTO_NC_PARTY_DISMISS_CMD (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_DISMISS_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_DISMISS_CMD cmd
+
+## PROTO_NC_PARTY_FINDER_ADD_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_ADD_REQ (sizeof 128)
+  +0: unsigned char[128] sMsg
+
+## PROTO_NC_PARTY_FINDER_DELETE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_DELETE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_PARTY_FINDER_DELETE_YOUR_MSG_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_PARTY_FINDER_INFO (sizeof 154)
+  +0: unsigned short nPastSecond
+  +2: long dRegistTime
+  +6: Name5 sCharID
+  +26: unsigned char[128] sMsg
+
+## PROTO_NC_PARTY_FINDER_LIST_ACK (sizeof 8)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+  +3: unsigned char bYouAreRegisted
+  +4: unsigned short nMaxPages
+  +6: unsigned short nNumOfList
+  +8: PROTO_NC_PARTY_FINDER_INFO[0] InfoList
+
+## PROTO_NC_PARTY_FINDER_LIST_REQ (sizeof 3)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD (sizeof 66)
+  +0: unsigned short partyregnum
+  +2: PROTO_PARTY_MEMBER_AND_ZONEMERCHINE master
+  +34: PROTO_PARTY_MEMBER_AND_ZONEMERCHINE member
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD_SEND (sizeof 69)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_FUNDAMENTAL_CMD cmd
+
+## PROTO_NC_PARTY_ITEM_JOIN_LOOTING_CMD (sizeof 22)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+  +2: Name5 LooterName
+
+## PROTO_NC_PARTY_ITEM_LOOTING_CMD (sizeof 2)
+  +0: unsigned char LootType
+  +1: unsigned char ItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_SET (sizeof 2)
+  +0: unsigned char lootingtype
+  +1: unsigned char nItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_ZONE_CMD (sizeof 8)
+  +0: unsigned short partyregnum
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+  +4: unsigned long LooterNo
+
+## PROTO_NC_PARTY_JOIN_ACK (sizeof 23)
+  +0: Name5 memberid
+  +20: unsigned char charclass
+  +21: unsigned short err
+
+## PROTO_NC_PARTY_JOIN_ACK_SEND (sizeof 26)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_JOIN_ACK ack
+
+## PROTO_NC_PARTY_JOIN_CMD (sizeof 34)
+  +0: unsigned short partyregnum
+  +2: PROTO_PARTY_MEMBER_AND_ZONEMERCHINE joiner
+
+## PROTO_NC_PARTY_JOIN_CMD_SEND (sizeof 37)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_JOIN_CMD cmd
+
+## PROTO_NC_PARTY_JOIN_REQ (sizeof 20)
+  +0: Name5 target
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ (sizeof 20)
+  +0: Name5 mastername
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_JOINPROPOSE_REQ req
+
+## PROTO_NC_PARTY_KICKOFF_ACK (sizeof 22)
+  +0: Name5 memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_KICKOFF_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_KICKOFF_ACK ack
+
+## PROTO_NC_PARTY_KICKOFF_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long kickoffmemberregnum
+
+## PROTO_NC_PARTY_KICKOFF_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_KICKOFF_CMD cmd
+
+## PROTO_NC_PARTY_KICKOFF_REQ (sizeof 20)
+  +0: Name5 member
+
+## PROTO_NC_PARTY_LEAVE_ACK (sizeof 22)
+  +0: Name5 memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_LEAVE_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LEAVE_ACK ack
+
+## PROTO_NC_PARTY_LEAVE_CMD (sizeof 33)
+  +0: unsigned short partyregnum
+  +2: PROTO_PARTY_MEMBER leavemember
+
+## PROTO_NC_PARTY_LEAVE_CMD_SEND (sizeof 36)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LEAVE_CMD cmd
+
+## PROTO_NC_PARTY_LEAVE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_PARTY_LOGIN_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_LOGIN_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LOGIN_CMD cmd
+
+## PROTO_NC_PARTY_LOGININFO_CMD (sizeof 20)
+  +0: Name5 memberid
+
+## PROTO_NC_PARTY_LOGININFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LOGININFO_CMD cmd
+
+## PROTO_NC_PARTY_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_LOGOUT_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LOGOUT_CMD cmd
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD (sizeof 20)
+  +0: Name5 memberid
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_PARTY_LOGOUTINFO_CMD cmd
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD (sizeof 1)
+  +0: unsigned char membercount
+  +1: PROTO_NC_PARTY_MEMBER_LIST_CMD::MEMBER_INFO[0] memberarray
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD_SEND (sizeof 114)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: unsigned char membercount
+  +4: PROTO_NC_PARTY_MEMBER_LIST_CMD::MEMBER_INFO[5] memberarray
+
+## PROTO_NC_PARTY_MEMBERINFORM_ACK (sizeof 3)
+  +0: unsigned short PartyRegnum
+  +2: unsigned char NumberOfMember
+  +3: PROTO_PARTY_MEMBER[0] Member
+
+## PROTO_NC_PARTY_MEMBERINFORM_REQ (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_SET_LOOTER_ACK (sizeof 22)
+  +0: Name5 sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_PARTY_SET_LOOTER_BROAD_CMD (sizeof 40)
+  +0: Name5 sCommandCharID
+  +20: Name5 sNewLooterCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_REQ (sizeof 20)
+  +0: Name5 sNewLooterCharID
+
+## PROTO_NC_PARTY_ZONE_JOIN_CMD (sizeof 8)
+  +0: unsigned long nMasterCharNo
+  +4: unsigned long nJoinCharNo
+
+## PROTO_NC_PARTY_ZONE_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_PARTY_ZONE_SET_LOOTER_CMD (sizeof 6)
+  +0: unsigned short nPartyNo
+  +2: unsigned long nNewLooterCharNo
+
+## PROTO_NC_PARTY_CHANGEMASTER_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4DBF] ack
+
+## PROTO_NC_PARTY_CHANGEMASTER_ACK (sizeof 22)
+  +0: [0x1349] newmaster
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x516C] cmd
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long newmaster_chrregnum
+
+## PROTO_NC_PARTY_CHANGEMASTER_REQ (sizeof 20)
+  +0: [0x1349] newmaster
+
+## PROTO_NC_PARTY_DISMISS_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_PARTY_DISMISS_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x477C] cmd
+
+## PROTO_NC_PARTY_DISMISS_CMD (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_FINDER_ADD_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_ADD_REQ (sizeof 128)
+  +0: [0x1827] sMsg
+
+## PROTO_NC_PARTY_FINDER_DELETE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_DELETE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_FINDER_DELETE_YOUR_MSG_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_FINDER_INFO (sizeof 154)
+  +0: unsigned short nPastSecond
+  +2: long dRegistTime
+  +6: [0x1349] sCharID
+  +26: [0x1827] sMsg
+
+## PROTO_NC_PARTY_FINDER_LIST_ACK (sizeof 8)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+  +3: unsigned char bYouAreRegisted
+  +4: unsigned short nMaxPages
+  +6: unsigned short nNumOfList
+  +8: [0x5075] InfoList
+
+## PROTO_NC_PARTY_FINDER_LIST_REQ (sizeof 3)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD_SEND (sizeof 69)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4B40] cmd
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD (sizeof 66)
+  +0: unsigned short partyregnum
+  +2: [0x3334] master
+  +34: [0x3334] member
+
+## PROTO_NC_PARTY_ITEM_JOIN_LOOTING_CMD (sizeof 22)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+  +2: [0x1349] LooterName
+
+## PROTO_NC_PARTY_ITEM_LOOTING_CMD (sizeof 2)
+  +0: unsigned char LootType
+  +1: unsigned char ItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_SET (sizeof 2)
+  +0: unsigned char lootingtype
+  +1: unsigned char nItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_ZONE_CMD (sizeof 8)
+  +0: unsigned short partyregnum
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+  +4: unsigned long LooterNo
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x52BA] req
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ (sizeof 20)
+  +0: [0x1349] mastername
+
+## PROTO_NC_PARTY_JOIN_ACK_SEND (sizeof 26)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4C9B] ack
+
+## PROTO_NC_PARTY_JOIN_ACK (sizeof 23)
+  +0: [0x1349] memberid
+  +20: unsigned char charclass
+  +21: unsigned short err
+
+## PROTO_NC_PARTY_JOIN_CMD_SEND (sizeof 37)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4C78] cmd
+
+## PROTO_NC_PARTY_JOIN_CMD (sizeof 34)
+  +0: unsigned short partyregnum
+  +2: [0x3334] joiner
+
+## PROTO_NC_PARTY_JOIN_REQ (sizeof 20)
+  +0: [0x1349] target
+
+## PROTO_NC_PARTY_KICKOFF_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x54CC] ack
+
+## PROTO_NC_PARTY_KICKOFF_ACK (sizeof 22)
+  +0: [0x1349] memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_KICKOFF_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5517] cmd
+
+## PROTO_NC_PARTY_KICKOFF_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long kickoffmemberregnum
+
+## PROTO_NC_PARTY_KICKOFF_REQ (sizeof 20)
+  +0: [0x1349] member
+
+## PROTO_NC_PARTY_LEAVE_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4FD2] ack
+
+## PROTO_NC_PARTY_LEAVE_ACK (sizeof 22)
+  +0: [0x1349] memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_LEAVE_CMD_SEND (sizeof 36)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x505C] cmd
+
+## PROTO_NC_PARTY_LEAVE_CMD (sizeof 33)
+  +0: unsigned short partyregnum
+  +2: [0x1F6B] leavemember
+
+## PROTO_NC_PARTY_LEAVE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_LOGININFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4FAA] cmd
+
+## PROTO_NC_PARTY_LOGININFO_CMD (sizeof 20)
+  +0: [0x1349] memberid
+
+## PROTO_NC_PARTY_LOGIN_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x53BD] cmd
+
+## PROTO_NC_PARTY_LOGIN_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4DF2] cmd
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD (sizeof 20)
+  +0: [0x1349] memberid
+
+## PROTO_NC_PARTY_LOGOUT_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5356] cmd
+
+## PROTO_NC_PARTY_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_MEMBERINFORM_ACK (sizeof 3)
+  +0: unsigned short PartyRegnum
+  +2: unsigned char NumberOfMember
+  +3: [0x4C5E] Member
+
+## PROTO_NC_PARTY_MEMBERINFORM_REQ (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD_SEND (sizeof 114)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: unsigned char membercount
+  +4: [0x53F7] memberarray
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD (sizeof 1)
+  +0: unsigned char membercount
+  +1: [0x4F83] memberarray
+
+## PROTO_NC_PARTY_SET_LOOTER_ACK (sizeof 22)
+  +0: [0x1349] sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_PARTY_SET_LOOTER_BROAD_CMD (sizeof 40)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLooterCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_REQ (sizeof 20)
+  +0: [0x1349] sNewLooterCharID
+
+## PROTO_NC_PARTY_ZONE_JOIN_CMD (sizeof 8)
+  +0: unsigned long nMasterCharNo
+  +4: unsigned long nJoinCharNo
+
+## PROTO_NC_PARTY_ZONE_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_PARTY_ZONE_SET_LOOTER_CMD (sizeof 6)
+  +0: unsigned short nPartyNo
+  +2: unsigned long nNewLooterCharNo
+
+## PROTO_NC_PARTY_CHANGEMASTER_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4DBF] ack
+
+## PROTO_NC_PARTY_CHANGEMASTER_ACK (sizeof 22)
+  +0: [0x1349] newmaster
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x516C] cmd
+
+## PROTO_NC_PARTY_CHANGEMASTER_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long newmaster_chrregnum
+
+## PROTO_NC_PARTY_CHANGEMASTER_REQ (sizeof 20)
+  +0: [0x1349] newmaster
+
+## PROTO_NC_PARTY_DISMISS_ACK_SEND (sizeof 3)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+
+## PROTO_NC_PARTY_DISMISS_CMD_SEND (sizeof 5)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x477C] cmd
+
+## PROTO_NC_PARTY_DISMISS_CMD (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_FINDER_ADD_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_ADD_REQ (sizeof 128)
+  +0: [0x1827] sMsg
+
+## PROTO_NC_PARTY_FINDER_DELETE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_PARTY_FINDER_DELETE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_FINDER_DELETE_YOUR_MSG_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_FINDER_INFO (sizeof 154)
+  +0: unsigned short nPastSecond
+  +2: long dRegistTime
+  +6: [0x1349] sCharID
+  +26: [0x1827] sMsg
+
+## PROTO_NC_PARTY_FINDER_LIST_ACK (sizeof 8)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+  +3: unsigned char bYouAreRegisted
+  +4: unsigned short nMaxPages
+  +6: unsigned short nNumOfList
+  +8: [0x5075] InfoList
+
+## PROTO_NC_PARTY_FINDER_LIST_REQ (sizeof 3)
+  +0: unsigned short nPageNo
+  +2: unsigned char nCountOfOnePage
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD_SEND (sizeof 69)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4B40] cmd
+
+## PROTO_NC_PARTY_FUNDAMENTAL_CMD (sizeof 66)
+  +0: unsigned short partyregnum
+  +2: [0x3334] master
+  +34: [0x3334] member
+
+## PROTO_NC_PARTY_ITEM_JOIN_LOOTING_CMD (sizeof 22)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+  +2: [0x1349] LooterName
+
+## PROTO_NC_PARTY_ITEM_LOOTING_CMD (sizeof 2)
+  +0: unsigned char LootType
+  +1: unsigned char ItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_SET (sizeof 2)
+  +0: unsigned char lootingtype
+  +1: unsigned char nItemGrade
+
+## PROTO_NC_PARTY_ITEM_LOOTING_ZONE_CMD (sizeof 8)
+  +0: unsigned short partyregnum
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+  +4: unsigned long LooterNo
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x52BA] req
+
+## PROTO_NC_PARTY_JOINPROPOSE_REQ (sizeof 20)
+  +0: [0x1349] mastername
+
+## PROTO_NC_PARTY_JOIN_ACK_SEND (sizeof 26)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4C9B] ack
+
+## PROTO_NC_PARTY_JOIN_ACK (sizeof 23)
+  +0: [0x1349] memberid
+  +20: unsigned char charclass
+  +21: unsigned short err
+
+## PROTO_NC_PARTY_JOIN_CMD_SEND (sizeof 37)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4C78] cmd
+
+## PROTO_NC_PARTY_JOIN_CMD (sizeof 34)
+  +0: unsigned short partyregnum
+  +2: [0x3334] joiner
+
+## PROTO_NC_PARTY_JOIN_REQ (sizeof 20)
+  +0: [0x1349] target
+
+## PROTO_NC_PARTY_KICKOFF_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x54CC] ack
+
+## PROTO_NC_PARTY_KICKOFF_ACK (sizeof 22)
+  +0: [0x1349] memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_KICKOFF_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5517] cmd
+
+## PROTO_NC_PARTY_KICKOFF_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long kickoffmemberregnum
+
+## PROTO_NC_PARTY_KICKOFF_REQ (sizeof 20)
+  +0: [0x1349] member
+
+## PROTO_NC_PARTY_LEAVE_ACK_SEND (sizeof 25)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4FD2] ack
+
+## PROTO_NC_PARTY_LEAVE_ACK (sizeof 22)
+  +0: [0x1349] memberid
+  +20: unsigned short err
+
+## PROTO_NC_PARTY_LEAVE_CMD_SEND (sizeof 36)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x505C] cmd
+
+## PROTO_NC_PARTY_LEAVE_CMD (sizeof 33)
+  +0: unsigned short partyregnum
+  +2: [0x1F6B] leavemember
+
+## PROTO_NC_PARTY_LEAVE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_PARTY_LOGININFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4FAA] cmd
+
+## PROTO_NC_PARTY_LOGININFO_CMD (sizeof 20)
+  +0: [0x1349] memberid
+
+## PROTO_NC_PARTY_LOGIN_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x53BD] cmd
+
+## PROTO_NC_PARTY_LOGIN_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4DF2] cmd
+
+## PROTO_NC_PARTY_LOGOUTINFO_CMD (sizeof 20)
+  +0: [0x1349] memberid
+
+## PROTO_NC_PARTY_LOGOUT_CMD_SEND (sizeof 9)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x5356] cmd
+
+## PROTO_NC_PARTY_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short partyregnum
+  +2: unsigned long chrregnum
+
+## PROTO_NC_PARTY_MEMBERINFORM_ACK (sizeof 3)
+  +0: unsigned short PartyRegnum
+  +2: unsigned char NumberOfMember
+  +3: [0x4C5E] Member
+
+## PROTO_NC_PARTY_MEMBERINFORM_REQ (sizeof 2)
+  +0: unsigned short partyregnum
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD_SEND (sizeof 114)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: unsigned char membercount
+  +4: [0x53F7] memberarray
+
+## PROTO_NC_PARTY_MEMBER_LIST_CMD (sizeof 1)
+  +0: unsigned char membercount
+  +1: [0x4F83] memberarray
+
+## PROTO_NC_PARTY_SET_LOOTER_ACK (sizeof 22)
+  +0: [0x1349] sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_PARTY_SET_LOOTER_BROAD_CMD (sizeof 40)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLooterCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_PARTY_SET_LOOTER_REQ (sizeof 20)
+  +0: [0x1349] sNewLooterCharID
+
+## PROTO_NC_PARTY_ZONE_JOIN_CMD (sizeof 8)
+  +0: unsigned long nMasterCharNo
+  +4: unsigned long nJoinCharNo
+
+## PROTO_NC_PARTY_ZONE_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_PARTY_ZONE_SET_LOOTER_CMD (sizeof 6)
+  +0: unsigned short nPartyNo
+  +2: unsigned long nNewLooterCharNo
+

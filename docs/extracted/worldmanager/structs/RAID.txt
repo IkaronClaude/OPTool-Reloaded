@@ -1,0 +1,867 @@
+## PROTO_NC_RAID_CHAT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_CHAT_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: Name5 sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: unsigned char[0] sChat
+
+## PROTO_NC_RAID_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: unsigned char[0] sChat
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_ACK (sizeof 22)
+  +0: Name5 sDelSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: Name5 sCommandCharID
+  +20: Name5 sDelSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_REQ (sizeof 20)
+  +0: Name5 sDelSubLeaderCharID
+
+## PROTO_NC_RAID_DISMISS_BROAD_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_RAID_INVITATION_ACK (sizeof 22)
+  +0: Name5 sInvitationCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_CMD (sizeof 21)
+  +0: Name5 sInvitationCharID
+  +20: unsigned char bIsAllow
+
+## PROTO_NC_RAID_INVITATION_ANSWER_REQ (sizeof 21)
+  +0: unsigned char bIsAllow
+  +1: Name5 sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_CMD (sizeof 20)
+  +0: Name5 sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_REQ (sizeof 20)
+  +0: Name5 sInvitationCharID
+
+## PROTO_NC_RAID_LEAVE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LEAVE_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: Name5 sCharID
+
+## PROTO_NC_RAID_LOGIN_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOGININFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: Name5 sCharID
+
+## PROTO_NC_RAID_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOGOUTINFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: Name5 sCharID
+
+## PROTO_NC_RAID_LOOTING_TYPE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LOOTING_TYPE_BROAD_CMD (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_LOOTING_TYPE_REQ (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_MAKE_ACK (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nError
+
+## PROTO_NC_RAID_MAKE_BROAD_CMD (sizeof 110)
+  +0: unsigned short nRaidNo
+  +2: unsigned short[4] nRaidPartyNo
+  +10: Name5[5] sFirstPartyCharID
+
+## PROTO_NC_RAID_MAKE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_RAID_MEMBER_JOIN_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: Name5 sCharID
+
+## PROTO_NC_RAID_MEMBER_LIST_CMD (sizeof 542)
+  +0: Name5 Leaderid
+  +20: Name5[4] SubLeaderid
+  +100: Name5 Looterid
+  +120: unsigned char nItemGrade
+  +121: unsigned char nLootingType
+  +122: PROTO_NC_RAID_MEMBER_LIST_CMD::MEMBER_INFO[20] memberarray
+
+## PROTO_NC_RAID_SET_LEADER_ACK (sizeof 22)
+  +0: Name5 sNewLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LEADER_BROAD_CMD (sizeof 44)
+  +0: Name5 sCommandCharID
+  +20: Name5 sNewLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LEADER_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_RAID_SET_LEADER_REQ (sizeof 20)
+  +0: Name5 sNewLeaderCharID
+
+## PROTO_NC_RAID_SET_LOOTER_ACK (sizeof 22)
+  +0: Name5 sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LOOTER_BROAD_CMD (sizeof 44)
+  +0: Name5 sCommandCharID
+  +20: Name5 sNewLooterCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LOOTER_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_RAID_SET_LOOTER_REQ (sizeof 20)
+  +0: Name5 sNewLooterCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_ACK (sizeof 22)
+  +0: Name5 sNewSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: Name5 sCommandCharID
+  +20: Name5 sNewSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_SUB_LEADER_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_REQ (sizeof 20)
+  +0: Name5 sNewSubLeaderCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_ACK (sizeof 22)
+  +0: Name5 sSlotMoveCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SLOT_MOVE_BROAD_CMD (sizeof 228)
+  +0: Name5 sCommandCharID
+  +20: PROTO_NC_RAID_SLOT_MOVE_BROAD_CMD::<unnamed-type-PrePosition> PrePosition
+  +24: PROTO_NC_RAID_SLOT_MOVE_BROAD_CMD::<unnamed-type-PostPosition> PostPosition
+  +28: Name5[5] sPreCharID
+  +128: Name5[5] sPostCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_REQ (sizeof 48)
+  +0: PROTO_NC_RAID_SLOT_MOVE_REQ::<unnamed-type-PrePosition> PrePosition
+  +4: PROTO_NC_RAID_SLOT_MOVE_REQ::<unnamed-type-PostPosition> PostPosition
+  +8: Name5 sPreSlotMoveCharID
+  +28: Name5 sPostSlotMoveCharID
+
+## PROTO_NC_RAID_VANISH_ACK (sizeof 22)
+  +0: Name5 sVanishCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_VANISH_BROAD_CMD (sizeof 44)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: Name5 sCommandCharID
+  +24: Name5 sVanishCharID
+
+## PROTO_NC_RAID_VANISH_CMD (sizeof 20)
+  +0: Name5 sCommandCharID
+
+## PROTO_NC_RAID_VANISH_REQ (sizeof 20)
+  +0: Name5 sVanishCharID
+
+## PROTO_NC_RAID_WARNING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_WARNING_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: Name5 sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: unsigned char[0] sChat
+
+## PROTO_NC_RAID_WARNING_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: unsigned char[0] sChat
+
+## PROTO_NC_RAID_ZONE_DEL_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nDelLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_DISMISS_CMD (sizeof 2)
+  +0: unsigned short nRaidNo
+
+## PROTO_NC_RAID_ZONE_LEAVE_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+
+## PROTO_NC_RAID_ZONE_LOOTING_TYPE_CMD (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+
+## PROTO_NC_RAID_ZONE_MAKE_CMD (sizeof 32)
+  +0: unsigned short nPartyNo
+  +2: unsigned short nRaidNo
+  +4: unsigned short[4] nRaidPartyNo
+  +12: unsigned long[5] FirstPartyCharRegNo
+
+## PROTO_NC_RAID_ZONE_MEMBER_JOIN_CMD (sizeof 42)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+  +10: PROTO_PARTY_MEMBER_AND_ZONEMERCHINE tInfo
+
+## PROTO_NC_RAID_ZONE_SET_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_LOOTER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLooterCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewSubLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SLOT_MOVE_CMD (sizeof 50)
+  +0: unsigned short nRaidNo
+  +2: PROTO_NC_RAID_ZONE_SLOT_MOVE_CMD::<unnamed-type-PrePosition> PrePosition
+  +26: PROTO_NC_RAID_ZONE_SLOT_MOVE_CMD::<unnamed-type-PostPosition> PostPosition
+
+## PROTO_NC_RAID_ZONE_VANISH_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nVanishCharNo
+
+## PROTO_NC_RAID_CHAT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_CHAT_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: [0x1349] sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: [0x14E0] sChat
+
+## PROTO_NC_RAID_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: [0x14E0] sChat
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sDelSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sDelSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sDelSubLeaderCharID
+
+## PROTO_NC_RAID_DISMISS_BROAD_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_RAID_INVITATION_ACK (sizeof 22)
+  +0: [0x1349] sInvitationCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_CMD (sizeof 21)
+  +0: [0x1349] sInvitationCharID
+  +20: unsigned char bIsAllow
+
+## PROTO_NC_RAID_INVITATION_ANSWER_REQ (sizeof 21)
+  +0: unsigned char bIsAllow
+  +1: [0x1349] sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_CMD (sizeof 20)
+  +0: [0x1349] sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_REQ (sizeof 20)
+  +0: [0x1349] sInvitationCharID
+
+## PROTO_NC_RAID_LEAVE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LEAVE_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGININFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGIN_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOGOUTINFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOOTING_TYPE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LOOTING_TYPE_BROAD_CMD (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_LOOTING_TYPE_REQ (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_MAKE_ACK (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nError
+
+## PROTO_NC_RAID_MAKE_BROAD_CMD (sizeof 110)
+  +0: unsigned short nRaidNo
+  +2: [0x1839] nRaidPartyNo
+  +10: [0x4F44] sFirstPartyCharID
+
+## PROTO_NC_RAID_MAKE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_RAID_MEMBER_JOIN_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_MEMBER_LIST_CMD (sizeof 542)
+  +0: [0x1349] Leaderid
+  +20: [0x47D2] SubLeaderid
+  +100: [0x1349] Looterid
+  +120: unsigned char nItemGrade
+  +121: unsigned char nLootingType
+  +122: [0x47D4] memberarray
+
+## PROTO_NC_RAID_SET_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sNewLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sNewLeaderCharID
+
+## PROTO_NC_RAID_SET_LOOTER_ACK (sizeof 22)
+  +0: [0x1349] sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LOOTER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLooterCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LOOTER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_LOOTER_REQ (sizeof 20)
+  +0: [0x1349] sNewLooterCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sNewSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_SUB_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sNewSubLeaderCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_ACK (sizeof 22)
+  +0: [0x1349] sSlotMoveCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SLOT_MOVE_BROAD_CMD (sizeof 228)
+  +0: [0x1349] sCommandCharID
+  +20: [0x4F42] PrePosition
+  +24: [0x4F43] PostPosition
+  +28: [0x4F44] sPreCharID
+  +128: [0x4F44] sPostCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_REQ (sizeof 48)
+  +0: [0x548B] PrePosition
+  +4: [0x548C] PostPosition
+  +8: [0x1349] sPreSlotMoveCharID
+  +28: [0x1349] sPostSlotMoveCharID
+
+## PROTO_NC_RAID_VANISH_ACK (sizeof 22)
+  +0: [0x1349] sVanishCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_VANISH_BROAD_CMD (sizeof 44)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCommandCharID
+  +24: [0x1349] sVanishCharID
+
+## PROTO_NC_RAID_VANISH_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_VANISH_REQ (sizeof 20)
+  +0: [0x1349] sVanishCharID
+
+## PROTO_NC_RAID_WARNING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_WARNING_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: [0x1349] sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: [0x14E0] sChat
+
+## PROTO_NC_RAID_WARNING_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: [0x14E0] sChat
+
+## PROTO_NC_RAID_ZONE_DEL_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nDelLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_DISMISS_CMD (sizeof 2)
+  +0: unsigned short nRaidNo
+
+## PROTO_NC_RAID_ZONE_LEAVE_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+
+## PROTO_NC_RAID_ZONE_LOOTING_TYPE_CMD (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+
+## PROTO_NC_RAID_ZONE_MAKE_CMD (sizeof 32)
+  +0: unsigned short nPartyNo
+  +2: unsigned short nRaidNo
+  +4: [0x1839] nRaidPartyNo
+  +12: [0x2257] FirstPartyCharRegNo
+
+## PROTO_NC_RAID_ZONE_MEMBER_JOIN_CMD (sizeof 42)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+  +10: [0x3334] tInfo
+
+## PROTO_NC_RAID_ZONE_SET_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_LOOTER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLooterCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewSubLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SLOT_MOVE_CMD (sizeof 50)
+  +0: unsigned short nRaidNo
+  +2: [0x55C3] PrePosition
+  +26: [0x55C4] PostPosition
+
+## PROTO_NC_RAID_ZONE_VANISH_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nVanishCharNo
+
+## PROTO_NC_RAID_CHAT_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_CHAT_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: [0x1349] sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: [0x14E0] sChat
+
+## PROTO_NC_RAID_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: [0x14E0] sChat
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sDelSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sDelSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_DEL_SUB_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sDelSubLeaderCharID
+
+## PROTO_NC_RAID_DISMISS_BROAD_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_RAID_INVITATION_ACK (sizeof 22)
+  +0: [0x1349] sInvitationCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_INVITATION_ANSWER_CMD (sizeof 21)
+  +0: [0x1349] sInvitationCharID
+  +20: unsigned char bIsAllow
+
+## PROTO_NC_RAID_INVITATION_ANSWER_REQ (sizeof 21)
+  +0: unsigned char bIsAllow
+  +1: [0x1349] sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_CMD (sizeof 20)
+  +0: [0x1349] sMasterCharID
+
+## PROTO_NC_RAID_INVITATION_REQ (sizeof 20)
+  +0: [0x1349] sInvitationCharID
+
+## PROTO_NC_RAID_LEAVE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LEAVE_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGININFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGIN_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOGOUTINFO_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_LOGOUT_CMD (sizeof 6)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nCharNo
+
+## PROTO_NC_RAID_LOOTING_TYPE_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_LOOTING_TYPE_BROAD_CMD (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_LOOTING_TYPE_REQ (sizeof 2)
+  +0: unsigned char nItemGrade
+  +1: unsigned char nLootingType
+
+## PROTO_NC_RAID_MAKE_ACK (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nError
+
+## PROTO_NC_RAID_MAKE_BROAD_CMD (sizeof 110)
+  +0: unsigned short nRaidNo
+  +2: [0x1839] nRaidPartyNo
+  +10: [0x4F44] sFirstPartyCharID
+
+## PROTO_NC_RAID_MAKE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_RAID_MEMBER_JOIN_BROAD_CMD (sizeof 24)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCharID
+
+## PROTO_NC_RAID_MEMBER_LIST_CMD (sizeof 542)
+  +0: [0x1349] Leaderid
+  +20: [0x47D2] SubLeaderid
+  +100: [0x1349] Looterid
+  +120: unsigned char nItemGrade
+  +121: unsigned char nLootingType
+  +122: [0x47D4] memberarray
+
+## PROTO_NC_RAID_SET_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sNewLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sNewLeaderCharID
+
+## PROTO_NC_RAID_SET_LOOTER_ACK (sizeof 22)
+  +0: [0x1349] sNewLooterCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_LOOTER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewLooterCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_LOOTER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_LOOTER_REQ (sizeof 20)
+  +0: [0x1349] sNewLooterCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_ACK (sizeof 22)
+  +0: [0x1349] sNewSubLeaderCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SET_SUB_LEADER_BROAD_CMD (sizeof 44)
+  +0: [0x1349] sCommandCharID
+  +20: [0x1349] sNewSubLeaderCharID
+  +40: unsigned short nPartyNo
+  +42: unsigned char nPartyIndex
+  +43: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_SET_SUB_LEADER_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_SET_SUB_LEADER_REQ (sizeof 20)
+  +0: [0x1349] sNewSubLeaderCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_ACK (sizeof 22)
+  +0: [0x1349] sSlotMoveCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_SLOT_MOVE_BROAD_CMD (sizeof 228)
+  +0: [0x1349] sCommandCharID
+  +20: [0x4F42] PrePosition
+  +24: [0x4F43] PostPosition
+  +28: [0x4F44] sPreCharID
+  +128: [0x4F44] sPostCharID
+
+## PROTO_NC_RAID_SLOT_MOVE_REQ (sizeof 48)
+  +0: [0x548B] PrePosition
+  +4: [0x548C] PostPosition
+  +8: [0x1349] sPreSlotMoveCharID
+  +28: [0x1349] sPostSlotMoveCharID
+
+## PROTO_NC_RAID_VANISH_ACK (sizeof 22)
+  +0: [0x1349] sVanishCharID
+  +20: unsigned short nError
+
+## PROTO_NC_RAID_VANISH_BROAD_CMD (sizeof 44)
+  +0: unsigned short nPartyNo
+  +2: unsigned char nPartyIndex
+  +3: unsigned char nSlotIndex
+  +4: [0x1349] sCommandCharID
+  +24: [0x1349] sVanishCharID
+
+## PROTO_NC_RAID_VANISH_CMD (sizeof 20)
+  +0: [0x1349] sCommandCharID
+
+## PROTO_NC_RAID_VANISH_REQ (sizeof 20)
+  +0: [0x1349] sVanishCharID
+
+## PROTO_NC_RAID_WARNING_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_RAID_WARNING_BROAD_CMD (sizeof 22)
+  +0: unsigned char itemLinkDataCount
+  +1: [0x1349] sTalkerCharID
+  +21: unsigned char nChatLen
+  +22: [0x14E0] sChat
+
+## PROTO_NC_RAID_WARNING_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char nChatLen
+  +2: [0x14E0] sChat
+
+## PROTO_NC_RAID_ZONE_DEL_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nDelLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_DISMISS_CMD (sizeof 2)
+  +0: unsigned short nRaidNo
+
+## PROTO_NC_RAID_ZONE_LEAVE_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+
+## PROTO_NC_RAID_ZONE_LOOTING_TYPE_CMD (sizeof 4)
+  +0: unsigned short nRaidNo
+  +2: unsigned char nItemGrade
+  +3: unsigned char nLootingType
+
+## PROTO_NC_RAID_ZONE_MAKE_CMD (sizeof 32)
+  +0: unsigned short nPartyNo
+  +2: unsigned short nRaidNo
+  +4: [0x1839] nRaidPartyNo
+  +12: [0x2257] FirstPartyCharRegNo
+
+## PROTO_NC_RAID_ZONE_MEMBER_JOIN_CMD (sizeof 42)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nCharNo
+  +10: [0x3334] tInfo
+
+## PROTO_NC_RAID_ZONE_SET_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_LOOTER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewLooterCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SET_SUB_LEADER_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned long nNewSubLeaderCharNo
+  +6: unsigned short nPartyNo
+  +8: unsigned char nPartyIndex
+  +9: unsigned char nSlotIndex
+
+## PROTO_NC_RAID_ZONE_SLOT_MOVE_CMD (sizeof 50)
+  +0: unsigned short nRaidNo
+  +2: [0x55C3] PrePosition
+  +26: [0x55C4] PostPosition
+
+## PROTO_NC_RAID_ZONE_VANISH_CMD (sizeof 10)
+  +0: unsigned short nRaidNo
+  +2: unsigned short nPartyNo
+  +4: unsigned char nPartyIndex
+  +5: unsigned char nSlotIndex
+  +6: unsigned long nVanishCharNo
+

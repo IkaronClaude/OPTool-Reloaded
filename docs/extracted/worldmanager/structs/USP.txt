@@ -1,0 +1,24 @@
+## PROTO_NC_USP_USER_CHARACTER_DELETE (sizeof 9)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_USP_USER_CHARACTER_INSERT (sizeof 50)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: [0x4CCB] sCharName
+  +49: unsigned char nClass
+
+## PROTO_NC_USP_USER_CHARACTER_DELETE (sizeof 9)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_USP_USER_CHARACTER_INSERT (sizeof 50)
+  +0: unsigned long nUserNo
+  +4: unsigned char nWorldNo
+  +5: unsigned long nCharNo
+  +9: [0x4CCB] sCharName
+  +49: unsigned char nClass
+

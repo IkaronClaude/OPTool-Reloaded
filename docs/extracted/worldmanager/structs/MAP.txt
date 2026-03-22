@@ -1,0 +1,108 @@
+## PROTO_NC_MAP_LINKEND_CMD (sizeof 47)
+  +0: unsigned short wmshandle
+  +2: unsigned short zonehandle
+  +4: unsigned long chrregnum
+  +8: Name3 map
+  +20: unsigned char zoneid
+  +21: SHINE_XY_TYPE location
+  +29: unsigned char StoreType
+  +30: unsigned __int64 CharExp
+  +38: unsigned __int64 CharMoney
+  +46: unsigned char IsPartyRelease
+
+## PROTO_NC_MAP_LINKRESERVE_ACK (sizeof 36)
+  +0: NETPACKETZONEHEADER header
+  +6: PROTO_NC_CHAR_REVIVEOTHER_CMD linkother
+
+## PROTO_NC_MAP_LINKRESERVE_ACK_SEND (sizeof 39)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_MAP_LINKRESERVE_ACK ack
+
+## PROTO_NC_MAP_LINKRESERVE_REQ (sizeof 59)
+  +0: NETPACKETZONEHEADER header
+  +6: unsigned short wldmanhandle
+  +8: unsigned char newmechineid
+  +9: PROTO_NC_MAP_LINKRESERVE_REQ::<unnamed-type-linkto> linkto
+  +29: PROTO_NC_CHAR_REVIVEOTHER_CMD linkother
+
+## PROTO_NC_MAP_LINKSTART_CMD (sizeof 6)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+
+## PROTO_NC_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short numofmap
+  +2: PROTO_NC_MAP_REGIST_CMD::<unnamed-type-maparray>[0] maparray
+
+## PROTO_NC_MAP_LINKEND_CMD (sizeof 47)
+  +0: unsigned short wmshandle
+  +2: unsigned short zonehandle
+  +4: unsigned long chrregnum
+  +8: [0x1347] map
+  +20: unsigned char zoneid
+  +21: [0x2140] location
+  +29: unsigned char StoreType
+  +30: unsigned __int64 CharExp
+  +38: unsigned __int64 CharMoney
+  +46: unsigned char IsPartyRelease
+
+## PROTO_NC_MAP_LINKRESERVE_ACK_SEND (sizeof 39)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4A1A] ack
+
+## PROTO_NC_MAP_LINKRESERVE_ACK (sizeof 36)
+  +0: [0x14EF] header
+  +6: [0x495E] linkother
+
+## PROTO_NC_MAP_LINKRESERVE_REQ (sizeof 59)
+  +0: [0x14EF] header
+  +6: unsigned short wldmanhandle
+  +8: unsigned char newmechineid
+  +9: [0x495D] linkto
+  +29: [0x495E] linkother
+
+## PROTO_NC_MAP_LINKSTART_CMD (sizeof 6)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+
+## PROTO_NC_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short numofmap
+  +2: [0x4BDC] maparray
+
+## PROTO_NC_MAP_LINKEND_CMD (sizeof 47)
+  +0: unsigned short wmshandle
+  +2: unsigned short zonehandle
+  +4: unsigned long chrregnum
+  +8: [0x1347] map
+  +20: unsigned char zoneid
+  +21: [0x2140] location
+  +29: unsigned char StoreType
+  +30: unsigned __int64 CharExp
+  +38: unsigned __int64 CharMoney
+  +46: unsigned char IsPartyRelease
+
+## PROTO_NC_MAP_LINKRESERVE_ACK_SEND (sizeof 39)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x4A1A] ack
+
+## PROTO_NC_MAP_LINKRESERVE_ACK (sizeof 36)
+  +0: [0x14EF] header
+  +6: [0x495E] linkother
+
+## PROTO_NC_MAP_LINKRESERVE_REQ (sizeof 59)
+  +0: [0x14EF] header
+  +6: unsigned short wldmanhandle
+  +8: unsigned char newmechineid
+  +9: [0x495D] linkto
+  +29: [0x495E] linkother
+
+## PROTO_NC_MAP_LINKSTART_CMD (sizeof 6)
+  +0: unsigned short wmshandle
+  +2: unsigned long chrregnum
+
+## PROTO_NC_MAP_REGIST_CMD (sizeof 2)
+  +0: unsigned short numofmap
+  +2: [0x4BDC] maparray
+

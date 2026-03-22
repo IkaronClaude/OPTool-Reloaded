@@ -1,0 +1,288 @@
+## PROTO_NC_CHAR_OPTION_DB_GET_GAME_ACK (sizeof 67)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_GAME Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_GAME_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_KEYMAPPING_ACK (sizeof 311)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_KEYMAPPING Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_KEYMAPPING_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SHORTCUTDATA_ACK (sizeof 1027)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_SHORTCUTDATA Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SHORTCUTDATA_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SHORTCUTSIZE_ACK (sizeof 27)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_SHORTCUTSIZE Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SHORTCUTSIZE_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SOUND_ACK (sizeof 4)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_SOUND Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_SOUND_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_VIDEO_ACK (sizeof 63)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_VIDEO Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_VIDEO_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_GET_WINDOWPOS_ACK (sizeof 395)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned char bSuccess
+  +3: PROTO_NC_CHAR_OPTION_WINDOWPOS Data
+
+## PROTO_NC_CHAR_OPTION_DB_GET_WINDOWPOS_REQ (sizeof 6)
+  +0: unsigned short WorldManagerHandle
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_DB_SET_GAME_CMD (sizeof 68)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_GAME Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_KEYMAPPING_CMD (sizeof 312)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_KEYMAPPING Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_SHORTCUTDATA_CMD (sizeof 1028)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_SHORTCUTDATA Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_SHORTCUTSIZE_CMD (sizeof 28)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_SHORTCUTSIZE Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_SOUND_CMD (sizeof 5)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_SOUND Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_VIDEO_CMD (sizeof 64)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_VIDEO Data
+
+## PROTO_NC_CHAR_OPTION_DB_SET_WINDOWPOS_CMD (sizeof 396)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_WINDOWPOS Data
+
+## PROTO_NC_CHAR_OPTION_GAME (sizeof 64)
+  +0: unsigned char[64] Data
+
+## PROTO_NC_CHAR_OPTION_GET_GAME_ACK (sizeof 65)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_GAME Data
+
+## PROTO_NC_CHAR_OPTION_GET_GAME_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_KEYMAPPING_ACK (sizeof 309)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_KEYMAPPING Data
+
+## PROTO_NC_CHAR_OPTION_GET_KEYMAPPING_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_SHORTCUTDATA_ACK (sizeof 1025)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_SHORTCUTDATA Data
+
+## PROTO_NC_CHAR_OPTION_GET_SHORTCUTDATA_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_SHORTCUTSIZE_ACK (sizeof 25)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_SHORTCUTSIZE Data
+
+## PROTO_NC_CHAR_OPTION_GET_SHORTCUTSIZE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_SOUND_ACK (sizeof 2)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_SOUND Data
+
+## PROTO_NC_CHAR_OPTION_GET_SOUND_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_VIDEO_ACK (sizeof 61)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_VIDEO Data
+
+## PROTO_NC_CHAR_OPTION_GET_VIDEO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_GET_WINDOWPOS_ACK (sizeof 393)
+  +0: unsigned char bSuccess
+  +1: PROTO_NC_CHAR_OPTION_WINDOWPOS Data
+
+## PROTO_NC_CHAR_OPTION_GET_WINDOWPOS_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_GET_DATA_TYPE_CMD (sizeof 8)
+  +0: unsigned long nCharNo
+  +4: [0x3c18] DataType
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_GET_GAMEOPTION_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_GET_GAMEOPTION_CMD DBGameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_GET_KEYMAP_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_GET_KEYMAP_CMD DBKeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_GET_SHORTCUTDATA_CMD (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_GET_SHORTCUTDATA_CMD DBShortCutData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_INIT_GAMEOPTION_ACK (sizeof 8)
+  +0: unsigned short nError
+  +2: unsigned long nCharNo
+  +6: PROTO_NC_CHAR_OPTION_IMPROVE_GET_GAMEOPTION_CMD DBGameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_INIT_GAMEOPTION_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_INIT_KEYMAP_ACK (sizeof 8)
+  +0: unsigned short nError
+  +2: unsigned long nCharNo
+  +6: PROTO_NC_CHAR_OPTION_IMPROVE_GET_KEYMAP_CMD DBKeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_INIT_KEYMAP_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_GAMEOPTION_ACK (sizeof 6)
+  +0: unsigned short nError
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_GAMEOPTION_REQ (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_GET_GAMEOPTION_CMD DBGameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_KEYMAP_ACK (sizeof 6)
+  +0: unsigned short nError
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_KEYMAP_REQ (sizeof 6)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_GET_KEYMAP_CMD DBKeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_SHORTCUTDATA_ACK (sizeof 6)
+  +0: unsigned short nError
+  +2: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_DB_SET_SHORTCUTDATA_REQ (sizeof 5)
+  +0: unsigned long nCharNo
+  +4: PROTO_NC_CHAR_OPTION_IMPROVE_SET_SHORTCUTDATA_REQ DBShortCutData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_GET_GAMEOPTION_CMD (sizeof 2)
+  +0: unsigned short nGameOptionDataCnt
+  +2: GAME_OPTION_DATA[0] GameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_GET_KEYMAP_CMD (sizeof 2)
+  +0: unsigned short nKeyMapDataCnt
+  +2: KEY_MAP_DATA[0] KeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_GET_SHORTCUTDATA_CMD (sizeof 2)
+  +0: unsigned short nShortCutDataCnt
+  +2: SHORT_CUT_DATA[0] ShortCutData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_INIT_GAMEOPTION_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: PROTO_NC_CHAR_OPTION_IMPROVE_GET_GAMEOPTION_CMD DBGameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_INIT_GAMEOPTION_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_INIT_KEYMAP_ACK (sizeof 4)
+  +0: unsigned short nError
+  +2: PROTO_NC_CHAR_OPTION_IMPROVE_GET_KEYMAP_CMD DBKeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_INIT_KEYMAP_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_GAMEOPTION_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_GAMEOPTION_REQ (sizeof 2)
+  +0: unsigned short nGameOptionDataCnt
+  +2: GAME_OPTION_DATA[0] GameOptionData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_KEYMAP_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_KEYMAP_REQ (sizeof 2)
+  +0: unsigned short nKeyMapDataCnt
+  +2: KEY_MAP_DATA[0] KeyMapData
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_SHORTCUTDATA_ACK (sizeof 2)
+  +0: unsigned short nError
+
+## PROTO_NC_CHAR_OPTION_IMPROVE_SET_SHORTCUTDATA_REQ (sizeof 1)
+  +0: unsigned char nShortCutDataCnt
+  +1: SHORT_CUT_DATA[0] ShortCutData
+
+## PROTO_NC_CHAR_OPTION_KEYMAPPING (sizeof 308)
+  +0: unsigned char[308] Data
+
+## PROTO_NC_CHAR_OPTION_LOGIN_BLOCKDATA_ERR_REQ (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_CHAR_OPTION_SET_GAME_CMD (sizeof 64)
+  +0: PROTO_NC_CHAR_OPTION_GAME Data
+
+## PROTO_NC_CHAR_OPTION_SET_KEYMAPPING_CMD (sizeof 308)
+  +0: PROTO_NC_CHAR_OPTION_KEYMAPPING Data
+
+## PROTO_NC_CHAR_OPTION_SET_SHORTCUTDATA_CMD (sizeof 1024)
+  +0: PROTO_NC_CHAR_OPTION_SHORTCUTDATA Data
+
+## PROTO_NC_CHAR_OPTION_SET_SHORTCUTSIZE_CMD (sizeof 24)
+  +0: PROTO_NC_CHAR_OPTION_SHORTCUTSIZE Data
+
+## PROTO_NC_CHAR_OPTION_SET_SOUND_CMD (sizeof 1)
+  +0: PROTO_NC_CHAR_OPTION_SOUND Data
+
+## PROTO_NC_CHAR_OPTION_SET_VIDEO_CMD (sizeof 60)
+  +0: PROTO_NC_CHAR_OPTION_VIDEO Data
+
+## PROTO_NC_CHAR_OPTION_SET_WINDOWPOS_CMD (sizeof 392)
+  +0: PROTO_NC_CHAR_OPTION_WINDOWPOS Data
+
+## PROTO_NC_CHAR_OPTION_SHORTCUTDATA (sizeof 1024)
+  +0: unsigned char[1024] Data
+
+## PROTO_NC_CHAR_OPTION_SHORTCUTSIZE (sizeof 24)
+  +0: unsigned char[24] Data
+
+## PROTO_NC_CHAR_OPTION_SOUND (sizeof 1)
+  +0: unsigned char[1] Data
+
+## PROTO_NC_CHAR_OPTION_VIDEO (sizeof 60)
+  +0: unsigned char[60] Data
+
+## PROTO_NC_CHAR_OPTION_WINDOWPOS (sizeof 392)
+  +0: unsigned char[392] Data
+

@@ -1,0 +1,2584 @@
+## PROTO_NC_GUILD_CHAT_ACK (sizeof 2)
+  +0: unsigned short error
+
+## PROTO_NC_GUILD_CHAT_CMD (sizeof 26)
+  +0: unsigned long nGuildNo
+  +4: Name5 talker
+  +24: PROTO_NC_GUILD_CHAT_REQ chat
+
+## PROTO_NC_GUILD_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+  +2: unsigned char[0] content
+
+## PROTO_NC_GUILD_DB_ACK (sizeof 1091)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+  +4: GUILD_CLIENT GuildClient
+  +1071: GUILD_SERVER GuildServer
+
+## PROTO_NC_GUILD_DB_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuild
+  +5: GUILD_DB[0] GuildDB
+
+## PROTO_NC_GUILD_DB_ALL_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_DB_DELETE_ACK (sizeof 6)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+
+## PROTO_NC_GUILD_DB_DELETE_CANCEL_ACK (sizeof 8)
+  +0: unsigned short nError
+  +2: unsigned long nNo
+  +6: unsigned short hTool
+
+## PROTO_NC_GUILD_DB_DELETE_CANCEL_REQ (sizeof 6)
+  +0: unsigned long nNo
+  +4: unsigned short hTool
+
+## PROTO_NC_GUILD_DB_DELETE_REQ (sizeof 20)
+  +0: unsigned long nNo
+  +4: Name4 sGuildName
+
+## PROTO_NC_GUILD_DB_DISMISS_ACK (sizeof 13)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned char nDismissStatus
+  +7: long dDismissDate
+  +11: unsigned short Error
+
+## PROTO_NC_GUILD_DB_DISMISS_REQ (sizeof 11)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned char nDismissStatus
+  +7: long dDismissDate
+
+## PROTO_NC_GUILD_DB_INTRO_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MAKE_ACK (sizeof 45)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: PROTO_NC_GUILD_MAKE_REQ Make
+  +35: long dCreateDate
+  +39: unsigned long nNo
+  +43: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MAKE_REQ (sizeof 55)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: Name5 sCharID
+  +26: PROTO_NC_GUILD_MAKE_REQ Make
+
+## PROTO_NC_GUILD_DB_MEMBER_ACK (sizeof 9)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+  +6: unsigned char PartMask
+  +7: unsigned short NumOfMember
+  +9: GUILD_MEMEBER_INFO[0] MemberList
+
+## PROTO_NC_GUILD_DB_MEMBER_GRADE_ACK (sizeof 37)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned char MemberGrade
+  +31: unsigned short Error
+  +33: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_DB_MEMBER_GRADE_REQ (sizeof 36)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned char MemberGrade
+  +31: unsigned long nSetCharNo
+  +35: unsigned char MemberGrade_Old
+
+## PROTO_NC_GUILD_DB_MEMBER_INTRO_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MEMBER_JOIN_ACK (sizeof 13)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned char nGrade
+  +11: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MEMBER_JOIN_REQ (sizeof 31)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: Name5 sCharID
+  +30: unsigned char nGrade
+
+## PROTO_NC_GUILD_DB_MEMBER_LEAVE_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MEMBER_LEAVE_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: Name5 sCharID
+
+## PROTO_NC_GUILD_DB_MEMBER_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_DB_MEMBER_VANISH_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MEMBER_VANISH_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: Name5 sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+
+## PROTO_NC_GUILD_DB_MONEY_ADD_ACK (sizeof 36)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned __int64 nMoneyAdd
+  +18: unsigned __int64 nMemberMoney
+  +26: unsigned __int64 nTotalMoney
+  +34: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MONEY_SUB_ACK (sizeof 36)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned __int64 nMoneySub
+  +18: unsigned __int64 nMemberMoney
+  +26: unsigned __int64 nTotalMoney
+  +34: unsigned short Error
+
+## PROTO_NC_GUILD_DB_NOTIFY_ACK (sizeof 34)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nNo
+  +8: long dNotifyDate
+  +12: Name5 sNotifyCharID
+  +32: unsigned short nNotifyLength
+  +34: char[0] sNotify
+
+## PROTO_NC_GUILD_DB_NOTIFY_REQ (sizeof 28)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: Name5 sNotifyCharID
+  +26: unsigned short nNotifyLength
+  +28: char[0] sNotify
+
+## PROTO_NC_GUILD_DB_RENAME_ACK (sizeof 24)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: Name4 sGuildName
+  +22: unsigned short err
+
+## PROTO_NC_GUILD_DB_RENAME_REQ (sizeof 22)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: Name4 sGuildName
+
+## PROTO_NC_GUILD_DB_RESULT_WRITE_CMD (sizeof 40)
+  +0: GUILD_DB_RESULT_WRITE Guild1
+  +20: GUILD_DB_RESULT_WRITE Guild2
+
+## PROTO_NC_GUILD_DB_RETYPE_ACK (sizeof 9)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char nType
+  +7: unsigned short err
+
+## PROTO_NC_GUILD_DB_RETYPE_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char nType
+
+## PROTO_NC_GUILD_DB_TOKEN_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuild
+  +5: GUILD_TOKEN_DB[0] GuildTokenDB
+
+## PROTO_NC_GUILD_DB_TOKEN_ALL_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_DB_WAR_ACK (sizeof 24)
+  +0: unsigned short Error
+  +2: PROTO_NC_GUILD_DB_WAR_REQ WarReq
+
+## PROTO_NC_GUILD_DB_WAR_REQ (sizeof 22)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nWarEnemy
+  +10: long dWarRequestDate
+  +14: long dWarStartDate
+  +18: long dWarEndDate
+
+## PROTO_NC_GUILD_DELETE_CMD (sizeof 16)
+  +0: Name4 Name
+
+## PROTO_NC_GUILD_DISMISS_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_DISMISS_CMD (sizeof 57)
+  +0: Name4 Name
+  +16: unsigned char nDismissStatus
+  +17: long dDismissDate
+  +21: tm tm_dDismissDate
+
+## PROTO_NC_GUILD_DISMISS_REQ (sizeof 28)
+  +0: Name4 Name
+  +16: Name3 Password
+
+## PROTO_NC_GUILD_EMBLEM_CHECK_AVAILABILITY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_INFO_CMD (sizeof 3)
+  +0: GUILD_EMBLEM_INFO EmblemInfo
+  +2: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nNumOfEmblem
+  +3: GUILD_EMBLEM_INFO_DB[0] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_EMBLEM_INFO_NOTICE_CMD (sizeof 6)
+  +0: unsigned long nGuildNo
+  +4: GUILD_EMBLEM_INFO EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_LEVELUP_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_EMBLEM_OFF_MSG_CMD (sizeof 2)
+  +0: unsigned char nMonth
+  +1: unsigned char nDay
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_ACK (sizeof 10)
+  +0: unsigned long nCharNo
+  +4: GUILD_EMBLEM_INFO EmblemInfo
+  +6: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_REQ (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: GUILD_EMBLEM_INFO EmblemInfo
+  +10: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_REQ (sizeof 2)
+  +0: GUILD_EMBLEM_INFO EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_ACK (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_REQ (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_GRADE_ACK (sizeof 3)
+  +0: unsigned char RequestGrade
+  +1: unsigned short Error
+
+## PROTO_NC_GUILD_GRADE_CMD (sizeof 1)
+  +0: unsigned char Grade
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_ACK (sizeof 16)
+  +0: PROTO_NC_GUILD_ZONE_WAR_START_CMD guildwarA
+  +8: PROTO_NC_GUILD_ZONE_WAR_START_CMD guildwarB
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_REQ (sizeof 8)
+  +0: unsigned long guildA
+  +4: unsigned long guildB
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_ACK (sizeof 2)
+  +0: unsigned short warnumber
+  +2: PROTO_NC_GUILD_ZONE_WAR_START_CMD[0] war
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned short TotalHistoryCount
+  +6: unsigned short HistoryCount
+  +8: unsigned short HistoryIndex
+  +10: GUILD_HISTORY[0] HistoryList
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_HISTORY_LIST_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned short TotalHistoryCount
+  +4: unsigned short HistoryCount
+  +6: unsigned short HistoryIndex
+  +8: GUILD_HISTORY[0] HistoryList
+
+## PROTO_NC_GUILD_INFO_ACK (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_LIST_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short TotalNumOfGuild
+  +5: unsigned short nGuildListCnt
+  +7: SHINE_GUILD_LIST_NEW[0] GuildList
+
+## PROTO_NC_GUILD_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_MAKE_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned long No
+  +6: Name4 Name
+  +22: unsigned char Type
+  +23: long dCreateDate
+
+## PROTO_NC_GUILD_MAKE_REQ (sizeof 29)
+  +0: Name4 Name
+  +16: Name3 Password
+  +28: unsigned char Type
+
+## PROTO_NC_GUILD_MEMBER_CLASS_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char ClassID
+
+## PROTO_NC_GUILD_MEMBER_EXP_RATIO_CMD (sizeof 22)
+  +0: Name5 CharID
+  +20: unsigned short ExpRatio
+
+## PROTO_NC_GUILD_MEMBER_FLAGS_CMD (sizeof 24)
+  +0: Name5 CharID
+  +20: unsigned long Flags
+
+## PROTO_NC_GUILD_MEMBER_GRADE_ACK (sizeof 23)
+  +0: Name5 CharID
+  +20: unsigned char MemberGrade
+  +21: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_GRADE_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Grade
+
+## PROTO_NC_GUILD_MEMBER_GRADE_REQ (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char MemberGrade
+
+## PROTO_NC_GUILD_MEMBER_INTRO_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INTRO_CMD (sizeof 22)
+  +0: Name5 CharID
+  +20: unsigned short nMemberIntroLength
+  +22: char[0] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INTRO_REQ (sizeof 2)
+  +0: unsigned short nMemberIntroLength
+  +2: char[0] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INVITE_ACK (sizeof 22)
+  +0: Name5 ToCharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INVITE_REQ (sizeof 20)
+  +0: Name5 ToCharID
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ACK (sizeof 17)
+  +0: Name4 GuildName
+  +16: unsigned char JoinAck
+
+## PROTO_NC_GUILD_MEMBER_JOIN_CMD (sizeof 110)
+  +0: GUILD_MEMBER_CLIENT Member
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ERR (sizeof 18)
+  +0: Name4 GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_JOIN_REQ (sizeof 36)
+  +0: Name4 GuildName
+  +16: Name5 FromCharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_MEMBER_LEVEL_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Level
+
+## PROTO_NC_GUILD_MEMBER_LIST_ACK (sizeof 6)
+  +0: unsigned short TotalMemberCount
+  +2: unsigned short MemberIndex
+  +4: unsigned short MemberCount
+  +6: GUILD_MEMBER_CLIENT[0] MemberList
+
+## PROTO_NC_GUILD_MEMBER_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_MEMBER_LOGOFF_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_MEMBER_LOGON_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_MEMBER_MAP_CMD (sizeof 32)
+  +0: Name5 CharID
+  +20: Name3 sMap
+
+## PROTO_NC_GUILD_MEMBER_PARTY_CMD (sizeof 21)
+  +0: Name5 CharID
+  +20: unsigned char Party
+
+## PROTO_NC_GUILD_MEMBER_VANISH_ACK (sizeof 22)
+  +0: Name5 CharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_VANISH_CMD (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_MEMBER_VANISH_REQ (sizeof 20)
+  +0: Name5 CharID
+
+## PROTO_NC_GUILD_MONEY_ADD_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneyAdd
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_ADD_CMD (sizeof 36)
+  +0: Name5 CharID
+  +20: unsigned __int64 GuildMoneyAdd
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MONEY_ADD_REQ (sizeof 8)
+  +0: unsigned __int64 GuildMoneyAdd
+
+## PROTO_NC_GUILD_MONEY_SUB_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneySub
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_SUB_CMD (sizeof 36)
+  +0: Name5 CharID
+  +20: unsigned __int64 GuildMoneySub
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_ACK (sizeof 2)
+  +0: unsigned short Error
+  +2: GUILD_CLIENT[0] GuildInfo
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned __int64 nGuildToken
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_ACK (sizeof 45)
+  +0: unsigned short Error
+  +2: GT_COND_INFO GTCondInfo
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_NAME_ACK (sizeof 22)
+  +0: unsigned long nNo
+  +4: Name4 Name
+  +20: GUILD_EMBLEM_INFO EmblemInfo
+
+## PROTO_NC_GUILD_NAME_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_NOTIFY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_NOTIFY_CMD (sizeof 62)
+  +0: long dNotifyDate
+  +4: tm tm_dNotifyDate
+  +40: Name5 sNotifyCharID
+  +60: unsigned short nNotifyLength
+  +62: char[0] sNotify
+
+## PROTO_NC_GUILD_NOTIFY_REQ (sizeof 2)
+  +0: unsigned short nNotifyLength
+  +2: char[0] sNotify
+
+## PROTO_NC_GUILD_RENAME_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: Name4 sGuildName
+
+## PROTO_NC_GUILD_RENAME_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: NETCOMMAND netcmd
+  +3: PROTO_NC_GUILD_RENAME_CMD cmd
+
+## PROTO_NC_GUILD_RETYPE_CMD (sizeof 5)
+  +0: unsigned long nGuildNo
+  +4: unsigned char nType
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_ACK (sizeof 9)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned short err
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_REQ (sizeof 6)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nFSGuildNum
+  +7: unsigned long[0] nFSGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_REQ (sizeof 7)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMinLevel
+  +5: unsigned short nMinMember
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_ACK (sizeof 204)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: long[9] MatchTime
+  +43: GUILD_TOURNAMENT_LIST_DB[31] TournamentTree
+  +198: unsigned long nLastWinnerGuildNo
+  +202: unsigned short nGuildTournamentJoinCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_ACK (sizeof 14)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+  +6: unsigned short nTeamPosition
+  +8: unsigned long nGuildNo
+  +12: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short hWMChar
+  +5: unsigned long nGTNo
+  +9: unsigned short nJoinGuildNum
+  +11: SHINE_GUILD_LIST_NEW[0] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_ACK (sizeof 28)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nAddMoney
+  +8: unsigned long nAddFame
+  +12: unsigned long nAddExp
+  +16: unsigned long nAddToken
+  +20: unsigned __int64 nAddMoneyDivision
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_REQ (sizeof 12)
+  +0: unsigned long nGTNo
+  +4: unsigned long OwnerGuildNum
+  +8: int nItem
+  +12: PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_REQ::ITEM_OPT[0] ItemOpt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_REQ (sizeof 161)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: GUILD_TOURNAMENT_LIST_DB[31] TournamentTree
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_REQ (sizeof 42)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: long[9] MatchTime
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_ACK (sizeof 9)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_REQ (sizeof 11)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: unsigned char nFinalSelectionGuildNum
+  +8: GUILD_TOURNAMENT_LIST_DB[0] FinalSelectionGuild
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMatchType
+  +5: unsigned char nMinLevel
+  +6: unsigned short nMinMemberCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_END_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short nEnterGuildNum
+  +5: GT_EnterList[0] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_GOLD_REFUND_ZONE_CMD (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nEnterGuildNum
+  +3: GT_EnterList[0] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_ACK (sizeof 8)
+  +0: unsigned long nGuildNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned short nError
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_ACK (sizeof 9)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned long nGTNo
+  +7: unsigned short nJoinGuildNum
+  +9: SHINE_GUILD_LIST_NEW[0] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_REQ (sizeof 4)
+  +0: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LAST_WINNER_CMD (sizeof 5)
+  +0: unsigned char bisNewWinnerGuild
+  +1: unsigned long nLastWinnerGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_ACK (sizeof 1014)
+  +0: unsigned short nError
+  +2: long Time_Start
+  +6: long Time_Practic
+  +10: long Time_PracticEnd
+  +14: long Time_Match_161
+  +18: long Time_Match_162
+  +22: long Time_Match_8
+  +26: long Time_Match_4
+  +30: long Time_Match_2
+  +34: long Time_Match_End
+  +38: tm tm_Time_Start
+  +74: tm tm_Time_Practic
+  +110: tm tm_Time_PracticEnd
+  +146: tm tm_Time_Match_161
+  +182: tm tm_Time_Match_162
+  +218: tm tm_Time_Match_8
+  +254: tm tm_Time_Match_4
+  +290: tm tm_Time_Match_2
+  +326: tm tm_Time_Match_End
+  +362: unsigned char nMatchType
+  +363: GUILD_TOURNAMENT_LIST[31] TournamentList
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_TOURNAMENT_NOTIFY_CMD (sizeof 21)
+  +0: [0x4131] Type
+  +4: unsigned char nRanking
+  +5: Name4 sGuildName
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_CMD (sizeof 8)
+  +0: unsigned __int64 nRefundMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_DB_SET_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned long nNo
+
+## PROTO_NC_GUILD_TOURNAMENT_RESULT_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_START_CMD (sizeof 17)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned short nExploerTimeMin
+  +5: unsigned short nWaitPlayTimeSec
+  +7: unsigned short nPlayTimeMin
+  +9: unsigned long nNo1
+  +13: unsigned long nNo2
+
+## PROTO_NC_GUILD_TOURNAMENT_TYPE_CMD (sizeof 1)
+  +0: unsigned char nMatchType
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_ENTER_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_OUT_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nCharNo
+  +8: unsigned long nGTNo
+  +12: unsigned long nGuildNo
+  +16: unsigned char nMinLevel
+  +17: unsigned short nMinMember
+  +19: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_REQ (sizeof 25)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: unsigned long nGTNo
+  +10: unsigned long nGuildNo
+  +14: unsigned char nMinLevel
+  +15: unsigned short nMinMember
+  +17: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_ACK (sizeof 9)
+  +0: unsigned short Error
+  +2: unsigned char nTournamentSeed
+  +3: unsigned long nGuildNo
+  +7: unsigned short nGuildMemberCnt
+  +9: GUILD_TOURNAMENT_MEMBER_GRADE_LIST[0] MemberGradeList
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_REQ (sizeof 5)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_ACK (sizeof 5)
+  +0: unsigned short err
+  +2: unsigned char nTournamentSeed
+  +3: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_REQ (sizeof 3)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_WAR_ABLE_LIST_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfWarInfo
+  +5: SHINE_GUILD_WAR_ABLE_INFO[0] WarInfoList
+
+## PROTO_NC_GUILD_WAR_ABLE_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_WAR_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_COOLDOWN_DONE_CMD (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_WAR_END_CMD (sizeof 34)
+  +0: Name4 EnemyGuildName
+  +16: unsigned long RequestNo
+  +20: unsigned long EnemyGuildFameAdd
+  +24: unsigned long GuildFameAdd
+  +28: unsigned long GuildTotalFame
+  +32: unsigned char WarResult
+  +33: unsigned char WarStatus
+
+## PROTO_NC_GUILD_WAR_LIST_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfWarInfo
+  +5: SHINE_GUILD_WAR_INFO[0] WarInfoList
+
+## PROTO_NC_GUILD_WAR_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_WAR_REQ (sizeof 16)
+  +0: Name4 TargetName
+
+## PROTO_NC_GUILD_WAR_SCORE_CMD (sizeof 116)
+  +0: Name4 GuildName1
+  +16: SHINE_GUILD_SCORE GuildScore1
+  +58: Name4 GuildName2
+  +74: SHINE_GUILD_SCORE GuildScore2
+
+## PROTO_NC_GUILD_WAR_START_CMD (sizeof 60)
+  +0: Name4 WarGuildName
+  +16: unsigned long RequestNo
+  +20: long EndDate
+  +24: tm tm_EndDate
+
+## PROTO_NC_GUILD_WAR_TARGET_CMD (sizeof 234)
+  +0: SHINE_GUILD_WAR_INFO WarInfo
+
+## PROTO_NC_GUILD_WORLD_RENAME_ACK (sizeof 25)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: Name4 sGuildName
+  +23: unsigned short err
+
+## PROTO_NC_GUILD_WORLD_RENAME_CMD (sizeof 22)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: Name4 sGuildName
+
+## PROTO_NC_GUILD_WORLD_RENAME_REQ (sizeof 23)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: Name4 sGuildName
+
+## PROTO_NC_GUILD_WORLD_RETYPE_ACK (sizeof 10)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: unsigned char nType
+  +8: unsigned short err
+
+## PROTO_NC_GUILD_WORLD_RETYPE_CMD (sizeof 7)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char nType
+
+## PROTO_NC_GUILD_WORLD_RETYPE_REQ (sizeof 8)
+  +0: NETPACKETZONEHEADER netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: unsigned char nType
+
+## PROTO_NC_GUILD_WORLD_SET_GUILD_TOKEN_CMD (sizeof 16)
+  +0: unsigned __int64 nDecreaseGuildToken
+  +8: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_WORLD_USE_GUILD_TOKEN_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+  +12: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_ZONE_DELETE_CMD (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_ZONE_LIST_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short NumOfList
+  +3: GUILD_ZONE[0] GuildZoneList
+
+## PROTO_NC_GUILD_ZONE_LIST_REQ (sizeof 1)
+  (no fields)
+
+## PROTO_NC_GUILD_ZONE_MAKE_CMD (sizeof 53)
+  +0: unsigned long nGuildMasterCharNo
+  +4: GUILD_ZONE GuildZone
+
+## PROTO_NC_GUILD_ZONE_MEMBER_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ZONE_MEMBER_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ZONE_USE_GUILD_TOKEN_CMD (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+
+## PROTO_NC_GUILD_ZONE_WAR_END_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+
+## PROTO_NC_GUILD_ZONE_WAR_KILL_CMD (sizeof 4)
+  +0: unsigned short hWMKiller
+  +2: unsigned short hWMTarget
+
+## PROTO_NC_GUILD_ZONE_WAR_START_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+
+## PROTO_NC_GUILD_DB_WAR_REQ (sizeof 22)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nWarEnemy
+  +10: long dWarRequestDate
+  +14: long dWarStartDate
+  +18: long dWarEndDate
+
+## PROTO_NC_GUILD_DELETE_CMD (sizeof 16)
+  +0: [0x1346] Name
+
+## PROTO_NC_GUILD_DISMISS_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_DISMISS_CMD (sizeof 57)
+  +0: [0x1346] Name
+  +16: unsigned char nDismissStatus
+  +17: long dDismissDate
+  +21: [0x136B] tm_dDismissDate
+
+## PROTO_NC_GUILD_DISMISS_REQ (sizeof 28)
+  +0: [0x1346] Name
+  +16: [0x1347] Password
+
+## PROTO_NC_GUILD_EMBLEM_CHECK_AVAILABILITY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_INFO_CMD (sizeof 3)
+  +0: [0x13E4] EmblemInfo
+  +2: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nNumOfEmblem
+  +3: [0x59ED] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_EMBLEM_INFO_NOTICE_CMD (sizeof 6)
+  +0: unsigned long nGuildNo
+  +4: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_LEVELUP_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_EMBLEM_OFF_MSG_CMD (sizeof 2)
+  +0: unsigned char nMonth
+  +1: unsigned char nDay
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_ACK (sizeof 10)
+  +0: unsigned long nCharNo
+  +4: [0x13E4] EmblemInfo
+  +6: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_REQ (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: [0x13E4] EmblemInfo
+  +10: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_REQ (sizeof 2)
+  +0: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_ACK (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_REQ (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_GRADE_ACK (sizeof 3)
+  +0: unsigned char RequestGrade
+  +1: unsigned short Error
+
+## PROTO_NC_GUILD_GRADE_CMD (sizeof 1)
+  +0: unsigned char Grade
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_ACK (sizeof 16)
+  +0: [0x4387] guildwarA
+  +8: [0x4387] guildwarB
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_REQ (sizeof 8)
+  +0: unsigned long guildA
+  +4: unsigned long guildB
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_ACK (sizeof 2)
+  +0: unsigned short warnumber
+  +2: [0x4388] war
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned short TotalHistoryCount
+  +6: unsigned short HistoryCount
+  +8: unsigned short HistoryIndex
+  +10: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_HISTORY_LIST_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned short TotalHistoryCount
+  +4: unsigned short HistoryCount
+  +6: unsigned short HistoryIndex
+  +8: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_INFO_ACK (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_LIST_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short TotalNumOfGuild
+  +5: unsigned short nGuildListCnt
+  +7: [0x433B] GuildList
+
+## PROTO_NC_GUILD_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MAKE_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned long No
+  +6: [0x1346] Name
+  +22: unsigned char Type
+  +23: long dCreateDate
+
+## PROTO_NC_GUILD_MAKE_REQ (sizeof 29)
+  +0: [0x1346] Name
+  +16: [0x1347] Password
+  +28: unsigned char Type
+
+## PROTO_NC_GUILD_MEMBER_CLASS_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char ClassID
+
+## PROTO_NC_GUILD_MEMBER_EXP_RATIO_CMD (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short ExpRatio
+
+## PROTO_NC_GUILD_MEMBER_FLAGS_CMD (sizeof 24)
+  +0: [0x1349] CharID
+  +20: unsigned long Flags
+
+## PROTO_NC_GUILD_MEMBER_GRADE_ACK (sizeof 23)
+  +0: [0x1349] CharID
+  +20: unsigned char MemberGrade
+  +21: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_GRADE_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Grade
+
+## PROTO_NC_GUILD_MEMBER_GRADE_REQ (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char MemberGrade
+
+## PROTO_NC_GUILD_MEMBER_INTRO_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INTRO_CMD (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short nMemberIntroLength
+  +22: [0x138F] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INTRO_REQ (sizeof 2)
+  +0: unsigned short nMemberIntroLength
+  +2: [0x138F] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INVITE_ACK (sizeof 22)
+  +0: [0x1349] ToCharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INVITE_REQ (sizeof 20)
+  +0: [0x1349] ToCharID
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ACK (sizeof 17)
+  +0: [0x1346] GuildName
+  +16: unsigned char JoinAck
+
+## PROTO_NC_GUILD_MEMBER_JOIN_CMD (sizeof 110)
+  +0: [0x13EC] Member
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ERR (sizeof 18)
+  +0: [0x1346] GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_JOIN_REQ (sizeof 36)
+  +0: [0x1346] GuildName
+  +16: [0x1349] FromCharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MEMBER_LEVEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Level
+
+## PROTO_NC_GUILD_MEMBER_LIST_ACK (sizeof 6)
+  +0: unsigned short TotalMemberCount
+  +2: unsigned short MemberIndex
+  +4: unsigned short MemberCount
+  +6: [0x348E] MemberList
+
+## PROTO_NC_GUILD_MEMBER_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MEMBER_LOGOFF_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_LOGON_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_MAP_CMD (sizeof 32)
+  +0: [0x1349] CharID
+  +20: [0x1347] sMap
+
+## PROTO_NC_GUILD_MEMBER_PARTY_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Party
+
+## PROTO_NC_GUILD_MEMBER_VANISH_ACK (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_VANISH_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_VANISH_REQ (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MONEY_ADD_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneyAdd
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_ADD_CMD (sizeof 36)
+  +0: [0x1349] CharID
+  +20: unsigned __int64 GuildMoneyAdd
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MONEY_ADD_REQ (sizeof 8)
+  +0: unsigned __int64 GuildMoneyAdd
+
+## PROTO_NC_GUILD_MONEY_SUB_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneySub
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_SUB_CMD (sizeof 36)
+  +0: [0x1349] CharID
+  +20: unsigned __int64 GuildMoneySub
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_ACK (sizeof 2)
+  +0: unsigned short Error
+  +2: [0x1AEF] GuildInfo
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned __int64 nGuildToken
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_ACK (sizeof 45)
+  +0: unsigned short Error
+  +2: [0x13E2] GTCondInfo
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_NAME_ACK (sizeof 22)
+  +0: unsigned long nNo
+  +4: [0x1346] Name
+  +20: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_NAME_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_NOTIFY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_NOTIFY_CMD (sizeof 62)
+  +0: long dNotifyDate
+  +4: [0x136B] tm_dNotifyDate
+  +40: [0x1349] sNotifyCharID
+  +60: unsigned short nNotifyLength
+  +62: [0x138F] sNotify
+
+## PROTO_NC_GUILD_NOTIFY_REQ (sizeof 2)
+  +0: unsigned short nNotifyLength
+  +2: [0x138F] sNotify
+
+## PROTO_NC_GUILD_RENAME_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x59BB] cmd
+
+## PROTO_NC_GUILD_RENAME_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_RETYPE_CMD (sizeof 5)
+  +0: unsigned long nGuildNo
+  +4: unsigned char nType
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_ACK (sizeof 9)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned short err
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_REQ (sizeof 6)
+  +0: [0x14EF] netpacketzoneheader
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nFSGuildNum
+  +7: [0x1C40] nFSGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_REQ (sizeof 7)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMinLevel
+  +5: unsigned short nMinMember
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_ACK (sizeof 204)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: [0x421D] MatchTime
+  +43: [0x4206] TournamentTree
+  +198: unsigned long nLastWinnerGuildNo
+  +202: unsigned short nGuildTournamentJoinCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_ACK (sizeof 14)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+  +6: unsigned short nTeamPosition
+  +8: unsigned long nGuildNo
+  +12: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short hWMChar
+  +5: unsigned long nGTNo
+  +9: unsigned short nJoinGuildNum
+  +11: [0x433B] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_ACK (sizeof 28)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nAddMoney
+  +8: unsigned long nAddFame
+  +12: unsigned long nAddExp
+  +16: unsigned long nAddToken
+  +20: unsigned __int64 nAddMoneyDivision
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_REQ (sizeof 12)
+  +0: unsigned long nGTNo
+  +4: unsigned long OwnerGuildNum
+  +8: int nItem
+  +12: [0x4249] ItemOpt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_REQ (sizeof 161)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: [0x4206] TournamentTree
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_REQ (sizeof 42)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: [0x421D] MatchTime
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_ACK (sizeof 9)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_REQ (sizeof 11)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: unsigned char nFinalSelectionGuildNum
+  +8: [0x1CA5] FinalSelectionGuild
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMatchType
+  +5: unsigned char nMinLevel
+  +6: unsigned short nMinMemberCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_END_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short nEnterGuildNum
+  +5: [0x4325] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_GOLD_REFUND_ZONE_CMD (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nEnterGuildNum
+  +3: [0x4325] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_ACK (sizeof 8)
+  +0: unsigned long nGuildNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned short nError
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_ACK (sizeof 9)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned long nGTNo
+  +7: unsigned short nJoinGuildNum
+  +9: [0x433B] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_REQ (sizeof 4)
+  +0: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LAST_WINNER_CMD (sizeof 5)
+  +0: unsigned char bisNewWinnerGuild
+  +1: unsigned long nLastWinnerGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_ACK (sizeof 1014)
+  +0: unsigned short nError
+  +2: long Time_Start
+  +6: long Time_Practic
+  +10: long Time_PracticEnd
+  +14: long Time_Match_161
+  +18: long Time_Match_162
+  +22: long Time_Match_8
+  +26: long Time_Match_4
+  +30: long Time_Match_2
+  +34: long Time_Match_End
+  +38: [0x136B] tm_Time_Start
+  +74: [0x136B] tm_Time_Practic
+  +110: [0x136B] tm_Time_PracticEnd
+  +146: [0x136B] tm_Time_Match_161
+  +182: [0x136B] tm_Time_Match_162
+  +218: [0x136B] tm_Time_Match_8
+  +254: [0x136B] tm_Time_Match_4
+  +290: [0x136B] tm_Time_Match_2
+  +326: [0x136B] tm_Time_Match_End
+  +362: unsigned char nMatchType
+  +363: [0x15F8] TournamentList
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_TOURNAMENT_NOTIFY_CMD (sizeof 21)
+  +0: [0x4131] Type
+  +4: unsigned char nRanking
+  +5: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_CMD (sizeof 8)
+  +0: unsigned __int64 nRefundMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_DB_SET_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned long nNo
+
+## PROTO_NC_GUILD_TOURNAMENT_RESULT_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_START_CMD (sizeof 17)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned short nExploerTimeMin
+  +5: unsigned short nWaitPlayTimeSec
+  +7: unsigned short nPlayTimeMin
+  +9: unsigned long nNo1
+  +13: unsigned long nNo2
+
+## PROTO_NC_GUILD_TOURNAMENT_TYPE_CMD (sizeof 1)
+  +0: unsigned char nMatchType
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_ENTER_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_OUT_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nCharNo
+  +8: unsigned long nGTNo
+  +12: unsigned long nGuildNo
+  +16: unsigned char nMinLevel
+  +17: unsigned short nMinMember
+  +19: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_REQ (sizeof 25)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: unsigned long nGTNo
+  +10: unsigned long nGuildNo
+  +14: unsigned char nMinLevel
+  +15: unsigned short nMinMember
+  +17: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_ACK (sizeof 9)
+  +0: unsigned short Error
+## PROTO_NC_GUILD_CHAT_ACK (sizeof 2)
+  +2: unsigned char nTournamentSeed
+  +0: unsigned short error
+
+  +3: unsigned long nGuildNo
+  +7: unsigned short nGuildMemberCnt
+  +9: [0x4272] MemberGradeList
+
+## PROTO_NC_GUILD_CHAT_CMD (sizeof 26)
+  +0: unsigned long nGuildNo
+  +4: [0x1349] talker
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_REQ (sizeof 5)
+  +24: [0x1C11] chat
+
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_CHAT_REQ (sizeof 2)
+  +0: unsigned char itemLinkDataCount
+  +1: unsigned char len
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_ACK (sizeof 5)
+  +2: [0x14E0] content
+
+  +0: unsigned short err
+  +2: unsigned char nTournamentSeed
+  +3: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_DB_ACK (sizeof 1091)
+  +0: unsigned short hWMChar
+  +2: unsigned short Error
+  +4: [0x13E0] GuildClient
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_REQ (sizeof 3)
+  +0: unsigned char nTournamentSeed
+  +1071: [0x145A] GuildServer
+
+  +1: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_DB_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+## PROTO_NC_GUILD_WAR_ABLE_LIST_ACK (sizeof 5)
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuild
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +5: [0x15B5] GuildDB
+
+  +3: unsigned short NumOfWarInfo
+  +5: [0x42FD] WarInfoList
+
+## PROTO_NC_GUILD_DB_ALL_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_WAR_ABLE_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_DB_DELETE_ACK (sizeof 6)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_DB_DELETE_CANCEL_ACK (sizeof 8)
+  +0: unsigned short nError
+  +2: unsigned long nNo
+  +6: unsigned short hTool
+
+## PROTO_NC_GUILD_WAR_COOLDOWN_DONE_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_DB_DELETE_CANCEL_REQ (sizeof 6)
+  +0: unsigned long nNo
+  +4: unsigned short hTool
+
+## PROTO_NC_GUILD_WAR_END_CMD (sizeof 34)
+  +0: [0x1346] EnemyGuildName
+  +16: unsigned long RequestNo
+  +20: unsigned long EnemyGuildFameAdd
+  +24: unsigned long GuildFameAdd
+  +28: unsigned long GuildTotalFame
+  +32: unsigned char WarResult
+  +33: unsigned char WarStatus
+
+## PROTO_NC_GUILD_DB_DELETE_REQ (sizeof 20)
+  +0: unsigned long nNo
+  +4: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_WAR_LIST_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfWarInfo
+## PROTO_NC_GUILD_DB_DISMISS_ACK (sizeof 13)
+  +5: [0x1A0B] WarInfoList
+
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned char nDismissStatus
+  +7: long dDismissDate
+  +11: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_DB_DISMISS_REQ (sizeof 11)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned char nDismissStatus
+  +7: long dDismissDate
+
+## PROTO_NC_GUILD_WAR_REQ (sizeof 16)
+  +0: [0x1346] TargetName
+
+## PROTO_NC_GUILD_DB_INTRO_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_SCORE_CMD (sizeof 116)
+  +0: [0x1346] GuildName1
+  +16: [0x1695] GuildScore1
+  +58: [0x1346] GuildName2
+  +74: [0x1695] GuildScore2
+
+## PROTO_NC_GUILD_DB_MAKE_ACK (sizeof 45)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: [0x1C7B] Make
+  +35: long dCreateDate
+  +39: unsigned long nNo
+  +43: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_START_CMD (sizeof 60)
+  +0: [0x1346] WarGuildName
+  +16: unsigned long RequestNo
+  +20: long EndDate
+  +24: [0x136B] tm_EndDate
+
+## PROTO_NC_GUILD_DB_MAKE_REQ (sizeof 55)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: [0x1349] sCharID
+  +26: [0x1C7B] Make
+
+## PROTO_NC_GUILD_WAR_TARGET_CMD (sizeof 234)
+  +0: [0x1617] WarInfo
+
+## PROTO_NC_GUILD_DB_MEMBER_ACK (sizeof 9)
+  +0: unsigned long nNo
+  +4: unsigned short Error
+  +6: unsigned char PartMask
+  +7: unsigned short NumOfMember
+## PROTO_NC_GUILD_WORLD_RENAME_ACK (sizeof 25)
+  +9: [0x172E] MemberList
+
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: [0x1346] sGuildName
+  +23: unsigned short err
+
+## PROTO_NC_GUILD_DB_MEMBER_GRADE_ACK (sizeof 37)
+  +0: unsigned short hWMChar
+  +2: [0x1349] sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+## PROTO_NC_GUILD_WORLD_RENAME_CMD (sizeof 22)
+  +30: unsigned char MemberGrade
+  +0: [0x14EF] netpacketzoneheader
+  +31: unsigned short Error
+  +6: [0x1346] sGuildName
+
+  +33: unsigned long nSetCharNo
+
+## PROTO_NC_GUILD_DB_MEMBER_GRADE_REQ (sizeof 36)
+## PROTO_NC_GUILD_WORLD_RENAME_REQ (sizeof 23)
+  +0: unsigned short hWMChar
+  +0: [0x14EF] netpacketzoneheader
+  +2: [0x1349] sCharID
+  +6: unsigned char nItemSlot
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +7: [0x1346] sGuildName
+
+  +30: unsigned char MemberGrade
+  +31: unsigned long nSetCharNo
+  +35: unsigned char MemberGrade_Old
+
+## PROTO_NC_GUILD_WORLD_RETYPE_ACK (sizeof 10)
+  +0: [0x14EF] netpacketzoneheader
+## PROTO_NC_GUILD_DB_MEMBER_INTRO_ACK (sizeof 12)
+  +6: unsigned char nItemSlot
+  +0: unsigned short hWMChar
+  +7: unsigned char nType
+  +2: unsigned long nNo
+  +8: unsigned short err
+
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_WORLD_RETYPE_CMD (sizeof 7)
+## PROTO_NC_GUILD_DB_MEMBER_JOIN_ACK (sizeof 13)
+  +0: [0x14EF] netpacketzoneheader
+  +0: unsigned short hWMChar
+  +6: unsigned char nType
+
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned char nGrade
+  +11: unsigned short Error
+
+## PROTO_NC_GUILD_WORLD_RETYPE_REQ (sizeof 8)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+## PROTO_NC_GUILD_DB_MEMBER_JOIN_REQ (sizeof 31)
+  +7: unsigned char nType
+
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: [0x1349] sCharID
+  +30: unsigned char nGrade
+
+## PROTO_NC_GUILD_WORLD_SET_GUILD_TOKEN_CMD (sizeof 16)
+  +0: unsigned __int64 nDecreaseGuildToken
+  +8: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_DB_MEMBER_LEAVE_ACK (sizeof 12)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned short Error
+
+## PROTO_NC_GUILD_WORLD_USE_GUILD_TOKEN_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+  +12: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_DB_MEMBER_LEAVE_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: [0x1349] sCharID
+
+## PROTO_NC_GUILD_ZONE_DELETE_CMD (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_DB_MEMBER_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_ZONE_LIST_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short NumOfList
+  +3: [0x42E3] GuildZoneList
+
+## PROTO_NC_GUILD_DB_MEMBER_VANISH_ACK (sizeof 32)
+  +0: unsigned short hWMChar
+  +2: [0x1349] sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+  +30: unsigned short Error
+
+## PROTO_NC_GUILD_ZONE_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_DB_MEMBER_VANISH_REQ (sizeof 30)
+  +0: unsigned short hWMChar
+  +2: [0x1349] sCharID
+  +22: unsigned long nNo
+  +26: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ZONE_MAKE_CMD (sizeof 53)
+  +0: unsigned long nGuildMasterCharNo
+  +4: [0x16D7] GuildZone
+
+## PROTO_NC_GUILD_DB_MONEY_ADD_ACK (sizeof 36)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned __int64 nMoneyAdd
+## PROTO_NC_GUILD_ZONE_MEMBER_JOIN_CMD (sizeof 8)
+  +18: unsigned __int64 nMemberMoney
+  +0: unsigned long nNo
+  +26: unsigned __int64 nTotalMoney
+  +4: unsigned long nCharNo
+
+  +34: unsigned short Error
+
+## PROTO_NC_GUILD_DB_MONEY_SUB_ACK (sizeof 36)
+## PROTO_NC_GUILD_ZONE_MEMBER_LEAVE_CMD (sizeof 4)
+  +0: unsigned short hWMChar
+  +0: unsigned long nCharNo
+
+  +2: unsigned long nNo
+  +6: unsigned long nCharNo
+  +10: unsigned __int64 nMoneySub
+  +18: unsigned __int64 nMemberMoney
+  +26: unsigned __int64 nTotalMoney
+  +34: unsigned short Error
+
+## PROTO_NC_GUILD_ZONE_USE_GUILD_TOKEN_CMD (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+
+## PROTO_NC_GUILD_DB_NOTIFY_ACK (sizeof 34)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nNo
+  +8: long dNotifyDate
+  +12: [0x1349] sNotifyCharID
+  +32: unsigned short nNotifyLength
+  +34: [0x138F] sNotify
+
+## PROTO_NC_GUILD_ZONE_WAR_END_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+
+## PROTO_NC_GUILD_DB_NOTIFY_REQ (sizeof 28)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: [0x1349] sNotifyCharID
+## PROTO_NC_GUILD_ZONE_WAR_KILL_CMD (sizeof 4)
+  +26: unsigned short nNotifyLength
+  +0: unsigned short hWMKiller
+  +28: [0x138F] sNotify
+
+  +2: unsigned short hWMTarget
+
+## PROTO_NC_GUILD_DB_RENAME_ACK (sizeof 24)
+  +0: unsigned short hWMChar
+## PROTO_NC_GUILD_ZONE_WAR_START_CMD (sizeof 8)
+  +2: unsigned long nGuildNo
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+  +6: [0x1346] sGuildName
+
+  +22: unsigned short err
+
+## PROTO_NC_GUILD_DB_RENAME_REQ (sizeof 22)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_DB_RESULT_WRITE_CMD (sizeof 40)
+  +0: [0x1CC5] Guild1
+  +20: [0x1CC5] Guild2
+
+## PROTO_NC_GUILD_DB_RETYPE_ACK (sizeof 9)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char nType
+  +7: unsigned short err
+
+## PROTO_NC_GUILD_DB_RETYPE_REQ (sizeof 7)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+  +6: unsigned char nType
+
+## PROTO_NC_GUILD_DB_TOKEN_ALL_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfGuild
+  +5: [0x1614] GuildTokenDB
+
+## PROTO_NC_GUILD_DB_TOKEN_ALL_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_DB_WAR_ACK (sizeof 24)
+  +0: unsigned short Error
+  +2: [0x1D1A] WarReq
+
+## PROTO_NC_GUILD_DB_WAR_REQ (sizeof 22)
+  +0: unsigned short hWMChar
+  +2: unsigned long nNo
+  +6: unsigned long nWarEnemy
+  +10: long dWarRequestDate
+  +14: long dWarStartDate
+  +18: long dWarEndDate
+
+## PROTO_NC_GUILD_DELETE_CMD (sizeof 16)
+  +0: [0x1346] Name
+
+## PROTO_NC_GUILD_DISMISS_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_DISMISS_CMD (sizeof 57)
+  +0: [0x1346] Name
+  +16: unsigned char nDismissStatus
+  +17: long dDismissDate
+  +21: [0x136B] tm_dDismissDate
+
+## PROTO_NC_GUILD_DISMISS_REQ (sizeof 28)
+  +0: [0x1346] Name
+  +16: [0x1347] Password
+
+## PROTO_NC_GUILD_EMBLEM_CHECK_AVAILABILITY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_INFO_CMD (sizeof 3)
+  +0: [0x13E4] EmblemInfo
+  +2: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nNumOfEmblem
+  +3: [0x59ED] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_INFO_DB_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_EMBLEM_INFO_NOTICE_CMD (sizeof 6)
+  +0: unsigned long nGuildNo
+  +4: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_LEVELUP_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_EMBLEM_OFF_MSG_CMD (sizeof 2)
+  +0: unsigned char nMonth
+  +1: unsigned char nDay
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_ACK (sizeof 10)
+  +0: unsigned long nCharNo
+  +4: [0x13E4] EmblemInfo
+  +6: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_DB_REQ (sizeof 14)
+  +0: unsigned long nCharNo
+  +4: unsigned long nGuildNo
+  +8: [0x13E4] EmblemInfo
+  +10: long EmblemCreateDate
+
+## PROTO_NC_GUILD_EMBLEM_SAVE_REQ (sizeof 2)
+  +0: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_ACK (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_EMBLEM_STATE_DB_REQ (sizeof 9)
+  +0: unsigned long nGuildNo
+  +4: long EmblemDeleteDate
+  +8: unsigned char EmblemState
+
+## PROTO_NC_GUILD_GRADE_ACK (sizeof 3)
+  +0: unsigned char RequestGrade
+  +1: unsigned short Error
+
+## PROTO_NC_GUILD_GRADE_CMD (sizeof 1)
+  +0: unsigned char Grade
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_ACK (sizeof 16)
+  +0: [0x4387] guildwarA
+  +8: [0x4387] guildwarB
+
+## PROTO_NC_GUILD_GUILDWARCONFIRM_REQ (sizeof 8)
+  +0: unsigned long guildA
+  +4: unsigned long guildB
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_ACK (sizeof 2)
+  +0: unsigned short warnumber
+  +2: [0x4388] war
+
+## PROTO_NC_GUILD_GUILDWARSTATUS_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned short TotalHistoryCount
+  +6: unsigned short HistoryCount
+  +8: unsigned short HistoryIndex
+  +10: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_HISTORY_DB_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_HISTORY_LIST_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned short TotalHistoryCount
+  +4: unsigned short HistoryCount
+  +6: unsigned short HistoryIndex
+  +8: [0x1543] HistoryList
+
+## PROTO_NC_GUILD_INFO_ACK (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_LIST_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short TotalNumOfGuild
+  +5: unsigned short nGuildListCnt
+  +7: [0x433B] GuildList
+
+## PROTO_NC_GUILD_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MAKE_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned long No
+  +6: [0x1346] Name
+  +22: unsigned char Type
+  +23: long dCreateDate
+
+## PROTO_NC_GUILD_MAKE_REQ (sizeof 29)
+  +0: [0x1346] Name
+  +16: [0x1347] Password
+  +28: unsigned char Type
+
+## PROTO_NC_GUILD_MEMBER_CLASS_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char ClassID
+
+## PROTO_NC_GUILD_MEMBER_EXP_RATIO_CMD (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short ExpRatio
+
+## PROTO_NC_GUILD_MEMBER_FLAGS_CMD (sizeof 24)
+  +0: [0x1349] CharID
+  +20: unsigned long Flags
+
+## PROTO_NC_GUILD_MEMBER_GRADE_ACK (sizeof 23)
+  +0: [0x1349] CharID
+  +20: unsigned char MemberGrade
+  +21: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_GRADE_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Grade
+
+## PROTO_NC_GUILD_MEMBER_GRADE_REQ (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char MemberGrade
+
+## PROTO_NC_GUILD_MEMBER_INTRO_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INTRO_CMD (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short nMemberIntroLength
+  +22: [0x138F] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INTRO_REQ (sizeof 2)
+  +0: unsigned short nMemberIntroLength
+  +2: [0x138F] sMemberIntro
+
+## PROTO_NC_GUILD_MEMBER_INVITE_ACK (sizeof 22)
+  +0: [0x1349] ToCharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_INVITE_REQ (sizeof 20)
+  +0: [0x1349] ToCharID
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ACK (sizeof 17)
+  +0: [0x1346] GuildName
+  +16: unsigned char JoinAck
+
+## PROTO_NC_GUILD_MEMBER_JOIN_CMD (sizeof 110)
+  +0: [0x13EC] Member
+
+## PROTO_NC_GUILD_MEMBER_JOIN_ERR (sizeof 18)
+  +0: [0x1346] GuildName
+  +16: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_JOIN_REQ (sizeof 36)
+  +0: [0x1346] GuildName
+  +16: [0x1349] FromCharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_LEAVE_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MEMBER_LEVEL_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Level
+
+## PROTO_NC_GUILD_MEMBER_LIST_ACK (sizeof 6)
+  +0: unsigned short TotalMemberCount
+  +2: unsigned short MemberIndex
+  +4: unsigned short MemberCount
+  +6: [0x348E] MemberList
+
+## PROTO_NC_GUILD_MEMBER_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MEMBER_LOGOFF_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_LOGON_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_MAP_CMD (sizeof 32)
+  +0: [0x1349] CharID
+  +20: [0x1347] sMap
+
+## PROTO_NC_GUILD_MEMBER_PARTY_CMD (sizeof 21)
+  +0: [0x1349] CharID
+  +20: unsigned char Party
+
+## PROTO_NC_GUILD_MEMBER_VANISH_ACK (sizeof 22)
+  +0: [0x1349] CharID
+  +20: unsigned short Error
+
+## PROTO_NC_GUILD_MEMBER_VANISH_CMD (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MEMBER_VANISH_REQ (sizeof 20)
+  +0: [0x1349] CharID
+
+## PROTO_NC_GUILD_MONEY_ADD_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneyAdd
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_ADD_CMD (sizeof 36)
+  +0: [0x1349] CharID
+  +20: unsigned __int64 GuildMoneyAdd
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MONEY_ADD_REQ (sizeof 8)
+  +0: unsigned __int64 GuildMoneyAdd
+
+## PROTO_NC_GUILD_MONEY_SUB_ACK (sizeof 10)
+  +0: unsigned __int64 GuildMoneySub
+  +8: unsigned short Error
+
+## PROTO_NC_GUILD_MONEY_SUB_CMD (sizeof 36)
+  +0: [0x1349] CharID
+  +20: unsigned __int64 GuildMoneySub
+  +28: unsigned __int64 GuildTotalMoney
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_ACK (sizeof 2)
+  +0: unsigned short Error
+  +2: [0x1AEF] GuildInfo
+
+## PROTO_NC_GUILD_MY_GUILD_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_ACK (sizeof 10)
+  +0: unsigned short Error
+  +2: unsigned __int64 nGuildToken
+
+## PROTO_NC_GUILD_MY_GUILD_TOKEN_INFO_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_ACK (sizeof 45)
+  +0: unsigned short Error
+  +2: [0x13E2] GTCondInfo
+
+## PROTO_NC_GUILD_MY_GUILD_TOURNAMENT_MATCH_TIME_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_NAME_ACK (sizeof 22)
+  +0: unsigned long nNo
+  +4: [0x1346] Name
+  +20: [0x13E4] EmblemInfo
+
+## PROTO_NC_GUILD_NAME_REQ (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_NOTIFY_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_NOTIFY_CMD (sizeof 62)
+  +0: long dNotifyDate
+  +4: [0x136B] tm_dNotifyDate
+  +40: [0x1349] sNotifyCharID
+  +60: unsigned short nNotifyLength
+  +62: [0x138F] sNotify
+
+## PROTO_NC_GUILD_NOTIFY_REQ (sizeof 2)
+  +0: unsigned short nNotifyLength
+  +2: [0x138F] sNotify
+
+## PROTO_NC_GUILD_RENAME_CMD_SEND (sizeof 23)
+  +0: unsigned char size
+  +1: [0x20ED] netcmd
+  +3: [0x59BB] cmd
+
+## PROTO_NC_GUILD_RENAME_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_RETYPE_CMD (sizeof 5)
+  +0: unsigned long nGuildNo
+  +4: unsigned char nType
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_ACK (sizeof 9)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned short err
+  +8: unsigned char Grade
+
+## PROTO_NC_GUILD_STORAGE_WITHDRAW_GRADE_REQ (sizeof 6)
+  +0: [0x14EF] netpacketzoneheader
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_ACK (sizeof 7)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nFSGuildNum
+  +7: [0x1C40] nFSGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_FINAL_SELECTION_REQ (sizeof 7)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMinLevel
+  +5: unsigned short nMinMember
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_ACK (sizeof 204)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: [0x421D] MatchTime
+  +43: [0x4206] TournamentTree
+  +198: unsigned long nLastWinnerGuildNo
+  +202: unsigned short nGuildTournamentJoinCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_ACK (sizeof 14)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+  +6: unsigned short nTeamPosition
+  +8: unsigned long nGuildNo
+  +12: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_ACK (sizeof 11)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short hWMChar
+  +5: unsigned long nGTNo
+  +9: unsigned short nJoinGuildNum
+  +11: [0x433B] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_JOIN_LIST_REQ (sizeof 6)
+  +0: unsigned short hWMChar
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_ACK (sizeof 28)
+  +0: unsigned long nGuildNo
+  +4: unsigned long nAddMoney
+  +8: unsigned long nAddFame
+  +12: unsigned long nAddExp
+  +16: unsigned long nAddToken
+  +20: unsigned __int64 nAddMoneyDivision
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_REWARD_CREATE_REQ (sizeof 12)
+  +0: unsigned long nGTNo
+  +4: unsigned long OwnerGuildNum
+  +8: int nItem
+  +12: [0x4249] ItemOpt
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_REQ (sizeof 161)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: [0x4206] TournamentTree
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_ACK (sizeof 6)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_MATCH_TIME_REQ (sizeof 42)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: [0x421D] MatchTime
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_ACK (sizeof 9)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned short Error
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_RESULT_REQ (sizeof 11)
+  +0: unsigned long nGTNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned char nResult
+  +7: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_ACK (sizeof 8)
+  +0: unsigned short Error
+  +2: unsigned long nGTNo
+  +6: unsigned char nMatchType
+  +7: unsigned char nFinalSelectionGuildNum
+  +8: [0x1CA5] FinalSelectionGuild
+
+## PROTO_NC_GUILD_TOURNAMENT_DB_SET_TYPE_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned char nMatchType
+  +5: unsigned char nMinLevel
+  +6: unsigned short nMinMemberCnt
+
+## PROTO_NC_GUILD_TOURNAMENT_END_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short nEnterGuildNum
+  +5: [0x4325] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_ENTER_LIST_DB_GET_REQ (sizeof 4)
+  +0: unsigned long nGTNo
+
+## PROTO_NC_GUILD_TOURNAMENT_GOLD_REFUND_ZONE_CMD (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short nEnterGuildNum
+  +3: [0x4325] EnterGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_ACK (sizeof 8)
+  +0: unsigned long nGuildNo
+  +4: unsigned short nTeamPosition
+  +6: unsigned short nError
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_ACK (sizeof 9)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned long nGTNo
+  +7: unsigned short nJoinGuildNum
+  +9: [0x433B] JoinGuildList
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_TOURNAMENT_JOIN_REQ (sizeof 4)
+  +0: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LAST_WINNER_CMD (sizeof 5)
+  +0: unsigned char bisNewWinnerGuild
+  +1: unsigned long nLastWinnerGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_ACK (sizeof 1014)
+  +0: unsigned short nError
+  +2: long Time_Start
+  +6: long Time_Practic
+  +10: long Time_PracticEnd
+  +14: long Time_Match_161
+  +18: long Time_Match_162
+  +22: long Time_Match_8
+  +26: long Time_Match_4
+  +30: long Time_Match_2
+  +34: long Time_Match_End
+  +38: [0x136B] tm_Time_Start
+  +74: [0x136B] tm_Time_Practic
+  +110: [0x136B] tm_Time_PracticEnd
+  +146: [0x136B] tm_Time_Match_161
+  +182: [0x136B] tm_Time_Match_162
+  +218: [0x136B] tm_Time_Match_8
+  +254: [0x136B] tm_Time_Match_4
+  +290: [0x136B] tm_Time_Match_2
+  +326: [0x136B] tm_Time_Match_End
+  +362: unsigned char nMatchType
+  +363: [0x15F8] TournamentList
+
+## PROTO_NC_GUILD_TOURNAMENT_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_TOURNAMENT_NOTIFY_CMD (sizeof 21)
+  +0: [0x4131] Type
+  +4: unsigned char nRanking
+  +5: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_CMD (sizeof 8)
+  +0: unsigned __int64 nRefundMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_REFUND_NOTICE_DB_SET_REQ (sizeof 8)
+  +0: unsigned long nGTNo
+  +4: unsigned long nNo
+
+## PROTO_NC_GUILD_TOURNAMENT_RESULT_CMD (sizeof 12)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned char nStatus
+  +4: unsigned long nWinnerGuildNo
+  +8: unsigned long nLoseGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_START_CMD (sizeof 17)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nTournamentMapNo
+  +3: unsigned short nExploerTimeMin
+  +5: unsigned short nWaitPlayTimeSec
+  +7: unsigned short nPlayTimeMin
+  +9: unsigned long nNo1
+  +13: unsigned long nNo2
+
+## PROTO_NC_GUILD_TOURNAMENT_TYPE_CMD (sizeof 1)
+  +0: unsigned char nMatchType
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_ENTER_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_FIGHTER_OUT_CMD (sizeof 9)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+  +5: unsigned long nCharNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_ACK (sizeof 27)
+  +0: unsigned short Error
+  +2: unsigned short hWMChar
+  +4: unsigned long nCharNo
+  +8: unsigned long nGTNo
+  +12: unsigned long nGuildNo
+  +16: unsigned char nMinLevel
+  +17: unsigned short nMinMember
+  +19: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_JOIN_NEW_REQ (sizeof 25)
+  +0: unsigned short hWMChar
+  +2: unsigned long nCharNo
+  +6: unsigned long nGTNo
+  +10: unsigned long nGuildNo
+  +14: unsigned char nMinLevel
+  +15: unsigned short nMinMember
+  +17: unsigned __int64 nProposalMoney
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_ACK (sizeof 9)
+  +0: unsigned short Error
+  +2: unsigned char nTournamentSeed
+  +3: unsigned long nGuildNo
+  +7: unsigned short nGuildMemberCnt
+  +9: [0x4272] MemberGradeList
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_MEMBERGRADE_REQ (sizeof 5)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned long nGuildNo
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_ACK (sizeof 5)
+  +0: unsigned short err
+  +2: unsigned char nTournamentSeed
+  +3: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_TOURNAMENT_ZONE_OBSERVER_ENTER_REQ (sizeof 3)
+  +0: unsigned char nTournamentSeed
+  +1: unsigned short nPlayerHnd
+
+## PROTO_NC_GUILD_WAR_ABLE_LIST_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfWarInfo
+  +5: [0x42FD] WarInfoList
+
+## PROTO_NC_GUILD_WAR_ABLE_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_WAR_ACK (sizeof 2)
+  +0: unsigned short Error
+
+## PROTO_NC_GUILD_WAR_COOLDOWN_DONE_CMD (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_WAR_END_CMD (sizeof 34)
+  +0: [0x1346] EnemyGuildName
+  +16: unsigned long RequestNo
+  +20: unsigned long EnemyGuildFameAdd
+  +24: unsigned long GuildFameAdd
+  +28: unsigned long GuildTotalFame
+  +32: unsigned char WarResult
+  +33: unsigned char WarStatus
+
+## PROTO_NC_GUILD_WAR_LIST_ACK (sizeof 5)
+  +0: unsigned short Error
+  +2: unsigned char PartMask
+  +3: unsigned short NumOfWarInfo
+  +5: [0x1A0B] WarInfoList
+
+## PROTO_NC_GUILD_WAR_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_WAR_REQ (sizeof 16)
+  +0: [0x1346] TargetName
+
+## PROTO_NC_GUILD_WAR_SCORE_CMD (sizeof 116)
+  +0: [0x1346] GuildName1
+  +16: [0x1695] GuildScore1
+  +58: [0x1346] GuildName2
+  +74: [0x1695] GuildScore2
+
+## PROTO_NC_GUILD_WAR_START_CMD (sizeof 60)
+  +0: [0x1346] WarGuildName
+  +16: unsigned long RequestNo
+  +20: long EndDate
+  +24: [0x136B] tm_EndDate
+
+## PROTO_NC_GUILD_WAR_TARGET_CMD (sizeof 234)
+  +0: [0x1617] WarInfo
+
+## PROTO_NC_GUILD_WORLD_RENAME_ACK (sizeof 25)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: [0x1346] sGuildName
+  +23: unsigned short err
+
+## PROTO_NC_GUILD_WORLD_RENAME_CMD (sizeof 22)
+  +0: [0x14EF] netpacketzoneheader
+  +6: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_WORLD_RENAME_REQ (sizeof 23)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: [0x1346] sGuildName
+
+## PROTO_NC_GUILD_WORLD_RETYPE_ACK (sizeof 10)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: unsigned char nType
+  +8: unsigned short err
+
+## PROTO_NC_GUILD_WORLD_RETYPE_CMD (sizeof 7)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nType
+
+## PROTO_NC_GUILD_WORLD_RETYPE_REQ (sizeof 8)
+  +0: [0x14EF] netpacketzoneheader
+  +6: unsigned char nItemSlot
+  +7: unsigned char nType
+
+## PROTO_NC_GUILD_WORLD_SET_GUILD_TOKEN_CMD (sizeof 16)
+  +0: unsigned __int64 nDecreaseGuildToken
+  +8: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_WORLD_USE_GUILD_TOKEN_CMD (sizeof 20)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+  +12: unsigned __int64 nRestGuildToken
+
+## PROTO_NC_GUILD_ZONE_DELETE_CMD (sizeof 4)
+  +0: unsigned long nNo
+
+## PROTO_NC_GUILD_ZONE_LIST_ACK (sizeof 3)
+  +0: unsigned char PartMask
+  +1: unsigned short NumOfList
+  +3: [0x42E3] GuildZoneList
+
+## PROTO_NC_GUILD_ZONE_LIST_REQ (sizeof 1)
+  (no fields - empty struct or complex type)
+
+## PROTO_NC_GUILD_ZONE_MAKE_CMD (sizeof 53)
+  +0: unsigned long nGuildMasterCharNo
+  +4: [0x16D7] GuildZone
+
+## PROTO_NC_GUILD_ZONE_MEMBER_JOIN_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ZONE_MEMBER_LEAVE_CMD (sizeof 4)
+  +0: unsigned long nCharNo
+
+## PROTO_NC_GUILD_ZONE_USE_GUILD_TOKEN_CMD (sizeof 12)
+  +0: unsigned long nGuildNo
+  +4: unsigned __int64 nDecreaseGuildToken
+
+## PROTO_NC_GUILD_ZONE_WAR_END_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+
+## PROTO_NC_GUILD_ZONE_WAR_KILL_CMD (sizeof 4)
+  +0: unsigned short hWMKiller
+  +2: unsigned short hWMTarget
+
+## PROTO_NC_GUILD_ZONE_WAR_START_CMD (sizeof 8)
+  +0: unsigned long nNo
+  +4: unsigned long nEnemyNo
+

@@ -117,6 +117,22 @@ public class ConnectionManager : BackgroundService
             _status[name] = state;
     }
 
+    public ServerConnection? GetConnection(int serverType)
+    {
+        lock (_connections)
+            return _connections.FirstOrDefault(c =>
+                c.State == ConnectionState.Connected &&
+                c.Endpoint.ServerType == serverType);
+    }
+
+    public List<ServerConnection> GetConnections(int serverType)
+    {
+        lock (_connections)
+            return _connections
+                .Where(c => c.State == ConnectionState.Connected && c.Endpoint.ServerType == serverType)
+                .ToList();
+    }
+
     public override void Dispose()
     {
         lock (_connections)

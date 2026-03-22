@@ -33,6 +33,9 @@ public class ServerConnection : IDisposable
     private Task? _receiveTask;
     private bool _disposed;
 
+    private readonly SemaphoreSlim _sendLock = new(1, 1);
+    private readonly Dictionary<ushort, TaskCompletionSource<FiestaPacket>> _pending = new();
+
     public ConnectionState State { get; private set; } = ConnectionState.Disconnected;
     public ServerInfoEntry Endpoint => _endpoint;
 
@@ -137,6 +140,11 @@ public class ServerConnection : IDisposable
                 {
                     _logger.LogTrace("[{Name}] Heartbeat ACK received", _endpoint.Name);
                 }
+                else if (TryCompletePending(packet))
+                {
+                    _logger.LogDebug("[{Name}] Completed pending request for 0x{Opcode:X4}",
+                        _endpoint.Name, packet.Opcode);
+                }
                 else
                 {
                     _logger.LogDebug("[{Name}] Received opcode 0x{Opcode:X4} ({Len} bytes payload)",
@@ -163,7 +171,41 @@ public class ServerConnection : IDisposable
     {
         if (_conn == null || State != ConnectionState.Connected)
             throw new InvalidOperationException("Not connected");
-        await _conn.WritePacketAsync(packet, ct);
+        await _sendLock.WaitAsync(ct);
+        try { await _conn.WritePacketAsync(packet, ct); }
+        finally { _sendLock.Release(); }
+    }
+
+    public async Task<FiestaPacket> SendAndWaitAsync(FiestaPacket request, ushort expectedAckOpcode, TimeSpan timeout, CancellationToken ct = default)
+    {
+        var tcs = new TaskCompletionSource<FiestaPacket>(TaskCreationOptions.RunContinuationsAsynchronously);
+        lock (_pending)
+            _pending[expectedAckOpcode] = tcs;
+
+        try
+        {
+            await SendAsync(request, ct);
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(ct);
+            cts.CancelAfter(timeout);
+            await using var reg = cts.Token.Register(() => tcs.TrySetCanceled(cts.Token));
+            return await tcs.Task;
+        }
+        finally
+        {
+            lock (_pending)
+                _pending.Remove(expectedAckOpcode);
+        }
+    }
+
+    private bool TryCompletePending(FiestaPacket packet)
+    {
+        TaskCompletionSource<FiestaPacket>? tcs;
+        lock (_pending)
+        {
+            if (!_pending.TryGetValue(packet.Opcode, out tcs))
+                return false;
+        }
+        return tcs.TrySetResult(packet);
     }
 
     public void Disconnect()

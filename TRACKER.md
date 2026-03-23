@@ -61,67 +61,58 @@ OPTool-Reloaded.sln
 
 ## Priority Tiers
 
-### P0 — Foundation (must have first)
+### P0 — Foundation
+- [x] Project scaffolding — ASP.NET Core Web API, solution, Dockerfile
+- [x] Packet framing — FiestaLib-Reloaded: 6-bit dept + 10-bit cmd opcode format
+- [x] S2S handshake — PROTO_NC_MISC_S2SCONNECTION_RDY/REQ/ACK (0x0801/02/03)
+- [x] Heartbeat — NC_MISC_HEARTBEAT_REQ/ACK (0x0804/05)
+- [x] Connection manager — auto-connect to all OpTool endpoints from ServerInfo.txt, reconnect on failure
+- [x] PDB extraction pipeline — llvm-pdbutil → extract → merge → generate C# structs
 
-- [ ] **Project scaffolding** — ASP.NET Core Web API project, solution file
-- [ ] **Packet framing** — length-prefixed binary protocol (1-byte or 3-byte length header)
-- [ ] **S2S handshake** — NC_MISC_S2SCONNECTION_RDY/REQ/ACK (0x0801/02/03)
-- [ ] **Heartbeat** — NC_MISC_HEARTBEAT_REQ/ACK (0x0808) keepalive
-- [ ] **Connection manager** — connect to WM/Login/Zone OpTool ports, reconnect on failure
+### P1 — Core Ops (WM) — all done
+- [x] `GET /api/s2s-list` — S2SCONNECT_LIST_REQ/ACK (opcodes 1/2)
+- [x] `GET /api/find-user?userId=N` — FIND_USER_REQ/ACK (opcodes 39/40)
+- [x] `POST /api/kick-user?userId=N` — KICK_USER_REQ/ACK (opcodes 41/42)
+- [x] `GET /api/map-users` — MAP_USER_LIST_REQ/ACK (opcodes 5/6)
+- [x] `GET /api/connect-brief` — CONNECT_BRIF_REQ/ACK (opcodes 7/8)
+- [x] `GET /api/user-limit` — REQ/ACK_CLIENT_NUM_OF_USER_LIMIT (opcodes 15/16)
+- [x] `POST /api/user-limit?limit=N` — SET_CLIENT_NUM_OF_USER_LIMIT (opcode 14, CMD no ACK)
 
-### P1 — Server Announcements (primary use case)
+### P2 — Server Management (WM)
+- [ ] `POST /api/close-server` — CLOSE_SERVER_REQ/ACK (opcodes 3/4) — **all servers handle this**
+- [ ] `DELETE /api/character?charNo=N` — CHARACTER_DELETE_REQ/ACK (opcodes 29/30)
+- [ ] `POST /api/announce` — NC_ACT_NOTICE_REQ (ACT dept, cross-dept handler in WM)
 
-- [ ] **NC_ACT_NOTICE_REQ** — send server-wide announcement via WM:9015
-- [ ] **API endpoint**: `POST /optool/announce` with message body
-- [ ] **Verify**: client receives announcement in-game
+### P3 — Monitoring (WM + Login)
+- [ ] `GET /api/packet-stats` — WM_SEND_PACKET_STATISTICS_REQ/ACK (opcodes 27/28)
+- [ ] `POST /api/packet-stats/clear` — WM_SEND_PACKET_STATISTICS_CLR (opcode 26, CMD)
+- [ ] `GET /api/logon-timing` — LOGON_PROCESS_TIME_VIEW_REQ/ACK (opcodes 24/25) — **Login only**
+- [ ] `POST /api/logon-timing/clear` — LOGON_PROCESS_TIME_VIEW_CLR (opcode 23) — **Login only**
 
-### P2 — Server Management
+### P4 — Guild Management (WM)
+- [ ] GUILD_DATA_CHANGE_REQ/ACK (opcodes 36/37) — modify guild data (739-byte req!)
+- [ ] GUILD_CHANGE_MEMBER_GRADE_REQ/ACK (opcodes 32/33)
+- [ ] GUILD_DISMISS_CANCEL_REQ/ACK (opcodes 43/44)
+- [ ] GUILD_TOURNAMENT_CHANGE_CMD/ACK (opcodes 21/22) — 688-byte tournament struct
+- [ ] GUILD_TOURNAMENT_SCHEDULE_RESET_REQ/ACK (opcodes 34/35)
 
-- [ ] **NC_OPTOOL_CLOSE_SERVER_REQ** (cmd 7) — graceful server shutdown
-- [ ] **NC_OPTOOL_KICK_USER_REQ** (cmd 9) — force-disconnect player
-- [ ] **NC_OPTOOL_FIND_USER_REQ** (cmd 11) — find player by name
-- [ ] **NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT** (cmd 27) — change player cap
-- [ ] **NC_OPTOOL_CONNECT_BRIF_REQ** (cmd 1) — get connection status brief
+### P5 — Kingdom Quest Management (WM)
+- [ ] KQ_SCHEDULE_REQ/ACK (opcodes 9/10)
+- [ ] KQ_CHANGE_CMD (opcode 11) — 377-byte KQ info struct
+- [ ] KQ_DELETE_CMD (opcode 17)
+- [ ] KQ_ALL_RESET_CMD (opcode 38)
+- [ ] KQ_MAP_ALLOC_INFO_REQ/ACK (opcodes 12/13)
 
-### P3 — Monitoring & Info
+### P6 — Event Management (WM, non-OPTOOL department)
+- [ ] NC_EVENT_ADD_EVENT_REQ
+- [ ] NC_EVENT_DEL_EVENT_REQ
+- [ ] NC_EVENT_UPDATE_EVENT_REQ
+- [ ] NC_EVENT_GET_ALL_EVENT_INFO_REQ
+- [ ] NC_EVENT_SET_ALL_READY_REQ
 
-- [ ] **NC_OPTOOL_MAP_USER_LIST_REQ** (cmd 3) — list users per map
-- [ ] **NC_OPTOOL_S2SCONNECT_LIST_REQ** (cmd 5) — list S2S connections
-- [ ] **NC_OPTOOL_WM_SEND_PACKET_STATISTICS_REQ** (cmd 29) — packet stats
-- [ ] **NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_REQ** (cmd 23) — logon timing
-- [ ] **NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT** (cmd 26) — get player cap
-
-### P4 — Character & Guild Management
-
-- [ ] **NC_OPTOOL_CHARACTER_DELETE_REQ** (cmd 12) — delete character
-- [ ] **NC_OPTOOL_GUILD_DATA_CHANGE_REQ** (cmd 14) — modify guild data
-- [ ] **NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ** (cmd 15) — change member rank
-- [ ] **NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ** (cmd 21) — cancel guild dissolution
-- [ ] **NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD** (cmd 43) — tournament changes
-- [ ] **NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ** (cmd 41) — reset tournament
-
-### P5 — Kingdom Quest Management
-
-- [ ] **NC_OPTOOL_KQ_SCHEDULE_REQ** (cmd 32) — get KQ schedule
-- [ ] **NC_OPTOOL_KQ_CHANGE_CMD** (cmd 34) — modify KQ
-- [ ] **NC_OPTOOL_KQ_DELETE_CMD** (cmd 36) — delete KQ
-- [ ] **NC_OPTOOL_KQ_ALL_RESET_CMD** (cmd 38) — reset all KQs
-- [ ] **NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ** (cmd 39) — KQ map allocation
-
-### P6 — Event Management (via WM OpTool parser, non-OPTOOL department)
-
-- [ ] **NC_EVENT_ADD_EVENT_REQ** — add event
-- [ ] **NC_EVENT_DEL_EVENT_REQ** — delete event
-- [ ] **NC_EVENT_UPDATE_EVENT_REQ** — update event
-- [ ] **NC_EVENT_GET_ALL_EVENT_INFO_REQ** — list all events
-- [ ] **NC_EVENT_SET_ALL_READY_REQ** — activate all events
-
-### P7 — Login-Specific (connect to Login:9012)
-
-- [ ] **NC_OPTOOL_LOGIN_USER_RATABLE_GET_REQ** (cmd 18) — get rate table
-- [ ] **NC_OPTOOL_LOGIN_USER_RATABLE_SET_CMD** (cmd 20) — set rate table
-- [ ] **NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_REQ** (cmd 23) — logon timing
-- [ ] **NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_CLR** (cmd 24) — clear logon timing
+### P7 — Login-Specific
+- [ ] LOGIN_USER_RATABLE_GET_REQ/ACK (opcodes 18/19) — **Login only**
+- [ ] LOGIN_USER_RATABLE_SET_CMD (opcode 20) — **Login only**
 
 ---
 
@@ -290,43 +281,118 @@ registers a cross-department handler for it.
 | Zone03        | 9027  |
 | Zone04        | 9030  |
 
-### OPTOOL Opcode → Cmd Mapping (dep=0x0A)
-| Cmd | Hex  | Opcode                                          | Handled By       |
-|-----|------|-------------------------------------------------|------------------|
-| 0   | 0x00 | NC_OPTOOL_NULL                                  | -                |
-| 1   | 0x01 | NC_OPTOOL_CONNECT_BRIF_REQ                      | Login, WM, Acct  |
-| 2   | 0x02 | NC_OPTOOL_CONNECT_BRIF_ACK                      | (response)       |
-| 3   | 0x03 | NC_OPTOOL_MAP_USER_LIST_REQ                     | Login, WM, Acct  |
-| 4   | 0x04 | NC_OPTOOL_MAP_USER_LIST_ACK                     | (response)       |
-| 5   | 0x05 | NC_OPTOOL_S2SCONNECT_LIST_REQ                   | Login, WM, Acct  |
-| 6   | 0x06 | NC_OPTOOL_S2SCONNECT_LIST_ACK                   | (response)       |
-| 7   | 0x07 | NC_OPTOOL_CLOSE_SERVER_REQ                      | Login, WM, Acct, Zone |
-| 8   | 0x08 | NC_OPTOOL_CLOSE_SERVER_ACK                      | (response)       |
-| 9   | 0x09 | NC_OPTOOL_KICK_USER_REQ                         | WM               |
-| 10  | 0x0A | NC_OPTOOL_KICK_USER_ACK                         | (response)       |
-| 11  | 0x0B | NC_OPTOOL_FIND_USER_REQ                         | WM               |
-| 12  | 0x0C | NC_OPTOOL_CHARACTER_DELETE_REQ                  | WM               |
-| 13  | 0x0D | NC_OPTOOL_CHARACTER_DELETE_ACK                  | (response)       |
-| 14  | 0x0E | NC_OPTOOL_GUILD_DATA_CHANGE_REQ                | WM               |
-| 15  | 0x0F | NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ        | WM               |
-| 17  | 0x11 | NC_OPTOOL_CHARACTER_DELETE_CMD                   | WM               |
-| 18  | 0x12 | NC_OPTOOL_LOGIN_USER_RATABLE_GET_REQ            | Login            |
-| 19  | 0x13 | NC_OPTOOL_LOGIN_USER_RATABLE_GET_ACK            | (response)       |
-| 20  | 0x14 | NC_OPTOOL_LOGIN_USER_RATABLE_SET_CMD            | Login            |
-| 21  | 0x15 | NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ              | WM               |
-| 23  | 0x17 | NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_REQ           | Login            |
-| 24  | 0x18 | NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_CLR           | Login            |
-| 26  | 0x1A | NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT          | WM               |
-| 27  | 0x1B | NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT          | WM               |
-| 29  | 0x1D | NC_OPTOOL_WM_SEND_PACKET_STATISTICS_REQ         | WM               |
-| 31  | 0x1F | NC_OPTOOL_WM_SEND_PACKET_STATISTICS_CLR         | WM               |
-| 32  | 0x20 | NC_OPTOOL_KQ_SCHEDULE_REQ                       | WM               |
-| 34  | 0x22 | NC_OPTOOL_KQ_CHANGE_CMD                         | WM               |
-| 36  | 0x24 | NC_OPTOOL_KQ_DELETE_CMD                          | WM               |
-| 38  | 0x26 | NC_OPTOOL_KQ_ALL_RESET_CMD                      | WM               |
-| 39  | 0x27 | NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ                 | WM               |
-| 41  | 0x29 | NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ   | WM               |
-| 43  | 0x2B | NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD           | WM               |
+### OPTOOL Opcode Table (dept=0x0A, base=0x2800)
+
+Source: PDB enum `ProtocolCommand::Optool` + `fc_NC_OPTOOL_*` / `opts_NC_OPTOOL_*` handler functions.
+
+| Cmd | Full   | Name                                    | Handlers (PDB)       | API Status |
+|-----|--------|-----------------------------------------|----------------------|------------|
+| 0   | 0x2800 | NC_OPTOOL_NULL                          | —                    | —          |
+| 1   | 0x2801 | NC_OPTOOL_S2SCONNECT_LIST_REQ           | WM, Login, Acct, ALog | Done      |
+| 2   | 0x2802 | NC_OPTOOL_S2SCONNECT_LIST_ACK           | (response)           | Done       |
+| 3   | 0x2803 | NC_OPTOOL_CLOSE_SERVER_REQ              | WM, Login, Acct, ALog | —         |
+| 4   | 0x2804 | NC_OPTOOL_CLOSE_SERVER_ACK              | (response)           | —          |
+| 5   | 0x2805 | NC_OPTOOL_MAP_USER_LIST_REQ             | WM, Login, Acct, ALog | Done      |
+| 6   | 0x2806 | NC_OPTOOL_MAP_USER_LIST_ACK             | (response)           | Done       |
+| 7   | 0x2807 | NC_OPTOOL_CONNECT_BRIF_REQ              | WM, Login, Acct, ALog, Zone | Done |
+| 8   | 0x2808 | NC_OPTOOL_CONNECT_BRIF_ACK              | (response)           | Done       |
+| 9   | 0x2809 | NC_OPTOOL_KQ_SCHEDULE_REQ               | WM                   | —          |
+| 10  | 0x280A | NC_OPTOOL_KQ_SCHEDULE_ACK               | (response)           | —          |
+| 11  | 0x280B | NC_OPTOOL_KQ_CHANGE_CMD                 | WM                   | —          |
+| 12  | 0x280C | NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ         | WM                   | —          |
+| 13  | 0x280D | NC_OPTOOL_KQ_MAP_ALLOC_INFO_ACK         | (response)           | —          |
+| 14  | 0x280E | NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT  | WM                   | Done       |
+| 15  | 0x280F | NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT  | WM                   | Done       |
+| 16  | 0x2810 | NC_OPTOOL_ACK_CLIENT_NUM_OF_USER_LIMIT  | (response)           | Done       |
+| 17  | 0x2811 | NC_OPTOOL_KQ_DELETE_CMD                 | WM                   | —          |
+| 18  | 0x2812 | NC_OPTOOL_LOGIN_USER_RATABLE_GET_REQ    | Login                | —          |
+| 19  | 0x2813 | NC_OPTOOL_LOGIN_USER_RATABLE_GET_ACK    | (response)           | —          |
+| 20  | 0x2814 | NC_OPTOOL_LOGIN_USER_RATABLE_SET_CMD    | Login                | —          |
+| 21  | 0x2815 | NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD   | WM                   | —          |
+| 22  | 0x2816 | NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK   | (response)           | —          |
+| 23  | 0x2817 | NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_CLR   | Login                | —          |
+| 24  | 0x2818 | NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_REQ   | Login                | —          |
+| 25  | 0x2819 | NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_ACK   | (response)           | —          |
+| 26  | 0x281A | NC_OPTOOL_WM_SEND_PACKET_STATISTICS_CLR | WM                   | —          |
+| 27  | 0x281B | NC_OPTOOL_WM_SEND_PACKET_STATISTICS_REQ | WM                   | —          |
+| 28  | 0x281C | NC_OPTOOL_WM_SEND_PACKET_STATISTICS_ACK | (response)           | —          |
+| 29  | 0x281D | NC_OPTOOL_CHARACTER_DELETE_REQ           | WM                   | —          |
+| 30  | 0x281E | NC_OPTOOL_CHARACTER_DELETE_ACK           | (response)           | —          |
+| 31  | 0x281F | NC_OPTOOL_CHARACTER_DELETE_CMD           | WM (forwards to Zone)| —          |
+| 32  | 0x2820 | NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ | WM                   | —          |
+| 33  | 0x2821 | NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_ACK | (response)           | —          |
+| 34  | 0x2822 | NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ | WM             | —          |
+| 35  | 0x2823 | NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_ACK | (response)     | —          |
+| 36  | 0x2824 | NC_OPTOOL_GUILD_DATA_CHANGE_REQ         | WM                   | —          |
+| 37  | 0x2825 | NC_OPTOOL_GUILD_DATA_CHANGE_ACK         | (response)           | —          |
+| 38  | 0x2826 | NC_OPTOOL_KQ_ALL_RESET_CMD              | WM                   | —          |
+| 39  | 0x2827 | NC_OPTOOL_FIND_USER_REQ                 | WM                   | Done       |
+| 40  | 0x2828 | NC_OPTOOL_FIND_USER_ACK                 | (response)           | Done       |
+| 41  | 0x2829 | NC_OPTOOL_KICK_USER_REQ                 | WM                   | Done       |
+| 42  | 0x282A | NC_OPTOOL_KICK_USER_ACK                 | (response)           | Done       |
+| 43  | 0x282B | NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ      | WM                   | —          |
+| 44  | 0x282C | NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK      | (response)           | —          |
+
+### Registered Handlers Per Server (from PDB `fc_NC_OPTOOL_*` / `opts_NC_OPTOOL_*`)
+
+**WorldManager** — `CParserOPTool` (23 handlers):
+```
+fc_NC_OPTOOL_S2SCONNECT_LIST_REQ
+fc_NC_OPTOOL_CLOSE_SERVER_REQ
+fc_NC_OPTOOL_MAP_USER_LIST_REQ
+fc_NC_OPTOOL_CONNECT_BRIF_REQ              (+AddCount helper)
+fc_NC_OPTOOL_KQ_SCHEDULE_REQ
+fc_NC_OPTOOL_KQ_CHANGE_CMD
+fc_NC_OPTOOL_KQ_MAP_ALLOC_INFO_REQ
+fc_NC_OPTOOL_KQ_DELETE_CMD
+fc_NC_OPTOOL_SET_CLIENT_NUM_OF_USER_LIMIT
+fc_NC_OPTOOL_REQ_CLIENT_NUM_OF_USER_LIMIT
+fc_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD
+fc_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_CLR
+fc_NC_OPTOOL_WM_SEND_PACKET_STATISTICS_REQ
+fc_NC_OPTOOL_CHARACTER_DELETE_REQ
+fc_NC_OPTOOL_CHARACTER_DELETE_CMD
+fc_NC_OPTOOL_GUILD_CHANGE_MEMBER_GRADE_REQ
+fc_NC_OPTOOL_GUILD_DATA_CHANGE_REQ
+fc_NC_OPTOOL_GUILD_TOURNAMENT_SCHEDULE_RESET_REQ
+fc_NC_OPTOOL_KQ_ALL_RESET_CMD
+fc_NC_OPTOOL_FIND_USER_REQ
+fc_NC_OPTOOL_KICK_USER_REQ
+fc_NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ
+```
+
+**Login** — `CParserOPTool` (9 handlers):
+```
+fc_NC_OPTOOL_S2SCONNECT_LIST_REQ
+fc_NC_OPTOOL_CLOSE_SERVER_REQ
+fc_NC_OPTOOL_MAP_USER_LIST_REQ
+fc_NC_OPTOOL_CONNECT_BRIF_REQ              (+AddCount helper)
+fc_NC_OPTOOL_LOGIN_USER_RATABLE_GET_REQ
+fc_NC_OPTOOL_LOGIN_USER_RATABLE_SET_CMD
+fc_NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_CLR
+fc_NC_OPTOOL_LOGON_PROCESS_TIME_VIEW_REQ
+```
+
+**Zone** — `OPToolSession` (2 handlers, different dispatch pattern):
+```
+opts_NC_OPTOOL_CONNECT_BRIF_REQ            (+AddCount helper)
+```
+
+**Account** — inline parser (4 handlers):
+```
+fc_NC_OPTOOL_S2SCONNECT_LIST_REQ
+fc_NC_OPTOOL_CLOSE_SERVER_REQ
+fc_NC_OPTOOL_MAP_USER_LIST_REQ
+fc_NC_OPTOOL_CONNECT_BRIF_REQ
+```
+
+**AccountLog** — inline parser (4 handlers, same as Account):
+```
+fc_NC_OPTOOL_S2SCONNECT_LIST_REQ
+fc_NC_OPTOOL_CLOSE_SERVER_REQ
+fc_NC_OPTOOL_MAP_USER_LIST_REQ
+fc_NC_OPTOOL_CONNECT_BRIF_REQ
+```
 
 ### Additional WM OpTool parser handlers (non-OPTOOL department)
 These are handled by `CParserOPTool` in WorldManager despite being in other departments:
@@ -445,15 +511,12 @@ void OPToolSession::opts_NC_OPTOOL_*(NETCOMMAND*)
 
 ## Open Questions
 
+- [x] ~~SERVER_ID_OPTOOL = 8~~ (FiestaServerType.OpTool)
+- [x] ~~S2S handshake key = `(ushort)(target_type + own_type)`~~
+- [x] ~~Name types: Name3=12 bytes, Name5=20 bytes, Name256Byte=256 bytes (null-terminated C strings)~~
 - [ ] What is the exact cmd number for NC_ACT_NOTICE_REQ in dep 9? (WM has cmd 74 and 88 for ACT)
 - [ ] What does the PROTO_NC_ACT_NOTICE_REQ struct look like? (just a string? fixed-length?)
-- [ ] What is the SERVER_ID_OPTOOL enum value for the S2S handshake identification?
-- [ ] What key value does the S2S handshake expect? (authentication)
 - [ ] Are there any community OpTool source references we can cross-reference?
-  - Canic's REUPLOAD source (if findable)
-  - Mini OpTool (community rebuild)
-  - FiestaHeroes documentation
-- [ ] What C++ types map to what sizes? (Name4=char[16]? Name5=char[20]? Need to verify from PDB)
 
 ---
 

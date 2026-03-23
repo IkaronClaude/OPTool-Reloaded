@@ -1,6 +1,7 @@
 using System.Net.Sockets;
 using FiestaLibReloaded.Config;
 using FiestaLibReloaded.Networking;
+using FiestaLibReloaded.Networking.Structs;
 
 namespace OPTool;
 
@@ -61,37 +62,42 @@ public class ServerConnection : IDisposable
 
         // Step 1: Read S2SCONNECTION_RDY (empty payload)
         var rdyPacket = await _conn.ReadPacketAsync(ct);
+        LogPacket("RECV", rdyPacket);
         if (rdyPacket.Opcode != OpS2SConnectionRdy)
         {
             throw new InvalidOperationException(
                 $"Expected S2SCONNECTION_RDY (0x{OpS2SConnectionRdy:X4}), got 0x{rdyPacket.Opcode:X4}");
         }
-        _logger.LogDebug("[{Name}] Received S2SCONNECTION_RDY", _endpoint.Name);
 
         // Step 2: Send S2SCONNECTION_REQ
-        // Payload: server_from_id (byte), server_to_id (byte), key (int32 LE)
-        var reqPayload = new byte[6];
-        reqPayload[0] = (byte)FiestaServerType.OpTool; // 8
-        reqPayload[1] = (byte)_endpoint.ServerType;
-        BitConverter.TryWriteBytes(reqPayload.AsSpan(2), _handshakeKey);
-        var reqPacket = new FiestaPacket(OpS2SConnectionReq, reqPayload);
+        var targetType = (byte)_endpoint.ServerType;
+        var ownType = (byte)FiestaServerType.OpTool;
+        var req = new PROTO_NC_MISC_S2SCONNECTION_REQ
+        {
+            echo_data = 0,
+            server_to_id = targetType,
+            server_from_id = ownType,
+            server_from_world_num = (byte)_endpoint.WorldNum,
+            server_from_zone_num = (byte)_endpoint.ZoneNum,
+            key = (ushort)(targetType + ownType),
+        };
+        var reqPacket = FiestaPacket.Create(req);
+        LogPacket("SEND", reqPacket);
         await _conn.WritePacketAsync(reqPacket, ct);
-        _logger.LogDebug("[{Name}] Sent S2SCONNECTION_REQ (from={From}, to={To})",
-            _endpoint.Name, (int)FiestaServerType.OpTool, _endpoint.ServerType);
 
         // Step 3: Read S2SCONNECTION_ACK
         var ackPacket = await _conn.ReadPacketAsync(ct);
+        LogPacket("RECV", ackPacket);
         if (ackPacket.Opcode != OpS2SConnectionAck)
         {
             throw new InvalidOperationException(
                 $"Expected S2SCONNECTION_ACK (0x{OpS2SConnectionAck:X4}), got 0x{ackPacket.Opcode:X4}");
         }
 
-        // ACK payload: error (byte) at offset 0
-        var error = ackPacket.Payload.Span[0];
-        if (error != 0)
+        var ack = ackPacket.ReadBody<PROTO_NC_MISC_S2SCONNECTION_ACK>();
+        if (ack.error != 0)
         {
-            throw new InvalidOperationException($"S2SCONNECTION_ACK error code: {error}");
+            throw new InvalidOperationException($"S2SCONNECTION_ACK error code: {ack.error}");
         }
 
         State = ConnectionState.Connected;
@@ -113,8 +119,8 @@ public class ServerConnection : IDisposable
                 if (_conn == null || State != ConnectionState.Connected) break;
 
                 var hbPacket = new FiestaPacket(OpHeartbeatReq, ReadOnlyMemory<byte>.Empty);
+                LogPacket("SEND", hbPacket);
                 await _conn.WritePacketAsync(hbPacket, ct);
-                _logger.LogTrace("[{Name}] Sent heartbeat", _endpoint.Name);
             }
             catch (OperationCanceledException) { break; }
             catch (Exception ex)
@@ -135,20 +141,16 @@ public class ServerConnection : IDisposable
                 if (_conn == null || State != ConnectionState.Connected) break;
 
                 var packet = await _conn.ReadPacketAsync(ct);
+                LogPacket("RECV", packet);
 
                 if (packet.Opcode == OpHeartbeatAck)
                 {
-                    _logger.LogTrace("[{Name}] Heartbeat ACK received", _endpoint.Name);
+                    // logged above
                 }
                 else if (TryCompletePending(packet))
                 {
-                    _logger.LogDebug("[{Name}] Completed pending request for 0x{Opcode:X4}",
+                    _logger.LogInformation("[{Name}] Completed pending request for 0x{Opcode:X4}",
                         _endpoint.Name, packet.Opcode);
-                }
-                else
-                {
-                    _logger.LogDebug("[{Name}] Received opcode 0x{Opcode:X4} ({Len} bytes payload)",
-                        _endpoint.Name, packet.Opcode, packet.Payload.Length);
                 }
             }
             catch (OperationCanceledException) { break; }
@@ -172,7 +174,11 @@ public class ServerConnection : IDisposable
         if (_conn == null || State != ConnectionState.Connected)
             throw new InvalidOperationException("Not connected");
         await _sendLock.WaitAsync(ct);
-        try { await _conn.WritePacketAsync(packet, ct); }
+        try
+        {
+            LogPacket("SEND", packet);
+            await _conn.WritePacketAsync(packet, ct);
+        }
         finally { _sendLock.Release(); }
     }
 
@@ -206,6 +212,14 @@ public class ServerConnection : IDisposable
                 return false;
         }
         return tcs.TrySetResult(packet);
+    }
+
+    private void LogPacket(string direction, FiestaPacket packet)
+    {
+        var hex = Convert.ToHexString(packet.Payload.Span);
+        _logger.LogInformation("[{Name}] {Dir} opcode=0x{Op:X4} dept={Dept} cmd={Cmd} len={Len} payload={Hex}",
+            _endpoint.Name, direction, packet.Opcode, packet.Department, packet.Command,
+            packet.Payload.Length, hex);
     }
 
     public void Disconnect()

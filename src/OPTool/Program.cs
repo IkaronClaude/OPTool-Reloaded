@@ -8,8 +8,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<ConnectionManager>();
 builder.Services.AddHostedService(sp => sp.GetRequiredService<ConnectionManager>());
+builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+if (Environment.GetEnvironmentVariable("DISABLE_SWAGGER") != "true")
+{
+    app.MapOpenApi();
+    app.UseSwaggerUI(o => o.SwaggerEndpoint("/openapi/v1.json", "OPTool API"));
+}
 
 // Helper: extract null-terminated string from fixed byte array
 static string CStr(byte[] buf)

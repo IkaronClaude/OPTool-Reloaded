@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\lib\FiestaLib-Reloaded\src\FiestaLibReloaded.Networking\FiestaLibReloaded.Networking.csproj" />
     <ProjectReference Include="..\..\lib\FiestaLib-Reloaded\src\FiestaLibReloaded.Config\FiestaLibReloaded.Config.csproj" />
   </ItemGroup>

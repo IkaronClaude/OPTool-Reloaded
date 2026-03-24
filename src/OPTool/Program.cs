@@ -1,4 +1,5 @@
 using System.Text;
+using Microsoft.AspNetCore.HttpOverrides;
 using FiestaLibReloaded.Config;
 using FiestaLibReloaded.Networking;
 using FiestaLibReloaded.Networking.Structs;
@@ -11,6 +12,15 @@ builder.Services.AddHostedService(sp => sp.GetRequiredService<ConnectionManager>
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
+
+var pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
+if (!string.IsNullOrEmpty(pathBase))
+    app.UsePathBase(pathBase);
 
 if (Environment.GetEnvironmentVariable("DISABLE_SWAGGER") != "true")
 {

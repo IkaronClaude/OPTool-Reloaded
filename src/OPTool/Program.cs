@@ -27,7 +27,8 @@ if (!string.IsNullOrEmpty(pathBase))
 if (Environment.GetEnvironmentVariable("DISABLE_SWAGGER") != "true")
 {
     app.MapOpenApi();
-    app.UseSwaggerUI(o => o.SwaggerEndpoint("/openapi/v1.json", "OPTool API"));
+    var swaggerPrefix = string.IsNullOrEmpty(pathBase) ? "" : pathBase;
+    app.UseSwaggerUI(o => o.SwaggerEndpoint($"{swaggerPrefix}/openapi/v1.json", "OPTool API"));
 }
 
 // Helper: extract null-terminated string from fixed byte array

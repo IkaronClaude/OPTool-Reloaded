@@ -73,12 +73,12 @@ app.MapGet("/api/s2s-list", async (ConnectionManager cm, CancellationToken ct) =
 });
 
 // --- Find User ---
-app.MapGet("/api/find-user", async (uint userId, ConnectionManager cm, CancellationToken ct) =>
+app.MapGet("/api/find-user", async (int userId, ConnectionManager cm, CancellationToken ct) =>
 {
     var conn = GetWm(cm);
     if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
 
-    var req = new PROTO_NC_OPTOOL_FIND_USER_REQ { nUserNo = userId };
+    var req = new PROTO_NC_OPTOOL_FIND_USER_REQ { nUserNo = (uint)userId };
     var ackPacket = await conn.SendAndWaitAsync(
         FiestaPacket.Create(req),
         PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_FIND_USER_ACK>(),
@@ -97,12 +97,12 @@ app.MapGet("/api/find-user", async (uint userId, ConnectionManager cm, Cancellat
 });
 
 // --- Kick User ---
-app.MapPost("/api/kick-user", async (uint userId, ConnectionManager cm, CancellationToken ct) =>
+app.MapPost("/api/kick-user", async (int userId, ConnectionManager cm, CancellationToken ct) =>
 {
     var conn = GetWm(cm);
     if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
 
-    var req = new PROTO_NC_OPTOOL_KICK_USER_REQ { nUserNo = userId };
+    var req = new PROTO_NC_OPTOOL_KICK_USER_REQ { nUserNo = (uint)userId };
     var ackPacket = await conn.SendAndWaitAsync(
         FiestaPacket.Create(req),
         PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_KICK_USER_ACK>(),

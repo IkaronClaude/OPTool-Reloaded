@@ -29,6 +29,30 @@ var pathBase = Environment.GetEnvironmentVariable("ASPNETCORE_PATHBASE");
 if (!string.IsNullOrEmpty(pathBase))
     app.UsePathBase(pathBase);
 
+// Turn backend query failures into clean HTTP errors instead of raw 500s. A
+// SendAndWaitAsync that times out throws TaskCanceledException (the server, e.g.
+// WM, didn't answer the OPTOOL request in the wait window); a malformed ACK
+// throws EndOfStreamException. Map these to 504 / 502 so callers get a clear
+// signal. (Client-initiated aborts are excluded.)
+app.Use(async (ctx, next) =>
+{
+    try
+    {
+        await next();
+    }
+    catch (Exception ex) when (ex is TaskCanceledException or OperationCanceledException
+                               && !ctx.RequestAborted.IsCancellationRequested)
+    {
+        ctx.Response.StatusCode = StatusCodes.Status504GatewayTimeout;
+        await ctx.Response.WriteAsJsonAsync(new { error = "upstream server did not answer in time", path = ctx.Request.Path.Value });
+    }
+    catch (EndOfStreamException)
+    {
+        ctx.Response.StatusCode = StatusCodes.Status502BadGateway;
+        await ctx.Response.WriteAsJsonAsync(new { error = "could not parse upstream server response", path = ctx.Request.Path.Value });
+    }
+});
+
 if (Environment.GetEnvironmentVariable("DISABLE_SWAGGER") != "true")
 {
     app.MapOpenApi();

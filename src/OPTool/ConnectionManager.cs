@@ -43,6 +43,36 @@ public class ConnectionManager : BackgroundService
         var endpoints = ServerInfoParser.GetOpToolEndpoints(serverInfoPath);
         _logger.LogInformation("Found {Count} OpTool endpoints in ServerInfo.txt", endpoints.Count);
 
+        // Optional s2s-proxy / k8s addressing. The literal IP:port in
+        // ServerInfo.txt is correct for a flat (non-proxied) deployment, but in
+        // the fiesta-docker / k8s stack those peer rows are rewritten to
+        // 127.0.0.1 (each pod's local proxy) and are meaningless from a separate
+        // OpTool pod. EndpointHostOverrides remaps a row -- keyed by its
+        // ServerInfo name, e.g. "PG_W00_WM" -- to an in-cluster DNS name
+        // (worldmanager.fiesta.svc.cluster.local). S2sPortOffset optionally
+        // shifts every port to the target pod's proxy inbound listener
+        // (origPort + offset, matching S2S_INTERNAL_OFFSET) so the exe sees the
+        // connection as 127.0.0.1 and its OpTool source-IP check passes. Both
+        // default to no-op, so flat / non-s2s servers keep working unchanged.
+        var hostOverrides = _config.GetSection("Fiesta:EndpointHostOverrides")
+            .GetChildren()
+            .Where(c => !string.IsNullOrWhiteSpace(c.Value))
+            .ToDictionary(c => c.Key, c => c.Value!, StringComparer.OrdinalIgnoreCase);
+        var portOffset = _config.GetValue("Fiesta:S2sPortOffset", 0);
+        if (hostOverrides.Count > 0 || portOffset != 0)
+        {
+            endpoints = endpoints
+                .Select(ep => ep with
+                {
+                    IpAddress = hostOverrides.TryGetValue(ep.Name, out var host) ? host : ep.IpAddress,
+                    Port = ep.Port + portOffset,
+                })
+                .ToList();
+            _logger.LogInformation(
+                "Applied addressing overrides: {Hosts} host override(s), port offset {Offset}",
+                hostOverrides.Count, portOffset);
+        }
+
         foreach (var ep in endpoints)
         {
             _logger.LogInformation("  {Name} -> {Ip}:{Port} (ServerType={Type})",

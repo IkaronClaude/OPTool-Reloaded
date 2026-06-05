@@ -5,6 +5,10 @@ using FiestaLibReloaded.Networking;
 using FiestaLibReloaded.Networking.Structs;
 using OPTool;
 
+// Notice / chat text is EUC-KR (cp949). Register the legacy code-page provider so
+// Encoding.GetEncoding(949) is available on .NET Core.
+Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<ConnectionManager>();
@@ -197,6 +201,32 @@ app.MapPost("/api/user-limit", async (int limit, ConnectionManager cm, Cancellat
     await conn.SendAsync(FiestaPacket.Create(cmd), ct);
 
     return Results.Ok(new { set_limit = limit });
+});
+
+// --- Server Announcement ("GM Say") ---
+// NC_ACT_NOTICE_REQ (ACT dept 0x08, cmd 16) -> WM broadcasts NC_ACT_NOTICE_CMD to
+// every connected client. Fire-and-forget command (no ACK). World-wide only.
+app.MapPost("/api/announce", async (string message, ConnectionManager cm, CancellationToken ct) =>
+{
+    if (string.IsNullOrEmpty(message))
+        return Results.BadRequest("message is required");
+
+    var conn = GetWm(cm);
+    if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
+
+    var bytes = Encoding.GetEncoding(949).GetBytes(message);
+    if (bytes.Length > byte.MaxValue)
+        return Results.BadRequest($"message too long: {bytes.Length} bytes encoded (max {byte.MaxValue})");
+
+    var req = new PROTO_NC_ACT_NOTICE_REQ
+    {
+        itemLinkDataCount = 0,
+        len = (byte)bytes.Length,
+        content = bytes,
+    };
+    await conn.SendAsync(new FiestaPacket(PROTO_NC_ACT_NOTICE_REQ.Opcode, req.ToBytes()), ct);
+
+    return Results.Ok(new { sent = true, bytes = bytes.Length, message });
 });
 
 app.Run();

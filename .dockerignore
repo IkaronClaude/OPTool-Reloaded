@@ -1,0 +1,11 @@
+# Keep host build artifacts out of the build context so `COPY . .` can't
+# clobber the in-container `dotnet restore` output (obj/project.assets.json),
+# which otherwise breaks `dotnet publish --no-restore` (NETSDK1064).
+**/bin/
+**/obj/
+**/.vs/
+.git/
+.gitignore
+*.user
+Dockerfile*
+.dockerignore

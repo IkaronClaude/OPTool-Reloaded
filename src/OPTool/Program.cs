@@ -391,7 +391,10 @@ app.MapPost("/api/guild/member-grade", async (uint guildNo, uint charNo, byte ol
     return Results.Ok(new { guild_no = guildNo, char_no = charNo, error = ack.error });
 });
 
-// --- Guild: Cancel Dismiss ---  REQ 43 -> ACK 44
+// --- Guild: Cancel Dismiss ---  REQ 43 -> ACK.
+// NOTE: WM's dismiss-cancel handler does NOT reply with GUILD_DISMISS_CANCEL_ACK
+// (cmd 44); verified live, it answers with the generic GUILD_DATA_CHANGE_ACK
+// (cmd 37, 0x2825, a ushort error). Wait for that opcode instead.
 app.MapPost("/api/guild/dismiss-cancel", async (uint guildNo, ConnectionManager cm, CancellationToken ct) =>
 {
     var conn = GetWm(cm);
@@ -399,11 +402,11 @@ app.MapPost("/api/guild/dismiss-cancel", async (uint guildNo, ConnectionManager 
 
     var ackPacket = await conn.SendAndWaitAsync(
         FiestaPacket.Create(new PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_REQ { nNo = guildNo }),
-        PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK>(),
+        PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK>(),
         TimeSpan.FromSeconds(5), ct);
-    var ack = ackPacket.ReadBody<PROTO_NC_OPTOOL_GUILD_DISMISS_CANCEL_ACK>();
+    var ack = ackPacket.ReadBody<PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK>();
 
-    return Results.Ok(new { guild_no = guildNo, error = ack.nError });
+    return Results.Ok(new { guild_no = guildNo, error = ack.error });
 });
 
 // --- Guild: Reset Tournament Schedule ---  REQ 34 -> ACK 35

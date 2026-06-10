@@ -82,6 +82,29 @@ static ServerConnection? GetLogin(ConnectionManager cm) =>
 static ushort OptoolOp(int cmd) => (ushort)((0x0A << 10) | cmd);
 static FiestaPacket EmptyOptool(int cmd) => new(OptoolOp(cmd), ReadOnlyMemory<byte>.Empty);
 
+// Encode a string into a fixed-length, null-padded ASCII buffer (truncating if
+// over length). Used to fill the Name*/sIntro/sNotify fixed arrays.
+static byte[] FixedBytes(string? s, int len)
+{
+    var buf = new byte[len];
+    if (!string.IsNullOrEmpty(s))
+    {
+        var b = Encoding.ASCII.GetBytes(s);
+        Array.Copy(b, buf, Math.Min(b.Length, len));
+    }
+    return buf;
+}
+static sbyte[] FixedSBytes(string? s, int len)
+{
+    var buf = new sbyte[len];
+    if (!string.IsNullOrEmpty(s))
+    {
+        var b = Encoding.ASCII.GetBytes(s);
+        for (int i = 0; i < Math.Min(b.Length, len); i++) buf[i] = (sbyte)b[i];
+    }
+    return buf;
+}
+
 app.MapGet("/health", () => "ok");
 
 app.MapGet("/status", (ConnectionManager cm) => cm.Status);
@@ -547,4 +570,123 @@ app.MapPost("/api/close-server", async (string? confirm, ConnectionManager cm, C
     return Results.Ok(new { closing = true, error = ack.error });
 });
 
+// ============================================================================
+// Full-record mutations (JSON body). These overwrite an entire record, so the
+// caller must supply every field -- there is no read-side to merge against.
+// ============================================================================
+
+// --- Guild: Change full guild record ---  REQ 36 -> ACK (GUILD_DATA_CHANGE_ACK 0x2825)
+app.MapPost("/api/guild/data-change", async (GuildDataChangeRequest body, ConnectionManager cm, CancellationToken ct) =>
+{
+    var conn = GetWm(cm);
+    if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
+
+    var req = new PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_REQ
+    {
+        nNo = body.No,
+        sName = new Name4 { n4_name = FixedBytes(body.Name, 16) },
+        sPassword = new Name3 { n3_name = FixedBytes(body.Password, 12) },
+        nMoney = body.Money,
+        nType = body.Type,
+        nGrade = body.Grade,
+        nFame = body.Fame,
+        nStoneLevel = body.StoneLevel,
+        nExp = body.Exp,
+        nMaxMembers = body.MaxMembers,
+        nWarWinCount = body.WarWin,
+        nWarLoseCount = body.WarLose,
+        nWarDrawCount = body.WarDraw,
+        nDismissStatus = body.DismissStatus,
+        dDismissDate = body.DismissDate,
+        dNotifyDate = body.NotifyDate,
+        sNotifyCharID = new Name5 { n5_name = FixedBytes(body.NotifyCharId, 20) },
+        sIntro = FixedSBytes(body.Intro, 128),
+        sNotify = FixedSBytes(body.Notify, 512),
+    };
+    var ackPacket = await conn.SendAndWaitAsync(
+        FiestaPacket.Create(req),
+        PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK>(),
+        TimeSpan.FromSeconds(5), ct);
+    var ack = ackPacket.ReadBody<PROTO_NC_OPTOOL_GUILD_DATA_CHANGE_ACK>();
+
+    return Results.Ok(new { guild_no = body.No, error = ack.error });
+});
+
+// --- KQ: Change/add a Kingdom Quest definition ---  CMD 11 (fire-and-forget).
+// Mutates the live KQ schedule; nested MapLink[4]/TeamRegenXY[2] default to
+// empty unless you need them. No ACK from WM.
+app.MapPost("/api/kq-change", async (KqChangeRequest body, ConnectionManager cm, CancellationToken ct) =>
+{
+    var conn = GetWm(cm);
+    if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
+
+    var kq = new PROTO_KQ_INFO
+    {
+        NextStartMode = body.NextStartMode,
+        NextStartDelayMin = body.NextStartDelayMin,
+        RepeatMode = body.RepeatMode,
+        RepeatCount = body.RepeatCount,
+        RewardIndex = body.RewardIndex,
+        DemandMobKill = body.DemandMobKill,
+        ScheduleTime = body.ScheduleTime,
+        RunCounter = body.RunCounter,
+        ScriptLanguage = FixedBytes(body.ScriptLanguage, 32),
+        ScriptInitValue = FixedBytes(body.ScriptInitValue, 32),
+        IsTeamPVP = (byte)(body.IsTeamPvp ? 1 : 0),
+    };
+    for (int i = 0; i < kq.MapLink.Length; i++) kq.MapLink[i] = new PROTO_KQ_MAP_INFO();
+    for (int i = 0; i < kq.TeamRegenXY.Length; i++) kq.TeamRegenXY[i] = new SHINE_XY_TYPE();
+
+    await conn.SendAsync(FiestaPacket.Create(new PROTO_NC_OPTOOL_KQ_CHANGE_CMD { KQInfo = kq }), ct);
+    return Results.Ok(new { sent = true, reward_index = body.RewardIndex });
+});
+
+// --- Guild: Change tournament schedule/bracket ---  REQ 21 -> ACK (0x2816).
+// TournamentTree[31] defaults to empty entries; the time fields are the knobs.
+app.MapPost("/api/guild/tournament-change", async (TournamentChangeRequest body, ConnectionManager cm, CancellationToken ct) =>
+{
+    var conn = GetWm(cm);
+    if (conn is null) return Results.Problem("No connected WorldManager", statusCode: 503);
+
+    var cmd = new PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_CMD
+    {
+        nMatchType = body.MatchType,
+        Time_Start = body.TimeStart,
+        Time_Practic = body.TimePractic,
+        Time_PracticEnd = body.TimePracticEnd,
+        Time_Match_161 = body.TimeMatch161,
+        Time_Match_162 = body.TimeMatch162,
+        Time_Match_8 = body.TimeMatch8,
+        Time_Match_4 = body.TimeMatch4,
+        Time_Match_2 = body.TimeMatch2,
+        Time_Match_End = body.TimeMatchEnd,
+    };
+    for (int i = 0; i < cmd.TournamentTree.Length; i++) cmd.TournamentTree[i] = new GUILD_TOURNAMENT_LIST();
+
+    var ackPacket = await conn.SendAndWaitAsync(
+        FiestaPacket.Create(cmd),
+        PacketRegistry.GetOpcode<PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK>(),
+        TimeSpan.FromSeconds(5), ct);
+    var ack = ackPacket.ReadBody<PROTO_NC_OPTOOL_GUILD_TOURNAMENT_CHANGE_ACK>();
+
+    return Results.Ok(new { match_type = body.MatchType, error = ack.error });
+});
+
 app.Run();
+
+// Request DTOs for the full-record mutation endpoints (bound from JSON body).
+record GuildDataChangeRequest(
+    uint No, string? Name, string? Password, ulong Money, byte Type, byte Grade,
+    uint Fame, ushort StoneLevel, ulong Exp, ushort MaxMembers,
+    uint WarWin, uint WarLose, uint WarDraw, byte DismissStatus,
+    int DismissDate, int NotifyDate, string? NotifyCharId, string? Intro, string? Notify);
+
+record KqChangeRequest(
+    byte NextStartMode, ushort NextStartDelayMin, byte RepeatMode, ushort RepeatCount,
+    ushort RewardIndex, ushort DemandMobKill, int ScheduleTime, byte RunCounter,
+    string? ScriptLanguage, string? ScriptInitValue, bool IsTeamPvp);
+
+record TournamentChangeRequest(
+    byte MatchType, int TimeStart, int TimePractic, int TimePracticEnd,
+    int TimeMatch161, int TimeMatch162, int TimeMatch8, int TimeMatch4,
+    int TimeMatch2, int TimeMatchEnd);
